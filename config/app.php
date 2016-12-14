@@ -172,11 +172,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        QuickInmobiliario\Providers\AppServiceProvider::class,
+        QuickInmobiliario\Providers\AuthServiceProvider::class,
+        // QuickInmobiliario\Providers\BroadcastServiceProvider::class,
+        QuickInmobiliario\Providers\EventServiceProvider::class,
+        QuickInmobiliario\Providers\RouteServiceProvider::class,
 
     ],
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace QuickInmobiliario\Http\Controllers\Auth;
 
-use App\User;
-use App\Http\Controllers\Controller;
+use QuickInmobiliario\User;
+use QuickInmobiliario\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
