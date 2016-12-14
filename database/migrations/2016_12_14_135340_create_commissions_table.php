@@ -13,7 +13,7 @@ class CreateCommissionsTable extends Migration
      */
     public function up()
     {
-      Schema::create('commissions', function(Bleprint $table){
+      Schema::create('commissions', function(Blueprint $table){
         $table->increments('id');
         $table->decimal('prince', 10, 2);
         $table->tinyInteger('state');
