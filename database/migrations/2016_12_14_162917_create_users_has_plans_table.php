@@ -15,8 +15,8 @@ class CreateUsersHasPlansTable extends Migration
     {
       Schema::create('users_has_plans', function(Blueprint $table){
         $table->integer('user_id');
-        $table->integer('plan_id');
-        $table->index(['user_id', 'plan_id']);
+        $table->integer('price_plan_id');
+        $table->index(['user_id', 'price_plan_id']);
       });
     }
 
