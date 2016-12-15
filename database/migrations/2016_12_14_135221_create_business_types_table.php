@@ -13,7 +13,7 @@ class CreateBusinessTypesTable extends Migration
      */
     public function up()
     {
-      Schema::create('bussiness_types', function(Blueprint $table){
+      Schema::create('business_types', function(Blueprint $table){
         $table->increments('id');
         $table->string('name', 45);
       });
@@ -26,6 +26,6 @@ class CreateBusinessTypesTable extends Migration
      */
     public function down()
     {
-      Schema::dropIfExists('bussiness_types');
+      Schema::dropIfExists('business_types');
     }
 }

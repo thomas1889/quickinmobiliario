@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('first_name', 150);
             $table->string('last_name', 150);
-            $table->string('bussiness_name', 150);
+            $table->string('business_name', 150);
             $table->string('cell_phone', 45);
             $table->string('address');
             $table->string('document_type', 45);
@@ -25,7 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('gender', 10);
             $table->string('email', 75)->unique();
             $table->string('username', 45);
-            $table->string('profession', 45);
+            $table->string('profession', 75);
             $table->string('city', 45);
             $table->string('password');
             $table->integer('user_type_id');
