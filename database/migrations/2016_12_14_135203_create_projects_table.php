@@ -15,17 +15,17 @@ class CreateProjectsTable extends Migration
     {
       Schema::create('projects', function(Blueprint $table){
         $table->increments('id');
-        $table->string('name', 75);
+        $table->string('name', 150);
         $table->string('address', 75);
         $table->string('phone', 45);
         $table->text('description');
-        $table->decimal('built_area', 7, 2);
-        $table->decimal('full_area', 7, 2);
+        $table->decimal('built_area', 10, 2);
+        $table->decimal('full_area', 10, 2);
         $table->string('zone', 45);
         $table->string('city', 45);
         $table->string('neighborhood', 45);
         $table->integer('use_type_id');
-        $table->integer('bussiness_type_id');
+        $table->integer('business_type_id');
         $table->timestamps();
       });
       DB::statement('ALTER TABLE projects ADD coordinates POINT');
