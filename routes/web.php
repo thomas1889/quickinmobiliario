@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'HomeController@index');
+Route::get('/inmuebles', [
+  'uses' => 'PropertyController@index',
+  'as' => 'properties_path'
+]);
