@@ -24,15 +24,4 @@ class PropertyTest extends TestCase
 
       $this->assertEquals(20, $properties->count());
     }
-
-    public function test_property_was_correctly_saved(){
-      factory(Commission::class, 10)->create()->each(function($commission){
-        $property = factory(Property::class)->make();
-        $commission->property()->save($property);
-      });
-
-      $property = Property::all();
-
-      dd($property);
-    }
 }
