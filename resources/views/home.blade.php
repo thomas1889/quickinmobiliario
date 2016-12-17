@@ -15,4 +15,11 @@
     </div>
   </div>
 
+  <div class="panel panel-primary">
+    <div class="panel-heading">Proyectos</div>
+    <div class="panel-body">
+      <h3>Acceda a la lista de Proyectos: <small><a href="{{ route('projects_path') }}" class="btn btn-link">Proyectos</a></small></h3>
+    </div>
+  </div>
+
 @stop

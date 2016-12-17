@@ -16,3 +16,8 @@ Route::get('/inmuebles', [
   'uses' => 'PropertyController@index',
   'as' => 'properties_path'
 ]);
+
+Route::get('/projects', [
+  'uses' => 'ProjectController@projects',
+  'as' => 'projects_path'
+]);
