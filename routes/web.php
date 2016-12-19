@@ -10,9 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', 'HomeController@index');
 Route::get('/inmuebles', [
   'uses' => 'PropertyController@index',
   'as' => 'properties_path'
 ]);
+
+Auth::routes();
