@@ -34,6 +34,6 @@ Route::get('inmueble/{id}', [
 
 
 Route::get('/projects', [
-  'uses' => 'ProjectController@projects',
+  'uses' => 'ProjectController@index',
   'as' => 'projects_path'
 ]);
