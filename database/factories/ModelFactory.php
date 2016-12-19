@@ -77,7 +77,7 @@ $factory->define(QuickInmobiliario\Project::class, function (Faker\Generator $fa
         'description' => $faker->text(200),
         'built_area' => $faker->numberBetween(50, 1500),
         'full_area' => $faker->numberBetween(50, 1500),
-        'zone' => $faker->randomElement(array('North', 'South', 'West')),
+        'zone' => $faker->randomElement(array('North', 'South', 'West','Center')),
         'city' => $faker->city,
         'neighborhood' => $faker->streetName,
         'use_type_id' => $faker->randomElement([1, 2]),
