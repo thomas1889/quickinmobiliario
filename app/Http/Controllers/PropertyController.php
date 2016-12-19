@@ -4,6 +4,10 @@ namespace QuickInmobiliario\Http\Controllers;
 
 use Illuminate\Http\Request;
 use QuickInmobiliario\Property;
+use QuickInmobiliario\Project;
+use QuickInmobiliario\PropertyType;
+use QuickInmobiliario\UseType;
+use QuickInmobiliario\BusinessType;
 
 class PropertyController extends Controller
 {
@@ -20,11 +24,21 @@ class PropertyController extends Controller
   }
 
   public function create(){
-    return view('properties.create');
+    $projects = Project::all();//Por ahora todos, pero se corregirá a los proyectos asociados al usuario juridico
+    $property_types = PropertyType::all();
+    $use_types = UseType::all();
+    $business_types = BusinessType::all();
+
+    return view('properties.create', [
+      'projects' => $projects,
+      'property_types' => $property_types,
+      'use_types' => $use_types,
+      'business_types' => $business_types
+    ]);
   }
 
   public function store(Request $request){
-    dd($resquest);
+    dd($request);
   }
 
   public function edit(){
