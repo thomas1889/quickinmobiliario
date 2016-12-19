@@ -7,24 +7,16 @@ use QuickInmobiliario\Projects;
 
 class ProjectController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        return view('home');
+      $projects = \QuickInmobiliario\Project::all();
+      return view('projects.index', ['projects' => $projects]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        
+
     }
 
     /**
@@ -46,8 +38,7 @@ class ProjectController extends Controller
      */
     public function show()
     {
-        $projects = Projects::all();
-        return view('projects.projects', ['projects' => $projects]);
+
     }
 
     /**
