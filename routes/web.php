@@ -14,10 +14,25 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index');
-Route::get('/inmuebles', [
+
+Route::get('inmueble/crear', [
+  'uses' => 'PropertyController@create',
+  'as' => 'property_create_path'
+]);
+Route::post('inmueble/crear', [
+  'uses' => 'PropertyController@store',
+  'as' => 'property_create_path'
+]);
+Route::get('inmuebles', [
   'uses' => 'PropertyController@index',
   'as' => 'properties_path'
 ]);
+Route::get('inmueble/{id}', [
+  'uses' => 'PropertyController@show',
+  'as' => 'property_show_path'
+]);
+
+
 Route::get('/projects', [
   'uses' => 'ProjectController@projects',
   'as' => 'projects_path'

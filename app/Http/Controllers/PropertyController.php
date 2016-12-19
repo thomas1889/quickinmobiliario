@@ -13,6 +13,21 @@ class PropertyController extends Controller
     return view('properties.index', ['properties' => $properties]);
   }
 
-  public function show(){
+  public function show($id){
+    $property = Property::find($id);
+
+    return view('properties.show', ['property' => $property]);
+  }
+
+  public function create(){
+    return view('properties.create');
+  }
+
+  public function store(Request $request){
+    dd($resquest);
+  }
+
+  public function edit(){
+
   }
 }
