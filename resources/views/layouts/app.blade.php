@@ -12,7 +12,7 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ elixir('css/app.css') }}">
-
+        <link rel="stylesheet" href="{{ elixir('css/stylesheet.css') }}">
         <!-- Scripts -->
         <script>
             window.Laravel = <?php
@@ -84,6 +84,8 @@ echo json_encode([
         </div>
 
         <!-- Scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="/js/app.js"></script>
+        <script src="/js/hide.js"></script>
     </body>
 </html>

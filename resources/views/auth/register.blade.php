@@ -9,27 +9,57 @@
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Name</label>
+
+                        <div class="form-group{{ $errors->has('select') ? ' has-error' : '' }}">
+                            <label for="select" class="col-md-4 control-label">Select</label>
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="first_name" value="{{ old('name') }}" required autofocus>
-                                @if ($errors->has('name'))
-                                <span class="help-block">
-                                    <strong>{{ $errors->first('name') }}</strong>
-                                </span>
-                                @endif
+                                <select id="select"  class="form-control" name="select"  required>
+                                    <option value="natural">Natural Person</option>
+                                    <option value="legal">Legal Person</option>
+                                </select>
                             </div>
                         </div>
-                        <div class="form-group{{ $errors->has('last_name') ? ' has-error' : '' }}">
-                            <label for="last_name" class="col-md-4 control-label">Last Name</label>
-                            <div class="col-md-6">
-                                <input id="last_name" type="text" class="form-control" name="last_name" value="{{ old('last_name') }}" required autofocus>
-                                @if ($errors->has('last_name'))
-                                <span class="help-block">
-                                    <strong>{{ $errors->first('last_name') }}</strong>
-                                </span>
-                                @endif
+
+                        <div id="pai">
+                            <!--Date Legal Person-->
+                            <div id="date_legal" class="form-group{{ $errors->has('business_name') ? ' has-error' : '' }}">
+                                <label for="business_name" class="col-md-4 control-label">Business Name</label>
+                                <div class="col-md-6">
+                                    <input id="business_name" type="text" class="form-control" name="business_name" value="{{ old('business_name') }}" required autofocus>
+                                    @if ($errors->has('business_name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('business_name') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
                             </div>
+                            <!--END Dates Legal Person-->
+                            <!--Dates Natural Person-->
+                            <div id="date_natural">
+                                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                                    <label for="name" class="col-md-4 control-label">Name</label>
+                                    <div class="col-md-6">
+                                        <input id="name" type="text" class="form-control" name="first_name" value="{{ old('name') }}" required autofocus>
+                                        @if ($errors->has('name'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('name') }}</strong>
+                                        </span>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="form-group{{ $errors->has('last_name') ? ' has-error' : '' }}">
+                                    <label for="last_name" class="col-md-4 control-label">Last Name</label>
+                                    <div class="col-md-6">
+                                        <input id="last_name" type="text" class="form-control" name="last_name" value="{{ old('last_name') }}" required autofocus>
+                                        @if ($errors->has('last_name'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('last_name') }}</strong>
+                                        </span>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                            <!--END Dates Natural Person-->
                         </div>
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
