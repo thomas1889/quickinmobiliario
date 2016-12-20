@@ -11,10 +11,16 @@
 |
 */
 
-Auth::routes();
-
 Route::get('/', 'HomeController@index');
 
+/**
+* Authorization routes
+*/
+Auth::routes();
+
+/**
+* Property routes
+*/
 Route::get('inmueble/crear', [
   'uses' => 'PropertyController@create',
   'as' => 'property_create_path'
@@ -32,7 +38,9 @@ Route::get('inmueble/{id}', [
   'as' => 'property_show_path'
 ]);
 
-
+/**
+* Project routes
+*/
 Route::get('/projects', [
   'uses' => 'ProjectController@index',
   'as' => 'projects_path'
