@@ -5,8 +5,8 @@ namespace QuickInmobiliario;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
-{
+class User extends Authenticatable {
+
     use Notifiable;
 
     /**
@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'first_name', 'last_name', 'username', 'email', 'password',
     ];
 
     /**
@@ -27,35 +27,36 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function commission(){
-      return $this->hasOne(Commission::class);
+    public function commission() {
+        return $this->hasOne(Commission::class);
     }
 
-    public function requests(){
-      return $this->hasMany(Request::class);
+    public function requests() {
+        return $this->hasMany(Request::class);
     }
 
-    public function punctuations(){
-      return $this->hasMany(Punctuation::class);
+    public function punctuations() {
+        return $this->hasMany(Punctuation::class);
     }
 
-    public function appointments(){
-      return $this->hasMany(Appointment::class);
+    public function appointments() {
+        return $this->hasMany(Appointment::class);
     }
 
-    public function user_type(){
-      return $this->belongsTo(UserType::class);
+    public function user_type() {
+        return $this->belongsTo(UserType::class);
     }
 
-    public function properties(){
-      return $this->belongsToMany(Property::class, 'users_has_properties');
+    public function properties() {
+        return $this->belongsToMany(Property::class, 'users_has_properties');
     }
 
-    public function projects(){
-      return $this->belongsToMany(Project::class, 'users_has_projects');
+    public function projects() {
+        return $this->belongsToMany(Project::class, 'users_has_projects');
     }
 
-    public function price_plans(){
-      return $this->belongsToMany(PricePlan::class, 'users_has_plans');
+    public function price_plans() {
+        return $this->belongsToMany(PricePlan::class, 'users_has_plans');
     }
+
 }

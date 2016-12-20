@@ -14,20 +14,20 @@ class CreateUsersTable extends Migration {
     public function up() {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('first_name', 150);
-            $table->string('last_name', 150);
-            $table->string('business_name', 150);
-            $table->string('cell_phone', 45);
+            $table->string('first_name', 150)->default("");
+            $table->string('last_name', 150)->default("");
+            $table->string('business_name', 150)->default("");
+            $table->string('cell_phone', 45)->default("");
             $table->string('address')->default("");
-            $table->string('document_type', 45);
-            $table->integer('age');
-            $table->string('gender', 10);
-            $table->string('email', 75)->unique();
-            $table->string('username', 45);
-            $table->string('profession', 75);
-            $table->string('city', 45);
-            $table->string('password');
-            $table->integer('user_type_id');
+            $table->string('document_type', 45)->default("");
+            $table->integer('age')->default(0);
+            $table->string('gender', 10)->default("");
+            $table->string('email', 75)->default("");
+            $table->string('username', 45)->default("");
+            $table->string('profession', 75)->default("");
+            $table->string('city', 45)->default("");
+            $table->string('password')->default("");
+            $table->integer('user_type_id')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });
