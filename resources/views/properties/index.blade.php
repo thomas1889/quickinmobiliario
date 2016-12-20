@@ -27,7 +27,7 @@
             <td>{{ $property->created_at }}</td>
             <td>
               <a href="{{ route('property_show_path', $property->id) }}" class="btn btn-success"><span class="glyphicon glyphicon-eye-open"></span></a>
-              <a href="#" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
+              <a href="{{ route('property_edit_path', $property->id) }}" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
               <a href="#" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
             </td>
           </tr>

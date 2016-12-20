@@ -6,6 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Property extends Model
 {
+  /**
+   * The attributes that are mass assignable.
+   *
+   * @var array
+   */
+  protected $fillable = [
+    'name', 'phone', 'address', 'description', 'antiquity', 'state', 'zone', 'city', 'neighborhood', 'built_area', 'full_area', 'rooms',
+    'stratum', 'parkings', 'bathrooms', 'floors', 'price', 'project_id', 'property_type_id', 'use_type_id', 'business_type_id'
+  ];
+
   public function property_images(){
     return $this->hasMany(PropertyImage::class);
   }

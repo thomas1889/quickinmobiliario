@@ -4,7 +4,7 @@
 
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
-      <h1>Detalle del Inmueble</h1>
+      <h1>Detalle del Inmueble <small> <a href="{{ route('properties_path') }}" class="btn btn-link pull-right"><< Volver</a></small></h1>
       <hr>
 
       <h2>{{ $property->name }}</h2>

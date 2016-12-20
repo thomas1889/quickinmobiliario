@@ -16,7 +16,7 @@ class CreatePropertiesTable extends Migration
       Schema::create('properties', function(Blueprint $table){
         $table->increments('id');
         $table->string('name', 75);
-        $table->tinyInteger('estado');
+        $table->tinyInteger('state');
         $table->string('phone', 45);
         $table->string('address', 75);
         $table->text('description');
@@ -24,11 +24,12 @@ class CreatePropertiesTable extends Migration
         $table->string('property_code');
         $table->string('zone', 45);
         $table->string('city', 45);
-        $table->string('state', 45);
         $table->string('neighborhood', 45);
         $table->decimal('built_area', 10, 2);
         $table->decimal('full_area', 10, 2);
         $table->tinyInteger('rooms');
+        $table->tinyInteger('parkings');
+        $table->tinyInteger('bathrooms');
         $table->tinyInteger('stratum');
         $table->tinyInteger('floors');
         $table->decimal('price', 15, 2);
