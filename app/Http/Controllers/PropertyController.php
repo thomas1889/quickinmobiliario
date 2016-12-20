@@ -13,29 +13,63 @@ use QuickInmobiliario\BusinessType;
 
 class PropertyController extends Controller
 {
+
+  /**
+  * @return Project
+  */
+  private function get_projects(){
+    return Project::all();//Por ahora todos, pero se corregirá a los proyectos asociados al usuario juridico
+  }
+
+  /**
+  * @return PropertyType
+  */
+  private function get_property_types(){
+    return PropertyType::all();
+  }
+
+  /**
+  * @return UseType
+  */
+  private function get_use_types(){
+    return UseType::all();
+  }
+
+  /**
+  * @return BusinessType
+  */
+  private function get_business_types(){
+    return BusinessType::all();
+  }
+
+  /**
+  * @return Response
+  */
   public function index(){
     $properties = Property::all();
 
     return view('properties.index', ['properties' => $properties]);
   }
 
+  /**
+  * @param Property $id
+  * @return Response
+  */
   public function show($id){
-    $property = Property::find($id);
+    $property = Property::findOrFail($id);
 
     return view('properties.show', ['property' => $property]);
   }
 
+  /**
+  * @return Response
+  */
   public function create(){
-    $projects = Project::all();//Por ahora todos, pero se corregirá a los proyectos asociados al usuario juridico
-    $property_types = PropertyType::all();
-    $use_types = UseType::all();
-    $business_types = BusinessType::all();
-
     return view('properties.create', [
-      'projects' => $projects,
-      'property_types' => $property_types,
-      'use_types' => $use_types,
-      'business_types' => $business_types
+      'projects' => $this->get_projects(),
+      'property_types' => $this->get_property_types(),
+      'use_types' => $this->get_use_types(),
+      'business_types' => $this->get_business_types()
     ]);
   }
 
@@ -46,7 +80,6 @@ class PropertyController extends Controller
   * @return Response
   */
   public function store(Request $request){
-    //dd($request);
     //Validation for property form's input
     $validator = Validator::make($request->all(), [
       'name' => 'required',
@@ -108,7 +141,31 @@ class PropertyController extends Controller
     return redirect()->route('property_show_path', $property->id);
   }
 
-  public function edit(){
+  /**
+  * @param Property $id
+  */
+  public function edit($id){
+    $property = Property::findOrFail($id);
+    $commission = Property::findOrFail($id)->commission;
 
+    return view('properties.edit', [
+      'property' => $property,
+      'commission' => $commission,
+      'projects' => $this->get_projects(),
+      'property_types' => $this->get_property_types(),
+      'use_types' => $this->get_use_types(),
+      'business_types' => $this->get_business_types()
+    ]);
+  }
+
+  /**
+  * @param Property $id
+  * @param Request $request
+  * @return Response
+  */
+  public function update($id, Request $request){
+    $property = Property::findOrFail($id);
+
+    return redirect()->route('properties_path');
   }
 }

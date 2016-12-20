@@ -29,6 +29,18 @@ Route::post('inmueble/crear', [
   'uses' => 'PropertyController@store',
   'as' => 'property_create_path'
 ]);
+Route::get('inmueble/{id}/editar', [
+  'uses' => 'PropertyController@edit',
+  'as' => 'property_edit_path'
+]);
+Route::put('inmueble/{id}/editar', [
+  'uses' => 'PropertyController@update',
+  'as' => 'property_edit_path'
+]);
+Route::delete('inmueble/{id}/borrar',[
+  'uses' => 'PropertyController@destroy',
+  'as' => 'property_delete_path'
+]);
 Route::get('inmuebles', [
   'uses' => 'PropertyController@index',
   'as' => 'properties_path'
