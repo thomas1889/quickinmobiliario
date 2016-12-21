@@ -10,7 +10,7 @@
 
       <form class="form" action="{{ route('property_edit_path', $property->id) }}">
         {{ csrf_field() }}
-        {{ method_field('put') }}
+        {{ method_field('PUT') }}
         @include('partials._property_form', ['buttonText' => 'Actualizar Inmueble'])
       </form>
     </div>

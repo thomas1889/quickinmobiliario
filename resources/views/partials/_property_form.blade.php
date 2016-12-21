@@ -154,8 +154,8 @@
     <label for="commission">Comisión</label>
     <div class="input-group">
       <div class="input-group-addon">$</div>
-      <input type="number" id="commission" min="0" step="1" name="commission" class="form-control" value="{{ $commission->price }}">
-      <input type="hidden" name="commission_id" value="{{ $commission->id }}">
+      <input type="number" id="commission" min="0" step="1" name="commission" class="form-control" value="{{ $property->commission->price }}">
+      <input type="hidden" name="commission_id" value="{{ $property->commission->id }}">
     </div>
   </div>
   <div class="form-group">

@@ -12,10 +12,11 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ elixir('css/app.css') }}">
-        <link rel="stylesheet" href="{{ elixir('css/stylesheet.css') }}">
         <!-- Scripts -->
         <script>
-            window.Laravel = <?php echo json_encode(['csrfToken' => csrf_token(),]); ?>
+            window.Laravel = <?php echo json_encode([
+              'csrfToken' => csrf_token(),
+            ]); ?>
         </script>
     </head>
     <body>

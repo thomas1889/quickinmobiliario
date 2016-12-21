@@ -146,11 +146,9 @@ class PropertyController extends Controller
   */
   public function edit($id){
     $property = Property::findOrFail($id);
-    $commission = Property::findOrFail($id)->commission;
 
     return view('properties.edit', [
       'property' => $property,
-      'commission' => $commission,
       'projects' => $this->get_projects(),
       'property_types' => $this->get_property_types(),
       'use_types' => $this->get_use_types(),
