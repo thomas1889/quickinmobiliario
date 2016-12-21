@@ -8,7 +8,7 @@
 
       @include('errors._validation_errors')
 
-      <form class="form" action="{{ route('property_edit_path', $property->id) }}">
+      <form class="form" action="{{ route('property_edit_path', $property->id) }}" method="post">
         {{ csrf_field() }}
         {{ method_field('PUT') }}
         @include('partials._property_form', ['buttonText' => 'Actualizar Inmueble'])

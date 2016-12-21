@@ -1,4 +1,4 @@
-@if ($property)
+@if (isset($property))
   <div class="form-group">
     <label for="name">Nombre Inmueble</label>
     <input type="text" id="name" name="name" class="form-control" value="{{ $property->name }}">
