@@ -20,8 +20,9 @@
                             </div>
                         </div>
 
+
+                        <!--Date Legal Person-->
                         <div id="date_legal">
-                            <!--Date Legal Person-->
                             <div  class="form-group{{ $errors->has('business_name') ? ' has-error' : '' }}">
                                 <label for="business_name" class="col-md-4 control-label">Business Name</label>
                                 <div class="col-md-6">
@@ -33,8 +34,9 @@
                                     @endif
                                 </div>
                             </div>
-                            <!--END Dates Legal Person-->
                         </div>
+                        <!--END Dates Legal Person-->
+
                         <!--Dates Natural Person-->
                         <div id="date_natural">
                             <div class="form-group{{ $errors->has('first_name') ? ' has-error' : '' }}">
@@ -48,20 +50,30 @@
                                     @endif
                                 </div>
                             </div>
-                            <div class="form-group{{ $errors->has('last_name') ? ' has-error' : '' }}">
-                                <label for="last_name" class="col-md-4 control-label">Last Name</label>
-                                <div class="col-md-6">
-                                    <input id="last_name" type="text" class="form-control" name="last_name" value="{{ old('last_name') }}" required=""  autofocus>
-
-                                    @if ($errors->has('last_name'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('last_name') }}</strong>
-                                    </span>
-                                    @endif
-                                </div>
-                            </div>
                         </div>
                         <!--END Dates Natural Person-->
+
+                        <div class="form-group{{ $errors->has('document_type') ? ' has-error' : '' }}">
+                            <label for="document_type" class="col-md-4 control-label">Document Type</label>
+                            <div class="col-md-6">
+                                <select id="document_type"  class="form-control" name="document_type"  >
+                                    <option value="CC">CC</option>
+                                    <option value="RUT">RUT</option>
+                                    <option value="NIT">NIT</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div  class="form-group{{ $errors->has('document') ? ' has-error' : '' }}">
+                            <label for="document" class="col-md-4 control-label">Document</label>
+                            <div class="col-md-6">
+                                <input id="document" type="text" class="form-control" name="document" value="{{ old('business_name') }}" required   autofocus>
+                                @if ($errors->has('document'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('document') }}</strong>
+                                </span>
+                                @endif
+                            </div>
+                        </div>
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
