@@ -25,10 +25,16 @@
             <td>{{ $property->full_area }}</td>
             <td>{{ $property->city }}</td>
             <td>{{ $property->created_at }}</td>
-            <td>
+            <td id="property-actions">
               <a href="{{ route('property_show_path', $property->id) }}" class="btn btn-success"><span class="glyphicon glyphicon-eye-open"></span></a>
               <a href="{{ route('property_edit_path', $property->id) }}" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
-              <a href="#" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
+              <a href="#" class="btn btn-danger" v-on:click.prevent="deleteProperty($event)">
+                <span class="glyphicon glyphicon-trash"></span>
+                <form class="hidden" action="{{ route('property_delete_path', $property->id) }}" method="post">
+                  {{ csrf_field() }}
+                  {{ method_field('DELETE') }}
+                </form>
+              </a>
             </td>
           </tr>
         @endforeach

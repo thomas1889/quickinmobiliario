@@ -16,5 +16,13 @@ require('./bootstrap');
 Vue.component('example', require('./components/Example.vue'));
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    methods: {
+      deleteProperty: function(event){
+        var x = confirm('Está seguro de borra el inmueble?');
+        if(x){
+          $(event.currentTarget).children('form').submit();
+        }
+      }
+    }
 });
