@@ -13,8 +13,41 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', require('./components/Example.vue'));
+/*Vue.component('example', require('./components/Example.vue'));
 
-const app = new Vue({
-    el: '#app'
+ const app = new Vue({
+ el: '#app'
+ });*/
+
+//$(document).ready(function () {
+
+//Select para mostrar  esconder divs
+
+var first_name = document.getElementById('first_name');
+var last_name = document.getElementById('last_name');
+var business_name = document.getElementById('business_name');
+$('#date_legal').children('div').hide();
+$('#date_natural').children('div').show();
+business_name.removeAttribute("required");
+
+$('#select').on('change', function () {
+    var selectValue = '#' + $(this).val();
+    if (selectValue == '#natural') {
+        $('#date_legal').children('div').hide();
+        $('#date_natural').children('div').show();
+        first_name.setAttribute('required');
+        last_name.setAttribute('required');
+        business_name.removeAttribute("required");
+
+    }
+    if (selectValue == '#legal') {
+        $('#date_natural').children('div').hide();
+        $('#date_legal').children('div').show();
+        first_name.removeAttribute("required");
+        last_name.removeAttribute("required");
+        business_name.setAttribute("required");
+    }
 });
+
+
+//});

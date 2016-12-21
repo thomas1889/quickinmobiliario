@@ -14,9 +14,11 @@
         <link rel="stylesheet" href="{{ elixir('css/app.css') }}">
         <!-- Scripts -->
         <script>
-            window.Laravel = <?php echo json_encode([
-              'csrfToken' => csrf_token(),
-            ]); ?>
+            window.Laravel = <?php
+echo json_encode([
+    'csrfToken' => csrf_token(),
+]);
+?>
         </script>
     </head>
     <body>
@@ -79,9 +81,7 @@
                 @yield('content')
             </div>
         </div>
-
         <!-- Scripts -->
         <script src="/js/app.js"></script>
-        <script src="/js/hide.js"></script>
     </body>
 </html>
