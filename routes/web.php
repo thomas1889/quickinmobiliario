@@ -49,6 +49,10 @@ Route::get('inmueble/{id}', [
   'uses' => 'PropertyController@show',
   'as' => 'property_show_path'
 ]);
+Route::post('images/upload',[
+  'uses' => 'PropertyImageController@upload',
+  'as' => 'property_image_upload_path'
+]);
 
 /**
 * Project routes
