@@ -57,9 +57,9 @@
                             <label for="document_type" class="col-md-4 control-label">Document Type</label>
                             <div class="col-md-6">
                                 <select id="document_type"  class="form-control" name="document_type"  >
-                                    <option value="CC">CC</option>
-                                    <option value="RUT">RUT</option>
-                                    <option value="NIT">NIT</option>
+                                    <!--                                    <option value="CC">CC</option>
+                                                                        <option value="NIT">NIT</option>
+                                                                        <option value="RUT">RUT</option>-->
                                 </select>
                             </div>
                         </div>

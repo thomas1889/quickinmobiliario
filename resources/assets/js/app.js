@@ -24,27 +24,31 @@ require('./bootstrap');
 //Select para mostrar  esconder divs
 
 var first_name = document.getElementById('first_name');
-//var last_name = document.getElementById('last_name');
 var business_name = document.getElementById('business_name');
 $('#date_legal').children('div').hide();
 $('#date_natural').children('div').show();
 business_name.removeAttribute("required");
+$("#document_type").append('<option value="CC">CC</option>');
 
 $('#select').on('change', function () {
     var selectValue = '#' + $(this).val();
     if (selectValue == '#natural') {
+        $("#document_type option[value='RUT']").remove();
+        $("#document_type option[value='NIT']").remove();
+        $("#document_type").append('<option value="CC">CC</option>');
         $('#date_legal').children('div').hide();
         $('#date_natural').children('div').show();
         first_name.setAttribute('required');
-//        last_name.setAttribute('required');
         business_name.removeAttribute("required");
 
     }
     if (selectValue == '#legal') {
+        $("#document_type option[value='CC']").remove();
+        $("#document_type").append('<option value="NIT">NIT</option>');
+        $("#document_type").append('<option value="RUT">RUT</option>');
         $('#date_natural').children('div').hide();
         $('#date_legal').children('div').show();
         first_name.removeAttribute("required");
-//        last_name.removeAttribute("required");
         business_name.setAttribute("required");
     }
 });
