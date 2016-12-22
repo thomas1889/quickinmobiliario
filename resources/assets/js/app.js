@@ -28,14 +28,14 @@ var business_name = document.getElementById('business_name');
 $('#date_legal').children('div').hide();
 $('#date_natural').children('div').show();
 business_name.removeAttribute("required");
-$("#document_type").append('<option value="CC">CC</option>');
+$("#document_type").append('<option value="CC">Cedula Ciudadania</option>');
 
 $('#select').on('change', function () {
     var selectValue = '#' + $(this).val();
     if (selectValue == '#natural') {
         $("#document_type option[value='RUT']").remove();
         $("#document_type option[value='NIT']").remove();
-        $("#document_type").append('<option value="CC">CC</option>');
+        $("#document_type").append('<option value="CC">Cedula Ciudadania</option>');
         $('#date_legal').children('div').hide();
         $('#date_natural').children('div').show();
         first_name.setAttribute('required');

@@ -26,7 +26,7 @@ use RegistersUsers;
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -61,7 +61,7 @@ use RegistersUsers;
      * @return User
      */
     protected function create(array $data) {
-        $user = User::create([
+        return User::create([
                     'first_name' => $data['first_name'],
                     'business_name' => $data['business_name'],
                     'document_type' => $data['document_type'],
@@ -70,8 +70,6 @@ use RegistersUsers;
                     'email' => $data['email'],
                     'password' => bcrypt($data['password']),
         ]);
-
-        return view('auth.user', $user->id);
     }
 
 }
