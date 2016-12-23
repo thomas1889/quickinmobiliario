@@ -13,25 +13,23 @@ class PropertyImageController extends Controller
   protected $fillable = ['file'];
 
   public function upload(Request $request){
-    //dd($request->file('file'));
-
-    $validator = Validator::make($request->file(), [
+    $validator = Validator::make($request->all(), [
       'file' => 'image'
     ]);
 
     if($validator->fails()){
-      return response()->json('error', 400);
+      return response()->json(['error' => 'Tipo de archivo no permitido'], 400);
     }
 
     $file = $request->file('file');
     $extension = File::extension($request->file('originalName'));
     $filename = sha1(time()).".{$extension}";
 
-    $algo = Storage::disk('local')->put('public'.$request->file('name'), $file);
+    $path = Storage::disk('local')->put('public'.$request->file('name'), $file);
 
     return response()->json([
-      'extension' => File::extension($algo),
-      'path' => $algo
+      'extension' => File::extension($path),
+      'path' => $path
     ]);
   }
 }
