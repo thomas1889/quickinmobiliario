@@ -2,13 +2,13 @@
 
 @section('content')
 <h2>Por favor ingrese todos los datos para registrar su <i>Proyecto</i>.</h2>
-<form action="">
+<form class="form" action="">
 	<div class="form-group">
 		<label>Nombre Proyecto</label>
 		<input type="text" name="form-control">
 	</div>
 
-	<div class="form-group">
+	<div class="form-group" action="{{ route ('projects_create_path')}}">
 		<label>Ciudad</label>
 		<select>
 			<option>1 Bogotá</option>
@@ -56,7 +56,6 @@
 		<label>Área del Lote</label>
 		<input type="number" name="form-control">
 	</div>
-
 	<button class="btn btn-primary">Enviar</button>
 </form>
 @stop
