@@ -26,7 +26,7 @@
                             <div  class="form-group{{ $errors->has('business_name') ? ' has-error' : '' }}">
                                 <label for="business_name" class="col-md-4 control-label">Business Name</label>
                                 <div class="col-md-6">
-                                    <input id="business_name" type="text" class="form-control" name="business_name" value="{{ old('business_name') }}" required   autofocus>
+                                    <input id="business_name" type="text" class="form-control" name="business_name" value="{{ old('business_name') }}"  autofocus>
                                     @if ($errors->has('business_name'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('business_name') }}</strong>
@@ -57,7 +57,9 @@
                             <label for="document_type" class="col-md-4 control-label">Document Type</label>
                             <div class="col-md-6">
                                 <select id="document_type"  class="form-control" name="document_type"  >
-
+                                    <option value="CC">Cedula Ciudadania</option>
+                                    <option value="RUT">RUT</option>
+                                    <option value="NIT">NIT</option>
                                 </select>
                             </div>
                         </div>
