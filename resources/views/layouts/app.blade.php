@@ -14,9 +14,11 @@
         <link rel="stylesheet" href="{{ elixir('css/app.css') }}">
         <!-- Scripts -->
         <script>
-            window.Laravel = <?php echo json_encode([
-              'csrfToken' => csrf_token(),
-            ]); ?>
+            window.Laravel = <?php
+echo json_encode([
+    'csrfToken' => csrf_token(),
+]);
+?>
         </script>
     </head>
     <body>
@@ -62,6 +64,9 @@
                                         <a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                             Salir
                                         </a>
+                                        <a href="{{ url('profile') }}">
+                                            Perfil
+                                        </a>
 
                                         <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
@@ -79,9 +84,7 @@
                 @yield('content')
             </div>
         </div>
-
         <!-- Scripts -->
         <script src="/js/app.js"></script>
-        <script src="/js/hide.js"></script>
     </body>
 </html>
