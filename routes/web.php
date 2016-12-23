@@ -55,7 +55,6 @@ Route::get('inmueble/{id}', [
 ]);
 
 /**
-<<<<<<< HEAD
 * Project routes
 */
 Route::get('projects/crear',[
@@ -89,4 +88,11 @@ Route::get('/projects', [
 Route::get('project/{id}',[
   'uses' => 'ProjectController@show',
   'as' => 'projects_show_path'
+=======
+ * Project routes
+ */
+Route::get('/projects', [
+    'uses' => 'ProjectController@index',
+    'as' => 'projects_path'
+>>>>>>> origin/master
 ]);
