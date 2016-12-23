@@ -86,3 +86,10 @@ $factory->define(QuickInmobiliario\Project::class, function (Faker\Generator $fa
         'coordinates' => DB::raw("GeomFromText('POINT(18 -64)')"),
     ];
 });
+
+$factory->define(QuickInmobiliario\PropertyImage::class, function (Faker\Generator $faker) {
+  return [
+    'path' => $faker->imageUrl(800, 400, 'city', true, 'Faker'),
+    'extension' => $faker->randomElement(['.jpg', '.png']),
+  ];
+});

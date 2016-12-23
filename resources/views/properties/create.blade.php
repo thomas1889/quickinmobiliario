@@ -12,6 +12,8 @@
         {{ csrf_field() }}
         @include('partials._property_form', ['buttonText' => 'Crear Inmueble'])
       </form>
+      <!-- Componente para vista previa de imágenes -->
+      <form action="{{ route('property_image_upload_path')}}" class="dropzone" id="my-awesome-dropzone">{{ csrf_field() }}</form>
     </div>
   </div>
 

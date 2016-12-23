@@ -53,6 +53,10 @@ Route::get('inmueble/{id}', [
     'uses' => 'PropertyController@show',
     'as' => 'property_show_path'
 ]);
+Route::post('images/upload', [
+    'uses' => 'PropertyImageController@upload',
+    'as' => 'property_image_upload_path'
+]);
 
 /**
  * Project routes
@@ -78,9 +82,15 @@ Route::delete('projects/{id}/borrar', [
     'as' => 'projects_delete_path'
 ]);
 
+
 Route::get('/projects', [
     'uses' => 'ProjectController@index',
     'as' => 'projects_path'
+]);
+
+Route::get('project/{id}', [
+    'uses' => 'ProjectController@show',
+    'as' => 'projects_show_path'
 ]);
 Route::get('project/{id}', [
     'uses' => 'ProjectController@show',

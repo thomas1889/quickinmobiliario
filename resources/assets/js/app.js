@@ -6,6 +6,7 @@
  */
 
 require('./bootstrap');
+var Dropzone = require('../../../node_modules/dropzone');
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -13,16 +14,22 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-/*Vue.component('example', require('./components/Example.vue'));
+//Vue.component('example', require('./components/Example.vue'));
 
- const app = new Vue({
- el: '#app'
- });*/
-
-//$(document).ready(function () {
+/* Vue Components for Frontend
+const app = new Vue({
+    el: '#app',
+    methods: {
+      deleteProperty: function(event){
+        var x = confirm('Está seguro de borrar el inmueble?');
+        if(x){
+          $(event.currentTarget).children('form').submit();
+        }
+      }
+    });
+*/
 
 //Select para mostrar  esconder divs
-
 var first_name = document.getElementById('first_name');
 var business_name = document.getElementById('business_name');
 $('#date_legal').children('div').hide();
@@ -53,5 +60,13 @@ $('#select').on('change', function () {
     }
 });
 
+Dropzone.autoDiscover = false;
 
-//});
+$(function(){
+  new Dropzone("#my-awesome-dropzone", {
+    addRemoveLinks: true,
+    maxFiles: 10,
+    dictRemoveFile: "X",
+    dictDefaultMessage: 'Arrastra las imágenes parar cargarlas'
+  });
+});
