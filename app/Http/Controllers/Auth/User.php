@@ -19,6 +19,7 @@ class User extends Controller {
     public function edit($param) {
         //Buscar usuario y cargar datos
         //return view('vista', ['user' => $user]);
+        //helper datos logueo
     }
 
     public function update() {

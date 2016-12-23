@@ -55,44 +55,34 @@ Route::get('inmueble/{id}', [
 ]);
 
 /**
-* Project routes
-*/
-Route::get('projects/crear',[
-  'uses' => 'ProjectController@create',
-  'as' => 'projects_create_path'
-]);
-Route::post('projects/crear',[
-  'uses' => 'ProjectController@store',
-  'as' => 'projects_create_path'
-]);
-Route::get('projects/{id}/editar',[
-  'uses' => 'ProjectController@edit',
-  'as' => 'projects_edit_path'
-]);
-Route::put('projects/{id}/editar',[
-  'uses' => 'ProjectController@edit',
-  'as' => 'projects_edit_path'
-]);
-Route::delete('projects/{id}/borrar',[
-  'uses' => 'ProjectController@destroy',
-  'as' => 'projects_delete_path'
-]);
-=======
  * Project routes
  */
->>>>>>> origin/master
+Route::get('projects/crear', [
+    'uses' => 'ProjectController@create',
+    'as' => 'projects_create_path'
+]);
+Route::post('projects/crear', [
+    'uses' => 'ProjectController@store',
+    'as' => 'projects_create_path'
+]);
+Route::get('projects/{id}/editar', [
+    'uses' => 'ProjectController@edit',
+    'as' => 'projects_edit_path'
+]);
+Route::put('projects/{id}/editar', [
+    'uses' => 'ProjectController@edit',
+    'as' => 'projects_edit_path'
+]);
+Route::delete('projects/{id}/borrar', [
+    'uses' => 'ProjectController@destroy',
+    'as' => 'projects_delete_path'
+]);
+
 Route::get('/projects', [
     'uses' => 'ProjectController@index',
     'as' => 'projects_path'
 ]);
-Route::get('project/{id}',[
-  'uses' => 'ProjectController@show',
-  'as' => 'projects_show_path'
-=======
- * Project routes
- */
-Route::get('/projects', [
-    'uses' => 'ProjectController@index',
-    'as' => 'projects_path'
->>>>>>> origin/master
+Route::get('project/{id}', [
+    'uses' => 'ProjectController@show',
+    'as' => 'projects_show_path'
 ]);
