@@ -1,6 +1,6 @@
-@extends('layouts.menu')
+@extends('layouts.submenu')
 
-@section('menu')
+@section('submenu')
 <div class="panel-body">
     PERFIL
 </div>

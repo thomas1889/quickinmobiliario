@@ -45,12 +45,12 @@ use RegistersUsers;
      */
     protected function validator(array $data) {
         return Validator::make($data, [
-                    'first_name' => 'max:255',
-                    'business_name' => 'max:255',
-                    'email' => 'required|email|max:255|unique:users',
-                    'username' => 'required|max:255|min:3|unique:users',
-                    'document' => 'required|max:255|min:3|unique:users',
-                    'password' => 'required|min:6|confirmed',
+            'first_name' => 'max:255',
+            'business_name' => 'max:255',
+            'email' => 'required|email|max:255|unique:users',
+            'username' => 'required|max:255|min:3|unique:users',
+            'document' => 'required|max:255|min:3|unique:users',
+            'password' => 'required|min:6|confirmed',
         ]);
     }
 
@@ -62,13 +62,14 @@ use RegistersUsers;
      */
     protected function create(array $data) {
         return User::create([
-                    'first_name' => $data['first_name'],
-                    'business_name' => $data['business_name'],
-                    'document_type' => $data['document_type'],
-                    'document' => $data['document'],
-                    'username' => $data['username'],
-                    'email' => $data['email'],
-                    'password' => bcrypt($data['password']),
+            'first_name' => $data['first_name'],
+            'business_name' => $data['business_name'],
+            'document_type' => $data['document_type'],
+            'document' => $data['document'],
+            'username' => $data['username'],
+            'email' => $data['email'],
+            'password' => bcrypt($data['password']),
+            'user_type_id' => $data['select'],
         ]);
     }
 

@@ -15,7 +15,7 @@ class User extends Authenticatable {
      * @var array
      */
     protected $fillable = [
-        'first_name', 'business_name', 'document_type', 'document', 'username', 'email', 'password',
+      'first_name', 'business_name', 'document_type', 'document', 'username', 'email', 'password', 'user_type_id',
     ];
 
     /**
@@ -24,7 +24,7 @@ class User extends Authenticatable {
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+      'password', 'remember_token',
     ];
 
     public function commission() {

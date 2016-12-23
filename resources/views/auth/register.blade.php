@@ -14,13 +14,11 @@
                             <label for="select" class="col-md-4 control-label">Select</label>
                             <div class="col-md-6">
                                 <select id="select"  class="form-control" name="select"  >
-                                    <option value="natural">Natural Person</option>
-                                    <option value="legal">Legal Person</option>
+                                    <option value="1">Natural Person</option>
+                                    <option value="2">Legal Person</option>
                                 </select>
                             </div>
                         </div>
-
-
                         <!--Date Legal Person-->
                         <div id="date_legal">
                             <div  class="form-group{{ $errors->has('business_name') ? ' has-error' : '' }}">
@@ -36,7 +34,6 @@
                             </div>
                         </div>
                         <!--END Dates Legal Person-->
-
                         <!--Dates Natural Person-->
                         <div id="date_natural">
                             <div class="form-group{{ $errors->has('first_name') ? ' has-error' : '' }}">
@@ -52,7 +49,6 @@
                             </div>
                         </div>
                         <!--END Dates Natural Person-->
-
                         <div class="form-group{{ $errors->has('document_type') ? ' has-error' : '' }}">
                             <label for="document_type" class="col-md-4 control-label">Document Type</label>
                             <div class="col-md-6">

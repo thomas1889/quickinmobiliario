@@ -17,6 +17,8 @@ class User extends Controller {
     }
 
     public function edit($param) {
+        $id = Session::get('id');
+        $type_person = Session::get('	user_type_id');
         //Buscar usuario y cargar datos
         //return view('vista', ['user' => $user]);
         //helper datos logueo

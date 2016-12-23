@@ -35,7 +35,7 @@ $("#document_type option[value='RUT']").hide();
 $("#document_type option[value='NIT']").hide();
 $('#select').on('change', function () {
     var selectValue = $(this).val();
-    if (selectValue == 'natural') {
+    if (selectValue == '1') {
         $("#document_type option[value='RUT']").remove();
         $("#document_type option[value='NIT']").remove();
         $("#document_type").append('<option value="CC">CC</option>');
@@ -44,7 +44,7 @@ $('#select').on('change', function () {
         first_name.attr("required", "true");
         business_name.removeAttr("required");
     }
-    if (selectValue == 'legal') {
+    if (selectValue == '2') {
         $("#document_type option[value='CC']").remove();
         $("#document_type").append('<option value="NIT">NIT</option>');
         $("#document_type").append('<option value="RUT">RUT</option>');

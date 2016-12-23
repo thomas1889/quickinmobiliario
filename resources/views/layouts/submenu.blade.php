@@ -8,7 +8,7 @@
         </div>
         <div class="col-xs-12 col-sm-9">
             <div class="panel panel-default">
-                @yield('menu')
+                @yield('submenu')
             </div>
         </div>
 
