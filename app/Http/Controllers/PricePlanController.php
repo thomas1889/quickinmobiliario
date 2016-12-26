@@ -30,22 +30,33 @@ class PricePlanController extends Controller
     return view('price_plans.create');
   }
 
+  /**
+  * @param StorePricePlan $request
+  * @return Response redirect
+  */
   public function store(StorePricePlan $request){
     $price_plan = new PricePlan;
     $price_plan->name = $request->get('name');
     $price_plan->price = $request->get('price');;
     $price_plan->description = $request->get('description');
+    $price_plan->save();
+
+    return redirect()->route('price_plan_show_path', $price_plan->id);
   }
 
   public function edit(){
-
   }
 
   public function update(){
-
   }
 
-  public function destroy(){
+  /**
+  * @param PricePlanId $id
+  */
+  public function destroy($id){
+    $price_plan = PricePlan::findOrFail($id);
+    $price_plan->delete();
 
+    return redirect()->route('price_plans_path');
   }
 }

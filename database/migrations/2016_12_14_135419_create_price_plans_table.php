@@ -18,6 +18,7 @@ class CreatePricePlansTable extends Migration
         $table->string('name', 45);
         $table->decimal('price', 10, 2);
         $table->text('description');
+        $table->timestamps();
       });
     }
 

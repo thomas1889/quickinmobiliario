@@ -26,6 +26,12 @@ const app = new Vue({
           $(event.currentTarget).children('form').submit();
         }
       },
+      deletePricePlan: function(event){
+        var x = confirm('Está seguro de borrar el plan?');
+        if(x){
+          $(event.currentTarget).children('form').submit();
+        }
+      },
       createProperty: function(){
         $('#form-create-property').submit();
       }
