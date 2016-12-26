@@ -67,6 +67,26 @@ Route::get('imagen_inmueble/{id}', [
 ]);
 
 /**
+* Price plans routes
+*/
+Route::get('plan/crear', [
+  'uses' => 'PricePlanController@create',
+  'as' => 'create_price_plan_path'
+]);
+Route::post('plan/crear', [
+  'uses' => 'PricePlanController@store',
+  'as' => 'create_price_plan_path'
+]);
+Route::get('plan/{id}', [
+  'uses' => 'PricePlanController@show',
+  'as' => 'price_plan_show_path'
+]);
+Route::get('planes', [
+  'uses' => 'PricePlanController@index',
+  'as' => 'price_plans_path'
+]);
+
+/**
  * Project routes
  */
 Route::get('projects/crear', [

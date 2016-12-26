@@ -22,6 +22,13 @@
               <h3>Acceso a listado de Inmuebles: <small><a href="{{ route('properties_path') }}" class="btn btn-success">Inmuebles >></a></small></h3>
             </div>
           </div>
+
+          <div class="panel panel-primary">
+            <div class="panel-heading">Planes</div>
+            <div class="panel-body">
+              <h3>Acceso a listado de planes: <small><a href="{{ route('price_plans_path') }}" class="btn btn-success">Planes >></a></small></h3>
+            </div>
+          </div>
         </div>
     </div>
 @stop
