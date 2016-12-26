@@ -57,6 +57,14 @@ Route::post('images/upload', [
     'uses' => 'PropertyImageController@upload',
     'as' => 'property_image_upload_path'
 ]);
+Route::get('images/delete', [
+  'uses' => 'PropertyImageController@delete',
+  'as' => 'property_image_delete_path'
+]);
+Route::get('imagen_inmueble/{id}', [
+  'uses' => 'PropertyImageController@getImage',
+  'as' => 'get_property_image_path'
+]);
 
 /**
  * Project routes

@@ -6,7 +6,7 @@
  */
 
 require('./bootstrap');
-var Dropzone = require('../../../node_modules/dropzone');
+import Dropzone from 'dropzone';
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -16,7 +16,7 @@ var Dropzone = require('../../../node_modules/dropzone');
 
 //Vue.component('example', require('./components/Example.vue'));
 
-/* Vue Components for Frontend
+//Vue Components for Frontend
 const app = new Vue({
     el: '#app',
     methods: {
@@ -25,12 +25,15 @@ const app = new Vue({
         if(x){
           $(event.currentTarget).children('form').submit();
         }
+      },
+      createProperty: function(){
+        $('#form-create-property').submit();
       }
-    });
-*/
+    }
+  });
 
 //Select para mostrar  esconder divs
-var first_name = document.getElementById('first_name');
+/*var first_name = document.getElementById('first_name');
 var business_name = document.getElementById('business_name');
 $('#date_legal').children('div').hide();
 $('#date_natural').children('div').show();
@@ -58,15 +61,34 @@ $('#select').on('change', function () {
         first_name.removeAttribute("required");
         business_name.setAttribute("required");
     }
-});
+});*/
 
+/* Generar el componente para encapsular el código */
 Dropzone.autoDiscover = false;
 
 $(function(){
-  new Dropzone("#my-awesome-dropzone", {
+  var uploader = new Dropzone("#my-awesome-dropzone", {
     addRemoveLinks: true,
     maxFiles: 10,
     dictRemoveFile: "X",
     dictDefaultMessage: 'Arrastra las imágenes parar cargarlas'
+  });
+  uploader.on('success', function(file){
+    var result = JSON.parse(file.xhr.response);
+    var input = `<input type="hidden" name="images[]" value="${result.path}">`;
+    $('#form-create-property').append(input);
+  }).on('removedfile', function(file){
+    var result = JSON.parse(file.xhr.response);
+    $.ajax({
+      url: '/images/delete',
+      method: 'GET',
+      data: { path: result.path },
+      success: function(data){
+        //console.log(data);
+      },
+      error: function(data){
+        //console.log(data);
+      }
+    });
   });
 });

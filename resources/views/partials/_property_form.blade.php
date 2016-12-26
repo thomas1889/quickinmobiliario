@@ -158,9 +158,6 @@
       <input type="hidden" name="commission_id" value="{{ $property->commission->id }}">
     </div>
   </div>
-  <div class="form-group">
-    <button type="submit" class="btn btn-primary">{{ $buttonText }}</button>
-  </div>
 @else
   <div class="form-group">
     <label for="name">Nombre Inmueble</label>
@@ -303,8 +300,5 @@
       <div class="input-group-addon">$</div>
       <input type="number" id="commission" min="0" step="1" name="commission" class="form-control" value="{{ old('commission') }}">
     </div>
-  </div>
-  <div class="form-group">
-    <button type="submit" class="btn btn-primary">{{ $buttonText }}</button>
   </div>
 @endif
