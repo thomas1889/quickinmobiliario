@@ -8,8 +8,8 @@
 		<input type="text" name="form-control">
 	</div>
 
-	<div class="form-group" action="{{ route ('projects_create_path')}}" method="POST">
-		{{ csrf_field()}}
+	<div class="form-group" action="{{ route ('projects_create_path') }}" method="POST">
+		{{ csrf_field() }}
 		@include('partials._pro')
 		<label>Ciudad</label>
 		<select>
