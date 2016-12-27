@@ -28,6 +28,7 @@ class CreateUsersTable extends Migration {
             $table->string('profession', 75)->default("");
             $table->string('city', 45)->default("");
             $table->string('password')->default("");
+            $table->string('image_perfil')->default("");
             $table->integer('user_type_id')->default(0);
             $table->rememberToken();
             $table->timestamps();
