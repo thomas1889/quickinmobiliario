@@ -12,9 +12,7 @@ class PricePlanController extends Controller
   * @return Response
   */
   public function index(){
-    $price_plans = PricePlan::all();
-
-    return view('price_plans.index', ['price_plans' => $price_plans]);
+    return view('price_plans.index', ['price_plans' => PricePlan::all()]);
   }
 
   public function show($id){
@@ -72,6 +70,10 @@ class PricePlanController extends Controller
     return PricePlan::findOrFail($id);
   }
 
+  /**
+  * @param PricePlan $price_plan
+  * @param StorePricePlan $request
+  */
   private function setPricePlan(PricePlan $price_plan, StorePricePlan $request){
     $price_plan->name = $request->get('name');
     $price_plan->price = $request->get('price');;
