@@ -5,6 +5,9 @@ namespace QuickInmobiliario\Http\Controllers\Auth;
 use QuickInmobiliario\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 use Illuminate\Http\Request;
+use Mail;
+use Session;
+use Redirect;
 
 class ForgotPasswordController extends Controller {
     /*
@@ -32,7 +35,10 @@ use SendsPasswordResetEmails;
     public function SendResetLinkEmail(Request $request) {
 
         $user_mail = $request->get('email');
-        mail($user_mail, "Reset", "Prueba");
+        Mail::send('auth.login', $request->all(), function ($message) {
+            $message->subject('Correo');
+            $message->to('stievnars@gmail.com');
+        });
         dd($user_mail);
     }
 
