@@ -33,6 +33,12 @@ const app = new Vue({
       },
       createProperty: function(){
         $('#form-create-property').submit();
+      },
+      deleteProject: function(event){
+        var x = confirm('Está seguro de eliminar el Proyecto?');
+        if (x){
+          $(event.currentTarget).children('form').submit();
+        }
       }
     }
   });

@@ -3,6 +3,7 @@
 namespace QuickInmobiliario\Http\Controllers;
 
 use QuickInmobiliario\Project;
+use QuickInmobiliario\Http\Requests\StoreProject;
 
 class ProjectController extends Controller{
   public function index()
@@ -22,7 +23,7 @@ class ProjectController extends Controller{
   public function destroy($id){
     $project = Project::findOrFail($id);
     $project->delete();
-    
+
     return redirect()->route('projects_path');
   }
 }
