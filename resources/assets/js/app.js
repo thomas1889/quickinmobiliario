@@ -35,8 +35,7 @@ const app = new Vue({
       createProperty: function(){
         $('#form-create-property').submit();
       }
-    }
-  });
+
 
 //Select para mostrar  esconder divs
 /*var first_name = document.getElementById('first_name');

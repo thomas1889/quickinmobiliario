@@ -6,7 +6,7 @@
 <div class="row">
   <div class="col-sm-8 col-md-offset-2">
     <h1 class="text-center">
-      <a href="/" class="btn btn-info pull-left"> Volver</a>
+      <a href="/projects" class="btn btn-info pull-left"> Volver</a>
       Detalles del Proyecto
       <a href="{{ route('projects_create_path') }}" class="btn btn-success pull-right">
         Publicar un Proyecto
@@ -38,10 +38,10 @@
       <p><strong>Pisos:</strong> {{ $project->business_type_id }}</p>
       <hr>
       <div class="row">
-        <a href="{{Route('projects_edit_path','$projects->id')}}" class="btn btn-warning pull-left">
+        <a href="{{ route('projects_edit_path', $project->id)}}" class="btn btn-warning pull-left">
           Editar <span class="glyphicon glyphicon-pencil"></span>
         </a>
-        <a href="{{Route('projects_delete_path','$projects->id')}}" class="btn btn-danger pull-left">
+        <a href="{{ route('projects_delete_path', $project->id)}}" class="btn btn-danger pull-left">
           Eliminar <span class="glyphicon glyphicon-trash"></span>
         </a>
         <a href="#top" class="btn btn-primary pull-right">
