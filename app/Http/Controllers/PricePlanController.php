@@ -51,7 +51,7 @@ class PricePlanController extends Controller
   }
 
   /**
-  * @param PricePlanId $id
+  * @param Integer $id
   */
   public function destroy($id){
     $price_plan = PricePlan::findOrFail($id);

@@ -18,7 +18,7 @@
           <tr>
             <td>{{ $plan->id }}</td>
             <td>{{ $plan->name }}</td>
-            <td>{{ $plan->price }}</td>
+            <td>{{ number_format($plan->price, 2, ',', '.') }}</td>
             <td>
               <a href="{{ route('price_plan_show_path', $plan->id) }}" title="Ver detalle plan" class="btn btn-success"><span class="glyphicon glyphicon-eye-open"></span></a>
               <a href="#" title="Editar plan" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
