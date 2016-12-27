@@ -27,7 +27,7 @@
     @foreach ($property->property_images as $image)
       <div class="col-xs-6 col-md-3">
         <a href="#" class="thumbnail">
-          <img src="{{ $image->path }}" alt="{{ $property->name }}">
+          <img src="{{ route('get_property_image_path', $image->id) }}" alt="{{ $property->name }}">
         </a>
       </div>
     @endforeach

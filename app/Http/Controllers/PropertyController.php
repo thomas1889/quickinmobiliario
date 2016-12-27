@@ -4,11 +4,13 @@ namespace QuickInmobiliario\Http\Controllers;
 
 use QuickInmobiliario\Http\Requests\StoreProperty;
 use QuickInmobiliario\Property;
+use QuickInmobiliario\PropertyImage;
 use QuickInmobiliario\Project;
 use QuickInmobiliario\Commission;
 use QuickInmobiliario\PropertyType;
 use QuickInmobiliario\UseType;
 use QuickInmobiliario\BusinessType;
+use Illuminate\Support\Facades\Storage;
 
 class PropertyController extends Controller
 {
@@ -102,10 +104,17 @@ class PropertyController extends Controller
     $property->business_type_id = $request->get('business_type_id');
     $property->description = $request->get('description');
     $property->property_code = 'qi-'.time();
+
     $commission = new Commission();
     $commission->price = $request->get('commission');
     $commission->save();
     $commission->property()->save($property);
+
+    foreach ($request->get('images') as $value) {
+      $images = new PropertyImage();
+      $images->path = $value;
+      $property->property_images()->save($images);
+    }
 
     return redirect()->route('property_show_path', $property->id);
   }
@@ -164,6 +173,11 @@ class PropertyController extends Controller
 
   public function destroy($id){
     $property = Property::findOrFail($id);
+    $property->commission()->delete();
+    $property->property_images()->each(function($image){
+      Storage::delete('public/'.$image->path);
+    });
+    $property->property_images()->delete();
     $property->delete();
 
     return redirect()->route('properties_path');

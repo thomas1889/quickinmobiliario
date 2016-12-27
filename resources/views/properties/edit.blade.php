@@ -11,8 +11,11 @@
       <form class="form" action="{{ route('property_edit_path', $property->id) }}" method="post">
         {{ csrf_field() }}
         {{ method_field('PUT') }}
-        @include('partials._property_form', ['buttonText' => 'Actualizar Inmueble'])
+        @include('partials._property_form')
       </form>
+      <div class="form-group">
+        <button type="button" class="btn btn-primary" id="btn-actualizar-inmueble">Actualizar Inmueble</button>
+      </div>
     </div>
   </div>
 

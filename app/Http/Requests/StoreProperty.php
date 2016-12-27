@@ -24,7 +24,7 @@ class StoreProperty extends FormRequest
      */
     public function rules()
     {
-        return [
+        $rules = [
           'name' => 'required',
           'phone' => 'required',
           'address' => 'required',
@@ -48,6 +48,15 @@ class StoreProperty extends FormRequest
           'description' => 'required',
           'commission' => 'required'
         ];
+
+        if(!empty($this->request->get('images'))){
+          $images = $this->request->get('images');
+          foreach($images as $key => $val) {
+            $rules['images.'.$key] = ['regex:/(.png|.jpg|.jpeg|.gif)/'];
+          }
+        }
+
+        return $rules;
     }
 
     /**

@@ -57,6 +57,38 @@ Route::post('images/upload', [
     'uses' => 'PropertyImageController@upload',
     'as' => 'property_image_upload_path'
 ]);
+Route::get('images/delete', [
+  'uses' => 'PropertyImageController@delete',
+  'as' => 'property_image_delete_path'
+]);
+Route::get('imagen_inmueble/{id}', [
+  'uses' => 'PropertyImageController@getImage',
+  'as' => 'get_property_image_path'
+]);
+
+/**
+* Price plans routes
+*/
+Route::get('plan/crear', [
+  'uses' => 'PricePlanController@create',
+  'as' => 'create_price_plan_path'
+]);
+Route::post('plan/crear', [
+  'uses' => 'PricePlanController@store',
+  'as' => 'create_price_plan_path'
+]);
+Route::get('plan/{id}', [
+  'uses' => 'PricePlanController@show',
+  'as' => 'price_plan_show_path'
+]);
+Route::delete('plan/{id}/borrar', [
+    'uses' => 'PricePlanController@destroy',
+    'as' => 'price_plan_delete_path'
+]);
+Route::get('planes', [
+  'uses' => 'PricePlanController@index',
+  'as' => 'price_plans_path'
+]);
 
 /**
  * Project routes

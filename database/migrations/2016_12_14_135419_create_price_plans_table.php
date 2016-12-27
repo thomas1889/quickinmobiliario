@@ -16,8 +16,9 @@ class CreatePricePlansTable extends Migration
       Schema::create('price_plans', function(Blueprint $table){
         $table->increments('id');
         $table->string('name', 45);
-        $table->decimal('prince', 10, 2);
+        $table->decimal('price', 10, 2);
         $table->text('description');
+        $table->timestamps();
       });
     }
 
