@@ -26,11 +26,6 @@ const app = new Vue({
           $(event.currentTarget).children('form').submit();
         }
       }
-  }
-});
-const pro = new Vue({
-    el: '#pro',
-    methods: {
       deleteProject: function(event){
         var x = confirm('Está seguro de eliminar el proyecto?');
         if(x){
