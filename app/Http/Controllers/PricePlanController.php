@@ -32,7 +32,7 @@ class PricePlanController extends Controller
 
   /**
   * @param StorePricePlan $request
-  * @return Response redirect
+  * @return Response
   */
   public function store(StorePricePlan $request){
     $price_plan = new PricePlan;
@@ -44,10 +44,24 @@ class PricePlanController extends Controller
     return redirect()->route('price_plan_show_path', $price_plan->id);
   }
 
-  public function edit(){
+  /**
+  * @param Integer $id
+  * @return Response
+  */
+  public function edit($id){
+    $price_plan = PricePlan::findOrFail($id);
+
+    return view('price_plans.edit', ['price_plan' => $price_plan]);
   }
 
-  public function update(){
+  public function update($id, StorePricePlan $request){
+    $price_plan = PricePlan::findOrFail($id);
+    $price_plan->name = $request->get('name');
+    $price_plan->price = $request->get('price');
+    $price_plan->description = $request->get('description');
+    $price_plan->save();
+
+    return redirect()->route('price_plan_edit_path', $price_plan->id);
   }
 
   /**

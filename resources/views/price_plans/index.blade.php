@@ -21,7 +21,7 @@
             <td>{{ number_format($plan->price, 2, ',', '.') }}</td>
             <td>
               <a href="{{ route('price_plan_show_path', $plan->id) }}" title="Ver detalle plan" class="btn btn-success"><span class="glyphicon glyphicon-eye-open"></span></a>
-              <a href="#" title="Editar plan" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
+              <a href="{{ route('price_plan_edit_path', $plan->id) }}" title="Editar plan" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
               <a href="#" title="Eliminar plan" class="btn btn-danger" v-on:click="deletePricePlan($event)">
                 <span class="glyphicon glyphicon-trash"></span>
                 <form class="hidden" action="{{ route('price_plan_delete_path', $plan->id) }}" method="post">
