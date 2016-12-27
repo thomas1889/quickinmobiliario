@@ -2,13 +2,12 @@
 
 @section('content')
 
-
 <div class="row">
-  <div class="col-sm-8 col-md-offset-2">
+  <div class="col-sm-8 col-sm-offset-2">
       <h1 class="text-center">
         <a href="/" class="btn btn-info pull-left" > << Regresar</a>
         Listado de Proyectos
-        <a href="{{Route('projects_create_path')}}" class="btn btn-success pull-right">
+        <a href="{{ route('projects_create_path') }}" class="btn btn-success pull-right">
           Publicar Proyecto
         </a>
       </h1>
@@ -26,25 +25,30 @@
           </tr>
         </thead>
         <tbody>
-          @foreach($projects as $projects)
+
+          @foreach($projects as $project)
           <tr>
-            <td>{{ $projects->id }}</td>
-            <td>{{ $projects->name }}</td>
-            <td>{{ $projects->built_area }}</td>
-            <td>{{ $projects->city }}</td>
+            <td>{{ $project->id }}</td>
+            <td>{{ $project->name }}</td>
+            <td>{{ $project->built_area }}</td>
+            <td>{{ $project->city }}</td>
             <td>
-              <a href="{{ route('projects_show_path', $projects->id) }}" class="btn btn-primary">
+              <a href="{{ route('projects_show_path', $project->id) }}" class="btn btn-primary">
                 <span class="glyphicon glyphicon-eye-open"></span>
               </a>
             </td>
             <td>
-              <a href="{{ route('projects_edit_path', $projects->id) }}" class="btn btn-warning">
+              <a href="{{ route('projects_edit_path', $project->id) }}" class="btn btn-warning">
                 <span class="glyphicon glyphicon-pencil"></span>
               </a>
             </td>
             <td>
-              <a href="{{ route('projects_delete_path', $projects->id) }}" class="btn btn-danger">
+              <a href="" class="btn btn-danger" v-on:click.prevent="deleteProject($event)">
                 <span class="glyphicon glyphicon-trash"></span>
+                <form class="hidden" action="{{ route('projects_delete_path', $project->id)}}" method="POST">
+                  {{ csrf_field() }}
+                  {{ method_field('delete') }}
+                </form>
               </a>
             </td>
           </tr>

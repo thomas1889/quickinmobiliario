@@ -16,7 +16,7 @@ var Dropzone = require('../../../node_modules/dropzone');
 
 //Vue.component('example', require('./components/Example.vue'));
 
-/* Vue Components for Frontend
+//Vue Components for Frontend
 const app = new Vue({
     el: '#app',
     methods: {
@@ -26,8 +26,19 @@ const app = new Vue({
           $(event.currentTarget).children('form').submit();
         }
       }
-    });
-*/
+  }
+});
+const pro = new Vue({
+    el: '#pro',
+    methods: {
+      deleteProject: function(event){
+        var x = confirm('Está seguro de eliminar el proyecto?');
+        if(x){
+          $(event.currentTarget).children('form').submit();
+        }
+      }
+  }
+});
 
 //Select para mostrar  esconder divs
 var first_name = document.getElementById('first_name');

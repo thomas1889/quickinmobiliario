@@ -82,16 +82,11 @@ Route::delete('projects/{id}/borrar', [
     'as' => 'projects_delete_path'
 ]);
 
-
-Route::get('/projects', [
+Route::get('projects', [
     'uses' => 'ProjectController@index',
     'as' => 'projects_path'
 ]);
 
-Route::get('project/{id}', [
-    'uses' => 'ProjectController@show',
-    'as' => 'projects_show_path'
-]);
 Route::get('project/{id}', [
     'uses' => 'ProjectController@show',
     'as' => 'projects_show_path'

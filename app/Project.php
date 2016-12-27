@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Project extends Model
 {
+  protected $fillable =[
+    'name', 'phone', 'address', 'description', 'zone', 'city',
+    'neighborhood', 'built_area', 'full_area'
+  ];
+
   public function properties(){
     return $this->hasMany(Property::class);
   }
