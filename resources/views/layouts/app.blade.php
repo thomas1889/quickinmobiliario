@@ -16,7 +16,7 @@
         <script>
             window.Laravel = <?php
 echo json_encode([
-    'csrfToken' => csrf_token(),
+  'csrfToken' => csrf_token(),
 ]);
 ?>
         </script>
@@ -64,7 +64,7 @@ echo json_encode([
                                         <a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                             Salir
                                         </a>
-                                        <a href="{{ url('profile') }}">
+                                        <a href="{{ route('profile_show_perfil',Auth::user()->first_name) }}">
                                             Perfil
                                         </a>
 
