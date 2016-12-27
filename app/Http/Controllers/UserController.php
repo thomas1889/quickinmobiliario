@@ -20,22 +20,26 @@ class UserController extends Controller {
     }
 
     public function update(Request $data) {
-//        return User::update([
-//            'first_name' => $data['first_name'],
-//            'business_name' => $data['business_name'],
-//            'document_type' => $data['document_type'],
-//            'document' => $data['document'],
-//            'username' => $data['username'],
-//            'email' => $data['email'],
-//            'password' => bcrypt($data['password']),
-//            'user_type_id' => $data['select'],
-//        ]);
-//
-//        $user->first_name = $request->get('first_name');
-//
-//        $user->save();
 
-        dd($data->all());
+//        $user->first_name = $request->get('first_name');
+//        $user->save();
+        $id = Auth::User()->id;
+        $user_update = User::findOrFail($id);
+        $user_update->username = $data->get('username');
+        $user_update->first_name = $data->get('first_name');
+        $user_update->last_name = $data->get('last_name');
+        $user_update->business_name = $data->get('business_name');
+        $user_update->document_type = $data->get('document_type');
+        $user_update->document = $data->get('document');
+        $user_update->email = $data->get('email');
+        $user_update->cell_phone = $data->get('cell_phone');
+        $user_update->address = $data->get('address');
+        $user_update->age = $data->get('age');
+        $user_update->gender = $data->get('gender');
+        $user_update->profession = $data->get('profession');
+        $user_update->city = $data->get('city');
+        $user_update->save();
+        return view('home');
     }
 
 }

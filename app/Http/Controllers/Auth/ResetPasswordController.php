@@ -35,4 +35,8 @@ use ResetsPasswords;
         $this->middleware('guest');
     }
 
+    public function reset() {
+        dd(hola);
+    }
+
 }
