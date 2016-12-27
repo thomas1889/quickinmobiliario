@@ -19,23 +19,23 @@ require('./bootstrap');
   const app = new Vue({
   el: '#app',
     methods: {
-    deleteProperty: function (event) {
+
+    deleteProperty: function(event){
     var x = confirm('Está seguro de borrar el inmueble?');
-      if (x) {
-    $(event.currentTarget).children('form').submit();
-    }
-    }
-    },
-    deletePricePlan: function(event){
-    var x = confirm('Está seguro de borrar el plan?');
       if (x){
     $(event.currentTarget).children('form').submit();
     }
     },
-    createProperty: function(){
-    $('#form-create-property').submit();
+      deletePricePlan: function(event){
+      var x = confirm('Está seguro de borrar el plan?');
+        if (x){
+      $(event.currentTarget).children('form').submit();
+      }
+      },
+      createProperty: function(){
+      $('#form-create-property').submit();
+      }
     }
-  }
   });
   //JS REGISTER
   var first_name = $('#first_name');

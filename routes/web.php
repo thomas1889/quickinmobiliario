@@ -70,8 +70,8 @@ Route::get('imagen_inmueble/{id}', [
 ]);
 
 /**
-* Price plans routes
-*/
+ * Price plans routes
+ */
 Route::get('plan/crear', [
   'uses' => 'PricePlanController@create',
   'as' => 'create_price_plan_path'
@@ -85,8 +85,8 @@ Route::get('plan/{id}', [
   'as' => 'price_plan_show_path'
 ]);
 Route::delete('plan/{id}/borrar', [
-    'uses' => 'PricePlanController@destroy',
-    'as' => 'price_plan_delete_path'
+  'uses' => 'PricePlanController@destroy',
+  'as' => 'price_plan_delete_path'
 ]);
 Route::get('planes', [
   'uses' => 'PricePlanController@index',
@@ -117,15 +117,9 @@ Route::delete('projects/{id}/borrar', [
   'as' => 'projects_delete_path'
 ]);
 
-
 Route::get('/projects', [
   'uses' => 'ProjectController@index',
   'as' => 'projects_path'
-]);
-
-Route::get('project/{id}', [
-  'uses' => 'ProjectController@show',
-  'as' => 'projects_show_path'
 ]);
 Route::get('project/{id}', [
   'uses' => 'ProjectController@show',
