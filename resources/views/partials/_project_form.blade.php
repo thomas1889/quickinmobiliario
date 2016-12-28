@@ -65,10 +65,6 @@
   <input type="text" id="neighborhood" name="neighborhood" class="form-control" value="{{ $project->neighborhood }}">
 </div>
 
-<div class="form-group">
-  <button type="submit" class="btn btn-primary">{{ $buttonText }}</button>
-</div>
-
 @else
 <div class="form-group">
   <label for="name">Nombre Proyecto</label>
