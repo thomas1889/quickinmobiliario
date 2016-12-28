@@ -1,11 +1,13 @@
 @if (isset($project))
+
 <div class="form-group">
   <label for="name">Nombre del Proyecto</label>
-  <input type="text" id="name" name="name" class="form-control" value="{{ $projects->name }}">
+  <input type="text" id="name" name="name" class="form-control" value="{{ $project->name }}">
 </div>
+
 <div class="form-group">
   <label for="address">Dirección</label>
-  <input type="text" id="address" name="address" class="form-control" value="{{ project->address }}">
+  <input type="text" id="address" name="address" class="form-control" value="{{ $project->address }}">
 </div>
 
 <div class="form-group">
@@ -21,7 +23,7 @@
 <div class="form-group">
   <label for="built_area">Área construida</label>
   <div class="input-group">
-    <input type="text" id="built_area" name="built_area" class="form-control" value="{{ $property->built_area }}">
+    <input type="text" id="built_area" name="built_area" class="form-control" value="{{ $project->built_area }}">
     <div class="input-group-addon">m<sup>2</sup></div>
   </div>
 </div>
@@ -43,6 +45,7 @@
     <option value="Centro" @if ($project->zone == 'Centro') selected @endif>Centro</option>
   </select>
 </div>
+
 <div class="form-group">
   <label for="city">Ciudad</label>
   <select class="form-control" name="city" id="city">
@@ -56,6 +59,7 @@
     <option value="Bogotá" selected>@if ($project->city == 'Bogotá') selected @endif>Bogotá</option>
   </select>
 </div>
+
 <div class="form-group">
   <label for="neighborhood">Barrio</label>
   <input type="text" id="neighborhood" name="neighborhood" class="form-control" value="{{ $project->neighborhood }}">
@@ -64,6 +68,7 @@
 <div class="form-group">
   <button type="submit" class="btn btn-primary">{{ $buttonText }}</button>
 </div>
+
 @else
 <div class="form-group">
   <label for="name">Nombre Proyecto</label>
@@ -87,6 +92,7 @@
     <option value="Centro" @if (old('zone') == 'Centro') selected @endif>Centro</option>
   </select>
 </div>
+
 <div class="form-group">
   <label for="city">Ciudad</label>
   <select class="form-control" name="city" id="city">
@@ -100,10 +106,12 @@
     <option value="Bogotá" @if(old('city') == 'Bogotá') selected @endif>Bogotá</option>
   </select>
 </div>
+
 <div class="form-group">
   <label for="neighborhood">Barrio</label>
   <input type="text" id="neighborhood" name="neighborhood" class="form-control" value="{{ old('neighborhood') }}">
 </div>
+
 <div class="form-group">
   <label for="built_area">Área construida</label>
   <div class="input-group">
@@ -111,6 +119,7 @@
     <div class="input-group-addon">m<sup>2</sup></div>
   </div>
 </div>
+
 <div class="form-group">
   <label for="full_area">Área lote</label>
   <div class="input-group">
@@ -123,7 +132,5 @@
   <label for="description">Descripción</label>
   <textarea name="description" id="description" rows="8" cols="80" class="form-control" placeholder="Descripción del inmueble">{{ old('description') }}</textarea>
 </div>
-<div class="form-group">
-  <button type="submit" class="btn btn-primary">{{ $buttonText }}</button>
-</div>
+
 @endif
