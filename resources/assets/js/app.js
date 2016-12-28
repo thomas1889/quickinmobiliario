@@ -12,6 +12,7 @@ require('./bootstrap');
    * or customize the JavaScript scaffolding to fit your unique needs.
    */
 Vue.component('uploadimages', require('./components/UploadImages.vue'));
+Vue.component('updateimages', require('./components/UpdateImages.vue'));
 
 //Vue Components for Frontend
 const app = new Vue({

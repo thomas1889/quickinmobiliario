@@ -57,7 +57,7 @@ class PropertyController extends Controller
     $commission->price = $request->get('commission');
     $commission->save();
     $commission->property()->save($property);
-    if(!empty($request->get('images'))){
+    if(is_array($request->get('images')) && !empty($request->get('images'))){
       foreach ($request->get('images') as $value) {
         $images = new PropertyImage();
         $images->path = $value;

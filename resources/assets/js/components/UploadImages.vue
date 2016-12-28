@@ -17,7 +17,7 @@ export default {
     this.addDropzoneSuccess();
     this.addDropzoneRemove();
   },
-  props: ['form', 'save', 'delete', 'title', 'token'],
+  props: ['form', 'principal', 'save', 'delete', 'title', 'token'],
   data () {
     return {
       images: [],
@@ -55,8 +55,8 @@ export default {
       });
     },
     generateHiddenInput: function(path){
-      var html = `<input type="hidden" id="${this.removeExtension(path)}" value="${path}">`
-      $('#form-create-property').append(html);
+      var html = `<input type="hidden" name="images[]" id="${this.removeExtension(path)}" value="${path}">`
+      $(`#${this.principal}`).append(html);
     },
     removeHiddenInput: function(id){
       $('#' + id).remove();
@@ -64,14 +64,6 @@ export default {
     removeExtension: function(path){
       return path.replace(/(.png|.jpg|.jpeg|.gif)/g, '');
     }
-  },
-  watch: {
-    images: function(val, oldVal){
-      console.log(val);
-    }
   }
 }
 </script>
-
-<style scoped>
-</style>

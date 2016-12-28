@@ -17,7 +17,6 @@ require('bootstrap-sass');
  */
 
 window.Vue = require('vue');
-//var VueResource = require('vue-resource');
 import VueResource from 'vue-resource';
 Vue.use(VueResource);
 
