@@ -26,7 +26,7 @@ class StorePricePlan extends FormRequest
     {
         return [
             'name' => 'required',
-            'price' => 'required',
+            'price' => 'required|max:10',
             'description' => 'required'
         ];
     }

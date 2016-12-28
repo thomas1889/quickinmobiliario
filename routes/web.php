@@ -65,7 +65,7 @@ Route::post('images/upload', [
   'uses' => 'PropertyImageController@upload',
   'as' => 'property_image_upload_path'
 ]);
-Route::get('images/delete', [
+Route::post('images/delete', [
   'uses' => 'PropertyImageController@delete',
   'as' => 'property_image_delete_path'
 ]);
@@ -88,6 +88,14 @@ Route::post('plan/crear', [
 Route::get('plan/{id}', [
   'uses' => 'PricePlanController@show',
   'as' => 'price_plan_show_path'
+]);
+Route::get('plan/{id}/editar', [
+  'uses' => 'PricePlanController@edit',
+  'as' => 'price_plan_edit_path'
+]);
+Route::put('plan/{id}/editar', [
+  'uses' => 'PricePlanController@update',
+  'as' => 'price_plan_edit_path'
 ]);
 Route::delete('plan/{id}/borrar', [
   'uses' => 'PricePlanController@destroy',
