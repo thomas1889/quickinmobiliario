@@ -32,14 +32,4 @@ use SendsPasswordResetEmails;
         $this->middleware('guest');
     }
 
-    public function SendResetLinkEmail(Request $request) {
-
-        $user_mail = $request->get('email');
-        Mail::send('auth.login', $request->all(), function ($message) {
-            $message->subject('Correo');
-            $message->to('stievnars@gmail.com');
-        });
-        dd($user_mail);
-    }
-
 }
