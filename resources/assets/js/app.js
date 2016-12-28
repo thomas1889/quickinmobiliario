@@ -6,42 +6,40 @@
  */
 
 require('./bootstrap');
-import Dropzone from 'dropzone';
   /**
    * Next, we will create a fresh Vue application instance and attach it to
    * the page. Then, you may begin adding components to this application
    * or customize the JavaScript scaffolding to fit your unique needs.
    */
-
-//Vue.component('example', require('./components/Example.vue'));
+Vue.component('uploadimages', require('./components/UploadImages.vue'));
 
 //Vue Components for Frontend
 const app = new Vue({
   el: '#app',
-    methods: {
-      deleteProperty: function(event){
-        var x = confirm('Está seguro de borrar el inmueble?');
-        if (x){
-          $(event.currentTarget).children('form').submit();
-        }
-      },
-      deletePricePlan: function(event){
-        var x = confirm('Está seguro de borrar el plan?');
-        if (x){
-          $(event.currentTarget).children('form').submit();
-        }
-      },
-      createProperty: function(){
-        $('#form-create-property').submit();
-      },
-      deleteProject: function(event){
-        var x = confirm('Está seguro de eliminar el Proyecto?');
-        if (x){
-          $(event.currentTarget).children('form').submit();
-        }
+  methods: {
+    deleteProperty: function(event){
+      var x = confirm('Está seguro de borrar el inmueble?');
+      if (x){
+        $(event.currentTarget).children('form').submit();
+      }
+    },
+    deletePricePlan: function(event){
+      var x = confirm('Está seguro de borrar el plan?');
+      if (x){
+        $(event.currentTarget).children('form').submit();
+      }
+    },
+    createProperty: function(){
+      $('#form-create-property').submit();
+    },
+    deleteProject: function(event){
+      var x = confirm('Está seguro de eliminar el Proyecto?');
+      if (x){
+        $(event.currentTarget).children('form').submit();
       }
     }
-  });
+  }
+});
 
 //JS REGISTER
 var first_name = $('#first_name');
@@ -71,32 +69,3 @@ $('#select').on('change', function () {
   }
 });
 //END JS REGISTER
-
-/ * Generar el componente para encapsular el código * /
-Dropzone.autoDiscover = false;
-$(function(){
-  var uploader = new Dropzone("#my-awesome-dropzone", {
-    addRemoveLinks: true,
-    maxFiles: 10,
-    dictRemoveFile: "X",
-    dictDefaultMessage: 'Arrastra las imágenes parar cargarlas'
-  });
-  uploader.on('success', function(file){
-    var result = JSON.parse(file.xhr.response);
-    var input = `<input type = "hidden" name = "images[]" value = "${result.path}">`;
-    $('#form-create-property').append(input);
-  }).on('removedfile', function(file){
-    var result = JSON.parse(file.xhr.response);
-    $.ajax({
-      url: '/images/delete',
-      method: 'GET',
-      data: { path: result.path },
-      success: function(data){
-        //console.log(data);
-      },
-      error: function(data){
-        //console.log(data);
-      }
-    });
-  });
-});
