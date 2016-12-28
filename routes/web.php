@@ -84,6 +84,14 @@ Route::get('plan/{id}', [
   'uses' => 'PricePlanController@show',
   'as' => 'price_plan_show_path'
 ]);
+Route::get('plan/{id}/editar', [
+  'uses' => 'PricePlanController@edit',
+  'as' => 'price_plan_edit_path'
+]);
+Route::put('plan/{id}/editar', [
+  'uses' => 'PricePlanController@update',
+  'as' => 'price_plan_edit_path'
+]);
 Route::delete('plan/{id}/borrar', [
   'uses' => 'PricePlanController@destroy',
   'as' => 'price_plan_delete_path'

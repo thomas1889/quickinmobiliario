@@ -86,7 +86,7 @@ $(function(){
   });
   uploader.on('success', function(file){
     var result = JSON.parse(file.xhr.response);
-    var input = ` < input type = "hidden" name = "images[]" value = "${result.path}" > `;
+    var input = `<input type = "hidden" name = "images[]" value = "${result.path}">`;
     $('#form-create-property').append(input);
   }).on('removedfile', function(file){
     var result = JSON.parse(file.xhr.response);
