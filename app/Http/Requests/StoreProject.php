@@ -25,20 +25,18 @@ class StoreProject extends FormRequest
     public function rules()
     {
         return [
-          'name' => 'required',
-          'address' => 'required',
-          'phone' => 'required',
+          'name' => 'required|unique:name|max:150',
+          'address' => 'required|max:75',
+          'phone' => 'required|number|max:45',
           'description' => 'required',
-          'built_area' => 'required',
-          'full_area' => 'required',
-          'zone' => 'required',
-          'city' => 'required',
-          'neighborhood' => 'required'
+          'built_area' => 'required|number',
+          'full_area' => 'required|number',
+          'zone' => 'required|max:45',
+          'city' => 'required|max:45',
+          'neighborhood' => 'required|max:45'
         ];
     }
-    /**
-     * {@inheritdoc}
-     */
+
     protected function formatErrors(Validator $validator)
     {
         return $validator->errors()->all();

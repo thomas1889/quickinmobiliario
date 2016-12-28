@@ -39,6 +39,9 @@ const app = new Vue({
         if (x){
           $(event.currentTarget).children('form').submit();
         }
+      },
+      createProject: function(){
+        $('#form-create-project').submit();
       }
     }
   });

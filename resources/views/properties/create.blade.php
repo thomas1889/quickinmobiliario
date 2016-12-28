@@ -17,9 +17,10 @@
         <label for="my-awesome-dropzone">Imágenes inmueble</label>
         <form action="{{ route('property_image_upload_path')}}" class="dropzone" id="my-awesome-dropzone">{{ csrf_field() }}</form>
       </div>
-
       <div class="form-group">
-        <button type="button" class="btn btn-primary" v-on:click="createProperty">Crear Inmueble</button>
+        <button type="button" class="btn btn-primary" v-on:click="createProperty">
+        Crear Inmueble
+        </button>
       </div>
     </div>
   </div>
