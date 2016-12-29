@@ -56,7 +56,7 @@ echo json_encode([
                             @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->first_name }} <span class="caret"></span>
+                                    {{ Auth::user()->username }} <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
@@ -64,7 +64,7 @@ echo json_encode([
                                         <a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                             Salir
                                         </a>
-                                        <a href="{{ route('profile_show_perfil',Auth::user()->first_name) }}">
+                                        <a href="{{ route('profile_show_perfil',Auth::user()->username) }}">
                                             Perfil
                                         </a>
 

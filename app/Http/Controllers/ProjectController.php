@@ -90,8 +90,14 @@ class ProjectController extends Controller{
     $project->zone = $request->get('zone');
     $project->city = $request->get('city');
     $project->neighborhood = $request->get('neighborhood');
+<<<<<<< HEAD
     $project->use_type_id = $request->get('use_type_id');
     $project->business_type_id = $request->get('business_type_id');
+=======
+    $project->save();
+
+    return redirect()->route('projects_path');
+>>>>>>> origin/master
   }
 
 }

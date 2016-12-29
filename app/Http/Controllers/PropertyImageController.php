@@ -30,8 +30,8 @@ class PropertyImageController extends Controller
     $extension = File::extension($request->file('originalName'));
     $filename = sha1(time()).".{$extension}";
 
-    $path = Storage::disk('local')->put('public'.$request->file('name'), $file);
-    $image_path = str_replace('public/', '', $path);
+    $path = Storage::disk('local')->put('public/properties'.$request->file('name'), $file);
+    $image_path = str_replace('public/properties/', '', $path);
 
     return response()->json([
       'extension' => File::extension($path),
@@ -44,7 +44,7 @@ class PropertyImageController extends Controller
   * @return Response json
   */
   public function delete(Request $request){
-    $file = Storage::disk('local')->delete('public/'.$request->get('path'));
+    $file = Storage::disk('local')->delete('public/properties/'.$request->get('path'));
     if(File::exists($file)){
       return response()->json([
         'error' => 'No se pudo eliminar el archivo'
@@ -60,7 +60,7 @@ class PropertyImageController extends Controller
   */
   public function getImage($id){
     $image = PropertyImage::findOrFail($id);
-    $file = Storage::disk('local')->get('public/'.$image->path);
+    $file = Storage::disk('local')->get('public/properties/'.$image->path);
 
     return response($file, 200);
   }

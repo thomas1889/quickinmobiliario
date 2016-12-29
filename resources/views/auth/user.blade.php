@@ -5,7 +5,7 @@
     PERFIL
 </div>
 <div class="panel-body">
-    <form class="form-horizontal" role="form" method="POST" action="{{ route('user_update_path') }}" >
+    <form class="form-horizontal" role="form" method="POST" action="{{ route('user_update_path') }}"enctype="multipart/form-data" >
         {{ csrf_field() }}
         {{ method_field('PUT') }}
         <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
@@ -54,6 +54,17 @@
                 @if ($errors->has('business_name'))
                 <span class="help-block">
                     <strong>{{ $errors->first('business_name') }}</strong>
+                </span>
+                @endif
+            </div>
+        </div>
+        <div  class="form-group{{ $errors->has('image') ? ' has-error' : '' }}">
+            <label for="image" class="col-md-4 control-label">Picture Perfil</label>
+            <div class="col-md-6">
+                <input id="image" type="file" class="form-control" name="image" accept="image" value="{{ $user->image_perfil }}" autofocus>
+                @if ($errors->has('image'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('image') }}</strong>
                 </span>
                 @endif
             </div>

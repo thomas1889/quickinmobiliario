@@ -25,6 +25,11 @@ Route::put('user_update', [
   'uses' => 'UserController@update',
   'as' => 'user_update_path'
 ]);
+Route::get('password/email', [
+  'uses' => 'Auth\ForgotPasswordController@getEmail',
+  'as' => 'password.email_path'
+]);
+
 /**
  * Property routes
  */
