@@ -59,7 +59,7 @@ export default {
       $(`#${this.principal}`).append(html);
     },
     removeHiddenInput: function(id){
-      $('#' + id).remove();
+      $(`#${id}`).remove();
     },
     removeExtension: function(path){
       return path.replace(/(.png|.jpg|.jpeg|.gif)/g, '');

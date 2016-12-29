@@ -158,6 +158,11 @@
       <input type="hidden" name="commission_id" value="{{ $property->commission->id }}">
     </div>
   </div>
+  @if (!empty($property_images))
+    @foreach ($property_images as $image)
+      <input type="hidden" name="images[]" id="{{ preg_replace('/(.png|.jpg|.jpeg|.gif)/', '', $image->path) }}" value="{{ $image->path }}">
+    @endforeach
+  @endif
 @else
   <div class="form-group">
     <label for="name">Nombre Inmueble</label>

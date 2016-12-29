@@ -79,7 +79,8 @@ class PropertyController extends Controller
       'projects' => $this->get_projects(),
       'property_types' => $this->get_property_types(),
       'use_types' => $this->get_use_types(),
-      'business_types' => $this->get_business_types()
+      'business_types' => $this->get_business_types(),
+      'property_images' => $this->get_property_images($id)
     ]);
   }
 
@@ -146,6 +147,14 @@ class PropertyController extends Controller
   */
   private function getProperty($id){
     return Property::findOrFail($id);
+  }
+
+  /**
+  * @param Integer $id
+  * @return PropertyImages
+  */
+  private function get_property_images($id){
+    return PropertyImage::where(['property_id' => $id])->get();
   }
 
   /**

@@ -16,36 +16,34 @@ require('./bootstrap');
 //Vue Components for Frontend
   const app = new Vue({
   el: '#app',
-    methods: {
+  methods: {
     deleteProperty: function(event){
-    var x = confirm('Está seguro de borrar el inmueble?');
+      var x = confirm('Está seguro de borrar el inmueble?');
       if (x){
-    $(event.currentTarget).children('form').submit();
-    }
+        $(event.currentTarget).children('form').submit();
+      }
     },
-      deletePricePlan: function(event){
+    deletePricePlan: function(event){
       var x = confirm('Está seguro de borrar el plan?');
-        if (x){
-      $(event.currentTarget).children('form').submit();
+      if (x){
+        $(event.currentTarget).children('form').submit();
       }
-      },
-      createProperty: function(){
-
+    },
+    createProperty: function(){
       $('#form-create-property').submit();
-      },
-      deleteProject: function(event){
+    },
+    deleteProject: function(event){
       var x = confirm('Está seguro de eliminar el Proyecto?');
-        if (x){
-
-      $(event.currentTarget).children('form').submit();
+      if (x){
+        $(event.currentTarget).children('form').submit();
       }
-      },
-      createProject: function(){
+    },
+    createProject: function(){
       $('#form-create-project').submit();
-      }
     }
   }
-  });
+});
+
 //JS REGISTER
   var first_name = $('#first_name');
   var business_name = $('#business_name');
