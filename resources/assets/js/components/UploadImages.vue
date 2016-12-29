@@ -42,7 +42,6 @@ export default {
       $('input[type="hidden"][name="images[]"]').each(function(){
         var mockfile = { name: $(this).val(), accepted: true, urlImg: $(this).val() };
         vue.updater.emit("addedfile", mockfile);
-        //vue.updater.emit("thumbnail", mockfile, $(this).data('source'));
         vue.updater.createThumbnailFromUrl(mockfile, $(this).data('source'));
         vue.updater.emit("complete", mockfile);
         $('.dz-image').children('img').attr({ width: "120", height: "120" });
