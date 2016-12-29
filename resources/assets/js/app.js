@@ -12,7 +12,6 @@ require('./bootstrap');
    * or customize the JavaScript scaffolding to fit your unique needs.
    */
   Vue.component('uploadimages', require('./components/UploadImages.vue'));
-  Vue.component('updateimages', require('./components/UpdateImages.vue'));
 //Vue Components for Frontend
   const app = new Vue({
   el: '#app',
@@ -31,6 +30,9 @@ require('./bootstrap');
     },
     createProperty: function(){
       $('#form-create-property').submit();
+    },
+    updateProperty: function(){
+      $('#form-edit-property').submit();
     },
     deleteProject: function(event){
       var x = confirm('Está seguro de eliminar el Proyecto?');

@@ -92,13 +92,23 @@ class PropertyController extends Controller
   public function update($id, StoreProperty $request){
     $property = $this->getProperty($id);
     $this->setProperty($property, $request);
-    $property->save();
+
+    PropertyImage::where(['property_id' => $id])->delete();
+    if(is_array($request->get('images')) && !empty($request->get('images'))){
+      foreach ($request->get('images') as $value) {
+        $images = new PropertyImage();
+        $images->path = $value;
+        $property->property_images()->save($images);
+      }
+    } else {
+      $property->save();
+    }
 
     $commission = Commission::findOrFail($request->get('commission_id'));
     $commission->price = $request->get('commission');
     $commission->save();
 
-    return redirect()->route('properties_path');
+    return redirect()->route('property_edit_path', $id);
   }
 
   public function destroy($id){
