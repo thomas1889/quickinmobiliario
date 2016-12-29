@@ -62,7 +62,7 @@ $("#document_type option[value='RUT']").remove();
   $('#date_natural').children('div').show();
   first_name.attr("required", "true");
   business_name.removeAttr("required");
-  }
+}
 if (selectValue == '2') {
 $("#document_type option[value='CC']").remove();
   $("#document_type").append('<option value="NIT">NIT</option>');
@@ -71,6 +71,6 @@ $("#document_type option[value='CC']").remove();
   $('#date_legal').children('div').show();
   first_name.removeAttr("required");
   business_name.attr("required", "true");
-  }
+}
 });
 //END JS REGISTER
