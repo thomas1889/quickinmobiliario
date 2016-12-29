@@ -104,23 +104,23 @@ Route::get('planes', [
 /**
  * Project routes
  */
-Route::get('projects/crear', [
+Route::get('proyectos/crear', [
   'uses' => 'ProjectController@create',
   'as' => 'projects_create_path'
 ]);
-Route::post('projects/crear', [
+Route::post('proyectos/crear', [
   'uses' => 'ProjectController@store',
   'as' => 'projects_create_path'
 ]);
-Route::get('projects/{id}/editar', [
+Route::get('proyectos/{id}/editar', [
   'uses' => 'ProjectController@edit',
   'as' => 'projects_edit_path'
 ]);
-Route::put('projects/{id}/editar', [
+Route::put('proyectos/{id}/editar', [
   'uses' => 'ProjectController@edit',
   'as' => 'projects_edit_path'
 ]);
-Route::delete('projects/{id}/borrar', [
+Route::delete('proyectos/{id}/borrar', [
   'uses' => 'ProjectController@destroy',
   'as' => 'projects_delete_path'
 ]);

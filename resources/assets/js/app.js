@@ -43,7 +43,6 @@ const app = new Vue({
         $('#form-create-project').submit();
       }
     }
-  }
 });
 
 //JS REGISTER

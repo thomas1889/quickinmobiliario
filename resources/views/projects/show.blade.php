@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
-
 <div class="row">
   <div class="col-sm-8 col-md-offset-2">
     <h1 class="text-center">
@@ -25,29 +23,37 @@
         </a>
       </div>
     </div>
-      <h3>código: {{ $project->id }}</h3>
-      <p><strong>Descripción:</strong> {{ $project->description }}</p>
-      <p><strong>Zona:</strong> {{ $project->zone }}</p>
-      <p><strong>Ciudad:</strong> {{ $project->city }}</p>
-      <p><strong>Barrio:</strong> {{ $project->neighborhood }}</p>
-      <p><strong>Dirección:</strong> {{ $project->address }}</p>
-      <p><strong>Área construida:</strong> {{ $project->built_area }} M2</p>
-      <p><strong>Área lote:</strong> {{ $project->full_area }} M2</p>
-      <p><strong>Habitaciones:</strong> {{ $project->neighborhood }}</p>
-      <p><strong>Estrato:</strong> {{ $project->use_type_id }}</p>
-      <p><strong>Pisos:</strong> {{ $project->business_type_id }}</p>
-      <hr>
-      <div class="row">
+    <h3>código: {{ $project->project_code }}</h3>
+    <p><strong>Tipo de Vivienda:</strong> {{ $project -> use_type_id }}</p>
+    <p><strong>Tipo de venta:</strong> {{ $project -> business_type_id }}</p>
+    <p><strong>Cantidad de Unidades:</strong> {{ $project->unit_quantity }}</p>
+    <p><strong>Descripción:</strong> {{ $project->description }}</p>
+    <p><strong>Zona:</strong> {{ $project->zone }}</p>
+    <p><strong>Ciudad:</strong> {{ $project->city }}</p>
+    <p><strong>Barrio:</strong> {{ $project->neighborhood }}</p>
+    <p><strong>Dirección:</strong> {{ $project->address }}</p>
+    <p><strong>Área construida:</strong> {{ $project->built_area }} M2</p>
+    <p><strong>Área lote:</strong> {{ $project->full_area }} M2</p>
+    <hr>
+    <div class="row">
+      <div class="col-sm-8">
         <a href="{{ route('projects_edit_path', $project->id)}}" class="btn btn-warning pull-left">
           Editar <span class="glyphicon glyphicon-pencil"></span>
         </a>
-        <a href="{{ route('projects_delete_path', $project->id)}}" class="btn btn-danger pull-left">
-          Eliminar <span class="glyphicon glyphicon-trash"></span>
+        <a href="" class="btn btn-danger" v-on:click.prevent="deleteProject($event)">
+          <span class="glyphicon glyphicon-trash"></span>
+          <form class="hidden" action="{{ route('projects_delete_path', $project->id)}}" method="POST">
+            {{ csrf_field() }}
+            {{ method_field('delete') }}
+          </form>
         </a>
+      </div>
+      <div class="col-sm-4">
         <a href="#top" class="btn btn-primary pull-right">
           Ir Arriba <span class="glyphicon glyphicon-chevron-up"></span>
         </a>
       </div>
     </div>
   </div>
-  @stop
+</div>
+@stop
