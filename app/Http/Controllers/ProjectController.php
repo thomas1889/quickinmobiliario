@@ -35,7 +35,7 @@ class ProjectController extends Controller{
     $project->city = $request->get('city');
     $project->neighborhood = $request->get('neighborhood');
     $project->save();
-    
+
     return redirect()->route('projects_path');
   }
   public function destroy($id){

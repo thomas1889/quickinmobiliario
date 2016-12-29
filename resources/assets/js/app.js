@@ -17,31 +17,30 @@ Vue.component('updateimages', require('./components/UpdateImages.vue'));
 //Vue Components for Frontend
 const app = new Vue({
   el: '#app',
-    methods: {
-      deleteProperty: function(event){
-        var x = confirm('Está seguro de borrar el inmueble?');
-        if (x){
-          $(event.currentTarget).children('form').submit();
-        }
-      },
-      deletePricePlan: function(event){
-        var x = confirm('Está seguro de borrar el plan?');
-        if (x){
-          $(event.currentTarget).children('form').submit();
-        }
-      },
-      createProperty: function(){
-        $('#form-create-property').submit();
-      },
-      deleteProject: function(event){
-        var x = confirm('Está seguro de eliminar el Proyecto?');
-        if (x){
-          $(event.currentTarget).children('form').submit();
-        }
-      },
-      createProject: function(){
-        $('#form-create-project').submit();
+  methods: {
+    deleteProperty: function(event){
+      var x = confirm('Está seguro de borrar el inmueble?');
+      if (x){
+        $(event.currentTarget).children('form').submit();
       }
+    },
+    deletePricePlan: function(event){
+      var x = confirm('Está seguro de borrar el plan?');
+      if (x){
+        $(event.currentTarget).children('form').submit();
+      }
+    },
+    createProperty: function(){
+      $('#form-create-property').submit();
+    },
+    deleteProject: function(event){
+      var x = confirm('Está seguro de eliminar el Proyecto?');
+      if (x){
+        $(event.currentTarget).children('form').submit();
+      }
+    },
+    createProject: function(){
+      $('#form-create-project').submit();
     }
   }
 });
