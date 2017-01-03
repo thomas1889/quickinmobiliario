@@ -31,6 +31,18 @@ Route::get('password/email', [
 ]);
 
 /**
+* Punctuation routes
+*/
+Route::get('calificacion/crear',[
+  'uses' => 'PunctuationController@create',
+  'as' => 'punctuation_create_path'
+]);
+Route::post('calificacion/crear',[
+  'uses' => 'PunctuationController@store',
+  'as' => 'punctuation_create_path'
+]);
+
+/**
  * Property routes
  */
 Route::get('inmueble/crear', [
