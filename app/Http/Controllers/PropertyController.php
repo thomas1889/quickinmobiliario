@@ -48,7 +48,7 @@ class PropertyController extends Controller
   * @param StoreProperty $request
   * @return Response
   */
-  public function store(StoreProperty $request){
+  public function store(StoreProperty $request){    
     $property = new Property;
     $this->setProperty($property, $request);
     $property->property_code = 'qi-'.time();
@@ -57,6 +57,7 @@ class PropertyController extends Controller
     $commission->price = $request->get('commission');
     $commission->save();
     $commission->property()->save($property);
+
     if(is_array($request->get('images')) && !empty($request->get('images'))){
       foreach ($request->get('images') as $value) {
         $images = new PropertyImage();
@@ -104,7 +105,7 @@ class PropertyController extends Controller
     $property = $this->getProperty($id);
     $property->commission()->delete();
     $property->property_images()->each(function($image){
-      Storage::delete('public/'.$image->path);
+      Storage::delete('public/properties/'.$image->path);
     });
     $property->property_images()->delete();
     $property->delete();

@@ -58,9 +58,8 @@ class PropertyImageController extends Controller
   * @param Id $id
   * @return Response $file;
   */
-  public function getImage($id){
-    $image = PropertyImage::findOrFail($id);
-    $file = Storage::disk('local')->get('public/properties/'.$image->path);
+  public function getImage($img){
+    $file = Storage::disk('local')->get('public/properties/'.$img);
 
     return response($file, 200);
   }

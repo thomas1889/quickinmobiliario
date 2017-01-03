@@ -69,7 +69,7 @@ Route::post('images/delete', [
   'uses' => 'PropertyImageController@delete',
   'as' => 'property_image_delete_path'
 ]);
-Route::get('imagen_inmueble/{id}', [
+Route::get('imagen_inmueble/{img}', [
   'uses' => 'PropertyImageController@getImage',
   'as' => 'get_property_image_path'
 ]);

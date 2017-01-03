@@ -1,15 +1,15 @@
 @if (isset($property))
   <div class="form-group">
     <label for="name">Nombre Inmueble</label>
-    <input type="text" id="name" name="name" class="form-control" value="{{ $property->name }}">
+    <input type="text" id="name" name="name" class="form-control" value="{{ old('name', $property->name) }}">
   </div>
   <div class="form-group">
     <label for="phone">Teléfono</label>
-    <input type="tel" id="phone" name="phone" class="form-control" value="{{ $property->phone }}">
+    <input type="tel" id="phone" name="phone" class="form-control" value="{{ old('phone', $property->phone) }}">
   </div>
   <div class="form-group">
     <label for="address">Dirección</label>
-    <input type="text" id="address" name="address" class="form-control" value="{{ $property->address }}">
+    <input type="text" id="address" name="address" class="form-control" value="{{ old('address', $property->address) }}">
   </div>
   <div class="form-group">
     <label for="antiquity">Antiguedad</label>
@@ -53,47 +53,47 @@
   </div>
   <div class="form-group">
     <label for="neighborhood">Barrio</label>
-    <input type="text" id="neighborhood" name="neighborhood" class="form-control" value="{{ $property->neighborhood }}">
+    <input type="text" id="neighborhood" name="neighborhood" class="form-control" value="{{ old('neighborhood', $property->neighborhood) }}">
   </div>
   <div class="form-group">
     <label for="built_area">Área construida</label>
     <div class="input-group">
-      <input type="text" id="built_area" name="built_area" class="form-control" value="{{ $property->built_area }}">
+      <input type="text" id="built_area" name="built_area" class="form-control" value="{{ old('built_area', $property->built_area) }}">
       <div class="input-group-addon">m<sup>2</sup></div>
     </div>
   </div>
   <div class="form-group">
     <label for="full_area">Área lote</label>
     <div class="input-group">
-      <input type="text" id="full_area" name="full_area" class="form-control" value="{{ $property->full_area }}">
+      <input type="text" id="full_area" name="full_area" class="form-control" value="{{ old('full_area', $property->full_area) }}">
       <div class="input-group-addon">m<sup>2</sup></div>
     </div>
   </div>
   <div class="form-group">
     <label for="rooms">Habitaciones</label>
-    <input type="number" min="1" step="1" id="rooms" name="rooms" class="form-control" value="{{ $property->rooms }}">
+    <input type="number" min="1" step="1" id="rooms" name="rooms" class="form-control" value="{{ old('rooms', $property->rooms) }}">
   </div>
   <div class="form-group">
     <label for="parkings">Parqueaderos</label>
-    <input type="number" min="1" step="1" id="parkings" name="parkings" class="form-control" value="{{ $property->parkings }}">
+    <input type="number" min="1" step="1" id="parkings" name="parkings" class="form-control" value="{{ old('parkings', $property->parkings) }}">
   </div>
   <div class="form-group">
     <label for="bathrooms">Baños</label>
-    <input type="number" min="1" step="1" id="bathrooms" name="bathrooms" class="form-control" value="{{ $property->bathrooms }}">
+    <input type="number" min="1" step="1" id="bathrooms" name="bathrooms" class="form-control" value="{{ old('bathrooms', $property->bathrooms) }}">
   </div>
   <div class="form-group">
     <label for="stratum">Estrato</label>
-    <input type="number" min="1" step="1" max="6" id="stratum" name="stratum" class="form-control" value="{{ $property->stratum }}">
+    <input type="number" min="1" step="1" max="6" id="stratum" name="stratum" class="form-control" value="{{ old('stratum', $property->stratum) }}">
   </div>
   <div class="form-group">
     <label for="floors">Pisos</label>
-    <input type="number" min="1" step="1" id="floors" name="floors" class="form-control" value="{{ $property->floors }}">
+    <input type="number" min="1" step="1" id="floors" name="floors" class="form-control" value="{{ old('floors', $property->floors) }}">
   </div>
   <div class="form-group">
     <label for="price">Precio</label>
     <div class="input-group">
       <div class="input-group-addon">$</div>
-      <input type="number" id="price" name="price" class="form-control" value="{{ $property->price }}">
+      <input type="number" id="price" name="price" class="form-control" value="{{ old('price', $property->price) }}">
     </div>
   </div>
 
@@ -148,19 +148,19 @@
   </div>
   <div class="form-group">
     <label for="description">Descripción</label>
-    <textarea name="description" id="description" rows="8" cols="80" class="form-control" placeholder="Descripción del inmueble">{{ $property->description }}</textarea>
+    <textarea name="description" id="description" rows="8" cols="80" class="form-control" placeholder="Descripción del inmueble">{{ old('description', $property->description) }}</textarea>
   </div>
   <div class="form-group">
     <label for="commission">Comisión</label>
     <div class="input-group">
       <div class="input-group-addon">$</div>
-      <input type="number" id="commission" min="0" step="1" name="commission" class="form-control" value="{{ $property->commission->price }}">
+      <input type="number" id="commission" min="0" step="1" name="commission" class="form-control" value="{{ old('commission', $property->commission->price) }}">
       <input type="hidden" name="commission_id" value="{{ $property->commission->id }}">
     </div>
   </div>
-  @if (!empty($property_images))
-    @foreach ($property_images as $image)
-      <input type="hidden" name="images[]" data-source="{{ route('get_property_image_path', $image->id) }}" id="{{ preg_replace('/(.png|.jpg|.jpeg|.gif)/', '', $image->path) }}" value="{{ $image->path }}">
+  @if (!empty($property->property_images))
+    @foreach ($property->property_images as $image)
+      <input type="hidden" name="images[]" data-source="{{ route('get_property_image_path', $image->path) }}" id="{{ preg_replace('/(.png|.jpg|.jpeg|.gif)/', '', $image->path) }}" value="{{ $image->path }}">
     @endforeach
   @endif
 @else
@@ -306,4 +306,9 @@
       <input type="number" id="commission" min="0" step="1" name="commission" class="form-control" value="{{ old('commission') }}">
     </div>
   </div>
+  @if (!empty(old('images')))
+    @foreach (old('images') as $image)
+      <input type="hidden" name="images[]" data-source="{{ route('get_property_image_path', $image) }}" id="{{ preg_replace('/(.png|.jpg|.jpeg|.gif)/', '', $image) }}" value="{{ $image }}">
+    @endforeach
+  @endif
 @endif

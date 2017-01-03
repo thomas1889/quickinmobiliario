@@ -12,7 +12,7 @@ require('./bootstrap');
    * or customize the JavaScript scaffolding to fit your unique needs.
    */
   Vue.component('uploadimages', require('./components/UploadImages.vue'));
-  
+
   const app = new Vue({
   el: '#app',
   methods: {
@@ -43,6 +43,7 @@ require('./bootstrap');
     createProject: function(){
       $('#form-create-project').submit();
     }
+  }
 });
 
 //JS REGISTER
