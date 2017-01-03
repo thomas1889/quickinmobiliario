@@ -58,13 +58,10 @@ class PropertyController extends Controller
 
     if(is_array($request->get('images')) && !empty($request->get('images'))){
       foreach ($request->get('images') as $value) {
-        $images = new PropertyImage();
-        $images->path = $value;
+        $images = new PropertyImage(['path' => $value]);
         $property->property_images()->save($images);
       }
-    } /*else {
-      $property->save();
-    }*/
+    }
 
     return redirect()->route('property_show_path', $property->id);
   }
