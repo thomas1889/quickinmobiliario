@@ -48,14 +48,12 @@ class PropertyController extends Controller
   * @param StoreProperty $request
   * @return Response
   */
-  public function store(StoreProperty $request){    
+  public function store(StoreProperty $request){
     $property = new Property;
     $this->setProperty($property, $request);
     $property->property_code = 'qi-'.time();
 
-    $commission = new Commission();
-    $commission->price = $request->get('commission');
-    $commission->save();
+    $commission = Commission::create(['price' => $request->get('commission')]);
     $commission->property()->save($property);
 
     if(is_array($request->get('images')) && !empty($request->get('images'))){
@@ -64,9 +62,9 @@ class PropertyController extends Controller
         $images->path = $value;
         $property->property_images()->save($images);
       }
-    } else {
+    } /*else {
       $property->save();
-    }
+    }*/
 
     return redirect()->route('property_show_path', $property->id);
   }

@@ -11,8 +11,6 @@ use QuickInmobiliario\PropertyImage;
 class PropertyImageController extends Controller
 {
 
-  protected $fillable = ['file'];
-
   /**
   * @param Request $request
   * @return Response json
