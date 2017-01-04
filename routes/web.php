@@ -29,6 +29,10 @@ Route::get('password/email', [
   'uses' => 'Auth\ForgotPasswordController@getEmail',
   'as' => 'password.email_path'
 ]);
+Route::get('imagen_perfil/{id}', [
+  'uses' => 'UserController@getPerfil',
+  'as' => 'get_perfil_image_path'
+]);
 
 /**
  * Property routes

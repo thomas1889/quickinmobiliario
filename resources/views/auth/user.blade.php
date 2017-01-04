@@ -1,5 +1,7 @@
 @extends('layouts.submenu')
-
+@section('image')
+ <img src="{{ route('get_perfil_image_path', $user->id) }}" alt="{{ $user->image_perfil }}">
+@endsection
 @section('submenu')
 <div class="panel-body">
     PERFIL
@@ -11,10 +13,21 @@
         <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
             <label for="username" class="col-md-4 control-label">Username</label>
             <div class="col-md-6">
-                <input id="username" type="text" class="form-control" name="username" value="{{ $user->username }}" required>
+                <input id="username" type="text" class="form-control" name="username" value="{{ $user->username }}" required readonly>
                 @if ($errors->has('username'))
                 <span class="help-block">
                     <strong>{{ $errors->first('username') }}</strong>
+                </span>
+                @endif
+            </div>
+        </div>
+        <div  class="form-group{{ $errors->has('document') ? ' has-error' : '' }}">
+            <label for="document" class="col-md-4 control-label">Document</label>
+            <div class="col-md-6">
+                <input id="document" type="text" class="form-control" name="document" value="{{ $user->document }}" required   readonly>
+                @if ($errors->has('document'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('document') }}</strong>
                 </span>
                 @endif
             </div>
@@ -47,17 +60,6 @@
         <!--END Dates Natural Person-->
         @else
         <!--Dates Legal Person-->
-        <div  class="form-group{{ $errors->has('business_name') ? ' has-error' : '' }}">
-            <label for="business_name" class="col-md-4 control-label">Business Name</label>
-            <div class="col-md-6">
-                <input id="business_name" type="text" class="form-control" name="business_name" value="{{ $user->business_name }}" required autofocus>
-                @if ($errors->has('business_name'))
-                <span class="help-block">
-                    <strong>{{ $errors->first('business_name') }}</strong>
-                </span>
-                @endif
-            </div>
-        </div>
         <div  class="form-group{{ $errors->has('image') ? ' has-error' : '' }}">
             <label for="image" class="col-md-4 control-label">Picture Perfil</label>
             <div class="col-md-6">
@@ -69,46 +71,21 @@
                 @endif
             </div>
         </div>
+        <div  class="form-group{{ $errors->has('business_name') ? ' has-error' : '' }}">
+            <label for="business_name" class="col-md-4 control-label">Business Name</label>
+            <div class="col-md-6">
+                <input id="business_name" type="text" class="form-control" name="business_name" value="{{ $user->business_name }}" required autofocus>
+                @if ($errors->has('business_name'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('business_name') }}</strong>
+                </span>
+                @endif
+            </div>
+        </div>
+        
         <!--END Dates Legal Person-->
         @endif
-
-        <div class="form-group{{ $errors->has('document_type') ? ' has-error' : '' }}">
-            <label for="document_type" class="col-md-4 control-label">Document Type</label>
-            <div class="col-md-6">
-                <select id="document_type"  class="form-control" name="document_type"  >
-                    @if ($user->user_type_id == 1)
-                    <option value="CC">Cedula Ciudadania</option>
-                    @else
-                    <option value="RUT">RUT</option>
-                    <option value="NIT">NIT</option>
-                    @endif
-                </select>
-            </div>
-        </div>
-        <div  class="form-group{{ $errors->has('document') ? ' has-error' : '' }}">
-            <label for="document" class="col-md-4 control-label">Document</label>
-            <div class="col-md-6">
-                <input id="document" type="text" class="form-control" name="document" value="{{ $user->document }}" required   autofocus>
-                @if ($errors->has('document'))
-                <span class="help-block">
-                    <strong>{{ $errors->first('document') }}</strong>
-                </span>
-                @endif
-            </div>
-        </div>
-
-        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-            <div class="col-md-6">
-                <input id="email" type="email" class="form-control" name="email" value="{{$user->email }}" required>
-                @if ($errors->has('email'))
-                <span class="help-block">
-                    <strong>{{ $errors->first('email') }}</strong>
-                </span>
-                @endif
-            </div>
-        </div>
-
+        
         <!--DATOS DE PERFIL DE USUARIO-->
         <div class="form-group{{ $errors->has('cell_phone') ? ' has-error' : '' }}">
             <label for="cell_phone" class="col-md-4 control-label">Cell Phone</label>
