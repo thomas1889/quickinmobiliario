@@ -8,14 +8,16 @@ use QuickInmobiliario\Punctuation;
 
 class PunctuationController extends Controller {
 
-
   /**
   * Display a listing of the resource.
   *
+  * @param int $id
   * @return \Illuminate\Http\Response
   */
-  public function index() {
-    //
+  public function index($id) {
+    $puntuactions = Punctuation::where(['user_id' => $id])->get();
+    $user = User::findOrFail($id);
+    return view('punctuations.index', ['punctuations' => $puntuactions, 'user' => $user]);
   }
 
   /**
@@ -38,26 +40,6 @@ class PunctuationController extends Controller {
     $punctuation = new Punctuation(['punctuation' => $request->get('punctuation'), 'comment' => $request->get('comment')]);
     $user->punctuations()->save($punctuation);
 
-    return redirect('/');
-  }
-
-  /**
-  * Display the specified resource.
-  *
-  * @param  int  $id
-  * @return \Illuminate\Http\Response
-  */
-  public function show($id) {
-    //
-  }
-
-  /**
-  * Show the form for editing the specified resource.
-  *
-  * @param  int  $id
-  * @return \Illuminate\Http\Response
-  */
-  public function edit($id) {
-    //
+    return redirect()->route('user_punctuations_path', $user->id);
   }
 }

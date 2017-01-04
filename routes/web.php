@@ -41,6 +41,10 @@ Route::post('calificacion/crear',[
   'uses' => 'PunctuationController@store',
   'as' => 'punctuation_create_path'
 ]);
+Route::get('usuario/{id}/calificaciones', [
+  'uses' => 'PunctuationController@index',
+  'as' => 'user_punctuations_path'
+]);
 
 /**
  * Property routes
