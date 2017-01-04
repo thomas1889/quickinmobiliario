@@ -41,8 +41,8 @@ class PropertyImageController extends Controller
   * @param Request $request
   * @return Response json
   */
-  public function delete(Request $request){
-    $file = Storage::disk('local')->delete('public/properties/'.$request->get('path'));
+  public function delete($img){
+    $file = Storage::disk('local')->delete('public/properties/'.$img);
     if(File::exists($file)){
       return response()->json([
         'error' => 'No se pudo eliminar el archivo'

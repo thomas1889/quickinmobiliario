@@ -13,7 +13,7 @@
         {{ method_field('PUT') }}
         @include('partials._property_form')
       </form>
-      <uploadimages form="update-property-images" principal="form-edit-property" title="Imágenes inmueble" save="{{ route('property_image_upload_path') }}" delete="{{ route('property_image_delete_path') }}" token="{{ csrf_token() }}"></uploadimages>
+      <uploadimages form="update-property-images" principal="form-edit-property" title="Imágenes inmueble" save="{{ route('property_image_upload_path') }}" delete="/imagen_inmueble" token="{{ csrf_token() }}"></uploadimages>
       <div class="form-group">
         <button type="button" class="btn btn-primary" v-on:click="updateProperty">Actualizar Inmueble</button>
       </div>

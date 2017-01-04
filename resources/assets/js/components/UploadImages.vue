@@ -67,7 +67,7 @@ export default {
       var vue = this;
       this.updater.on('removedfile', function(file){
         if(file.urlImg !== undefined){
-          Vue.http.post(vue.delete, { path: file.urlImg }).then((response) => {
+          Vue.http.delete(vue.delete + '/' + file.urlImg).then((response) => {
             vue.images.splice(vue.images.indexOf(file.urlImg), 1);
             vue.removeHiddenInput(vue.removeExtension(file.urlImg));
           }, (response) => {

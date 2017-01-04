@@ -77,11 +77,11 @@ Route::get('inmueble/{id}', [
   'uses' => 'PropertyController@show',
   'as' => 'property_show_path'
 ]);
-Route::post('images/upload', [
+Route::post('imagen_inmueble/upload', [
   'uses' => 'PropertyImageController@upload',
   'as' => 'property_image_upload_path'
 ]);
-Route::post('images/delete', [
+Route::delete('imagen_inmueble/{img}', [
   'uses' => 'PropertyImageController@delete',
   'as' => 'property_image_delete_path'
 ]);
