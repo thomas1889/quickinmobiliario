@@ -24,7 +24,7 @@ class PunctuationController extends Controller {
   * @return \Illuminate\Http\Response
   */
   public function create() {
-    return view('punctuations.edit', ['users' => User::all()]);
+    return view('punctuations.create', ['users' => User::all()]);
   }
 
   /**
