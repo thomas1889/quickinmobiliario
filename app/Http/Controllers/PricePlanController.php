@@ -16,7 +16,7 @@ class PricePlanController extends Controller
   }
 
   public function show($id){
-    return view('price_plans.show', ['price_plan' => $this->getPricePlan($id)]);
+    return view('price_plans.show', ['price_plan' => PricePlan::findOrFail($id)]);
   }
 
   /**
@@ -41,7 +41,7 @@ class PricePlanController extends Controller
   * @return Response
   */
   public function edit($id){
-    return view('price_plans.edit', ['price_plan' => $this->getPricePlan($id)]);
+    return view('price_plans.edit', ['price_plan' => PricePlan::findOrFail($id)]);
   }
 
   /**
@@ -49,7 +49,7 @@ class PricePlanController extends Controller
   * @param StorePricePlan $request
   */
   public function update($id, StorePricePlan $request){
-    $price_plan = $this->getPricePlan($id)->update($request->all());
+    $price_plan = PricePlan::findOrFail($id)->update($request->all());
 
     return redirect()->route('price_plan_edit_path', $id);
   }
@@ -58,16 +58,8 @@ class PricePlanController extends Controller
   * @param Integer $id
   */
   public function destroy($id){
-    $price_plan = $this->getPricePlan($id)->delete();
+    $price_plan = PricePlan::findOrFail($id)->delete();
 
     return redirect()->route('price_plans_path');
-  }
-
-  /**
-  * @param Integer $id
-  * @return PricePlan
-  */
-  private function getPricePlan($id){
-    return PricePlan::findOrFail($id);
   }
 }

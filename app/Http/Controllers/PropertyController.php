@@ -89,9 +89,7 @@ class PropertyController extends Controller
     $this->setProperty($property, $request);
     $property->save();
 
-    $commission = Commission::findOrFail($request->get('commission_id'));
-    $commission->price = $request->get('commission');
-    $commission->save();
+    $commission = Commission::findOrFail($request->get('commission_id'))->update(['price' => $request->get('commission')]);
 
     return redirect()->route('properties_path');
   }
