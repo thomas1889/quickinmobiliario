@@ -1,10 +1,10 @@
 @extends('layouts.submenu')
 @section('image')
- <img src="{{ route('get_perfil_image_path', $user->id) }}" alt="{{ $user->image_perfil }}">
+<img src="{{ route('get_perfil_image_path', $user->id) }}" class="col-xs-12 img-circle">
 @endsection
 @section('submenu')
 <div class="panel-body">
-    PERFIL
+
 </div>
 <div class="panel-body">
     <form class="form-horizontal" role="form" method="POST" action="{{ route('user_update_path') }}"enctype="multipart/form-data" >
@@ -63,7 +63,7 @@
         <div  class="form-group{{ $errors->has('image') ? ' has-error' : '' }}">
             <label for="image" class="col-md-4 control-label">Picture Perfil</label>
             <div class="col-md-6">
-                <input id="image" type="file" class="form-control" name="image" accept="image" value="{{ $user->image_perfil }}" autofocus>
+                <input id="image" type="file" accept="image/*" class="form-control" name="image" accept="image" value="{{ $user->image_perfil }}" autofocus>
                 @if ($errors->has('image'))
                 <span class="help-block">
                     <strong>{{ $errors->first('image') }}</strong>
@@ -82,10 +82,10 @@
                 @endif
             </div>
         </div>
-        
+
         <!--END Dates Legal Person-->
         @endif
-        
+
         <!--DATOS DE PERFIL DE USUARIO-->
         <div class="form-group{{ $errors->has('cell_phone') ? ' has-error' : '' }}">
             <label for="cell_phone" class="col-md-4 control-label">Cell Phone</label>
@@ -165,7 +165,7 @@
         <div class="form-group">
             <div class="col-md-6 col-md-offset-4">
                 <button  type="submit" class="btn btn-primary">
-                    Register
+                    save changes
                 </button>
             </div>
         </div>

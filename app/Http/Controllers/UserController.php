@@ -44,6 +44,9 @@ class UserController extends Controller {
         if ($file == "") {
             $user_update->save();
         } else {
+            if (Auth::User()->image_perfil != "quick.png") {
+                Storage::disk('local')->delete('public/avatares/' . Auth::User()->image_perfil);
+            }
             $nombre = time() . '_' . $file->getClientOriginalName();
             Storage::disk('local')->put('public/avatares/' . $nombre, file_get_contents($file->getRealPath()));
             $user_update->image_perfil = $nombre;

@@ -68,6 +68,7 @@ use RegistersUsers;
             'document' => $data['document'],
             'username' => $data['username'],
             'email' => $data['email'],
+            'image_perfil' => $data['image_perfil'],
             'password' => bcrypt($data['password']),
             'user_type_id' => $data['select'],
         ]);

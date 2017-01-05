@@ -5,12 +5,14 @@
     <div class="main row">
         <div class="col-xs-12 col-sm-3 ">
             <div class="container">
-                <div class="panel-body col-xs-12">
-                   @yield('image')
+                <div class="panel-body col-sm-3 col-md-2">
+                    @yield('image')
                 </div>
             </div>
             <div class="container">
+                <div class="panel-body col-sm-7 col-md-10">
                 MENU
+                </div>
             </div>
         </div>
         <div class="col-xs-12 col-sm-9">

@@ -10,6 +10,8 @@
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}" >
                         {{ csrf_field() }}
 
+                        <input id="image_perfil" type="hidden" name="image_perfil" value="quick.png">
+                        
                         <div class="form-group{{ $errors->has('select') ? ' has-error' : '' }}">
                             <label for="select" class="col-md-4 control-label">Select</label>
                             <div class="col-md-6">
@@ -19,6 +21,7 @@
                                 </select>
                             </div>
                         </div>
+
                         <!--Date Legal Person-->
                         <div id="date_legal">
                             <div  class="form-group{{ $errors->has('business_name') ? ' has-error' : '' }}">
