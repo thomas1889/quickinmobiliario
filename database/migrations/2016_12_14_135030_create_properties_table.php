@@ -32,7 +32,7 @@ class CreatePropertiesTable extends Migration
         $table->tinyInteger('bathrooms');
         $table->tinyInteger('stratum');
         $table->tinyInteger('floors');
-        $table->decimal('price', 15, 2);
+        $table->decimal('price', 18, 2);
         $table->integer('project_id')->default(0);
         $table->integer('property_type_id');
         $table->integer('use_type_id');

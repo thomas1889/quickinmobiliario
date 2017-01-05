@@ -11,8 +11,6 @@ use QuickInmobiliario\PropertyImage;
 class PropertyImageController extends Controller
 {
 
-  protected $fillable = ['file'];
-
   /**
   * @param Request $request
   * @return Response json
@@ -43,8 +41,8 @@ class PropertyImageController extends Controller
   * @param Request $request
   * @return Response json
   */
-  public function delete(Request $request){
-    $file = Storage::disk('local')->delete('public/properties/'.$request->get('path'));
+  public function delete($img){
+    $file = Storage::disk('local')->delete('public/properties/'.$img);
     if(File::exists($file)){
       return response()->json([
         'error' => 'No se pudo eliminar el archivo'
@@ -58,9 +56,8 @@ class PropertyImageController extends Controller
   * @param Id $id
   * @return Response $file;
   */
-  public function getImage($id){
-    $image = PropertyImage::findOrFail($id);
-    $file = Storage::disk('local')->get('public/properties/'.$image->path);
+  public function getImage($img){
+    $file = Storage::disk('local')->get('public/properties/'.$img);
 
     return response($file, 200);
   }

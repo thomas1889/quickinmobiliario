@@ -19,6 +19,9 @@ class CreateProjectsTable extends Migration
         $table->string('address', 75);
         $table->string('phone', 45);
         $table->text('description');
+        $table->string('unit_quantity',100,3);
+        $table->string('left_units',100,3);
+        $table->string('project_code',30);
         $table->decimal('built_area', 10, 2);
         $table->decimal('full_area', 10, 2);
         $table->string('zone', 45);

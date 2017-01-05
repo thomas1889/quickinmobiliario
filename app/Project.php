@@ -8,7 +8,7 @@ class Project extends Model
 {
   protected $fillable =[
     'name', 'phone', 'address', 'description', 'zone', 'city',
-    'neighborhood', 'built_area', 'full_area'
+    'neighborhood', 'built_area', 'full_area', 'unit_quantity', 'left_units', 'use_type_id', 'business_type_id'
   ];
 
   public function properties(){

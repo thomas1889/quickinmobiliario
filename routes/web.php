@@ -35,6 +35,22 @@ Route::get('imagen_perfil/{id}', [
 ]);
 
 /**
+* Punctuation routes
+*/
+Route::get('calificacion/crear',[
+  'uses' => 'PunctuationController@create',
+  'as' => 'punctuation_create_path'
+]);
+Route::post('calificacion/crear',[
+  'uses' => 'PunctuationController@store',
+  'as' => 'punctuation_create_path'
+]);
+Route::get('usuario/{id}/calificaciones', [
+  'uses' => 'PunctuationController@index',
+  'as' => 'user_punctuations_path'
+]);
+
+/**
  * Property routes
  */
 Route::get('inmueble/crear', [
@@ -65,15 +81,15 @@ Route::get('inmueble/{id}', [
   'uses' => 'PropertyController@show',
   'as' => 'property_show_path'
 ]);
-Route::post('images/upload', [
+Route::post('imagen_inmueble/upload', [
   'uses' => 'PropertyImageController@upload',
   'as' => 'property_image_upload_path'
 ]);
-Route::post('images/delete', [
+Route::delete('imagen_inmueble/{img}', [
   'uses' => 'PropertyImageController@delete',
   'as' => 'property_image_delete_path'
 ]);
-Route::get('imagen_inmueble/{id}', [
+Route::get('imagen_inmueble/{img}', [
   'uses' => 'PropertyImageController@getImage',
   'as' => 'get_property_image_path'
 ]);
@@ -113,23 +129,23 @@ Route::get('planes', [
 /**
  * Project routes
  */
-Route::get('projects/crear', [
+Route::get('proyectos/crear', [
   'uses' => 'ProjectController@create',
   'as' => 'projects_create_path'
 ]);
-Route::post('projects/crear', [
+Route::post('proyectos/crear', [
   'uses' => 'ProjectController@store',
   'as' => 'projects_create_path'
 ]);
-Route::get('projects/{id}/editar', [
+Route::get('proyectos/{id}/editar', [
   'uses' => 'ProjectController@edit',
   'as' => 'projects_edit_path'
 ]);
-Route::put('projects/{id}/editar', [
+Route::put('proyectos/{id}/editar', [
   'uses' => 'ProjectController@edit',
   'as' => 'projects_edit_path'
 ]);
-Route::delete('projects/{id}/borrar', [
+Route::delete('proyectos/{id}/borrar', [
   'uses' => 'ProjectController@destroy',
   'as' => 'projects_delete_path'
 ]);

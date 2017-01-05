@@ -53,18 +53,14 @@ class PropertyController extends Controller
     $this->setProperty($property, $request);
     $property->property_code = 'qi-'.time();
 
-    $commission = new Commission();
-    $commission->price = $request->get('commission');
-    $commission->save();
+    $commission = Commission::create(['price' => $request->get('commission')]);
     $commission->property()->save($property);
+
     if(is_array($request->get('images')) && !empty($request->get('images'))){
       foreach ($request->get('images') as $value) {
-        $images = new PropertyImage();
-        $images->path = $value;
+        $images = new PropertyImage(['path' => $value]);
         $property->property_images()->save($images);
       }
-    } else {
-      $property->save();
     }
 
     return redirect()->route('property_show_path', $property->id);
@@ -79,8 +75,7 @@ class PropertyController extends Controller
       'projects' => $this->get_projects(),
       'property_types' => $this->get_property_types(),
       'use_types' => $this->get_use_types(),
-      'business_types' => $this->get_business_types(),
-      'property_images' => $this->get_property_images($id)
+      'business_types' => $this->get_business_types()
     ]);
   }
 
@@ -92,30 +87,18 @@ class PropertyController extends Controller
   public function update($id, StoreProperty $request){
     $property = $this->getProperty($id);
     $this->setProperty($property, $request);
+    $property->save();
 
-    PropertyImage::where(['property_id' => $id])->delete();
-    if(is_array($request->get('images')) && !empty($request->get('images'))){
-      foreach ($request->get('images') as $value) {
-        $images = new PropertyImage();
-        $images->path = $value;
-        $property->property_images()->save($images);
-      }
-    } else {
-      $property->save();
-    }
+    $commission = Commission::findOrFail($request->get('commission_id'))->update(['price' => $request->get('commission')]);
 
-    $commission = Commission::findOrFail($request->get('commission_id'));
-    $commission->price = $request->get('commission');
-    $commission->save();
-
-    return redirect()->route('property_edit_path', $id);
+    return redirect()->route('properties_path');
   }
 
   public function destroy($id){
     $property = $this->getProperty($id);
     $property->commission()->delete();
     $property->property_images()->each(function($image){
-      Storage::delete('public/'.$image->path);
+      Storage::delete('public/properties/'.$image->path);
     });
     $property->property_images()->delete();
     $property->delete();
@@ -157,14 +140,6 @@ class PropertyController extends Controller
   */
   private function getProperty($id){
     return Property::findOrFail($id);
-  }
-
-  /**
-  * @param Integer $id
-  * @return PropertyImages
-  */
-  private function get_property_images($id){
-    return PropertyImage::where(['property_id' => $id])->get();
   }
 
   /**

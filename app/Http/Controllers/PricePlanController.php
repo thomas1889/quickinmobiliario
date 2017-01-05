@@ -16,7 +16,7 @@ class PricePlanController extends Controller
   }
 
   public function show($id){
-    return view('price_plans.show', ['price_plan' => $this->getPricePlan($id)]);
+    return view('price_plans.show', ['price_plan' => PricePlan::findOrFail($id)]);
   }
 
   /**
@@ -31,8 +31,7 @@ class PricePlanController extends Controller
   * @return Response
   */
   public function store(StorePricePlan $request){
-    $price_plan = new PricePlan;
-    $this->setPricePlan($price_plan, $request);
+    $price_plan = PricePlan::create($request->all());
 
     return redirect()->route('price_plan_show_path', $price_plan->id);
   }
@@ -42,42 +41,25 @@ class PricePlanController extends Controller
   * @return Response
   */
   public function edit($id){
-    return view('price_plans.edit', ['price_plan' => $this->getPricePlan($id)]);
+    return view('price_plans.edit', ['price_plan' => PricePlan::findOrFail($id)]);
   }
 
+  /**
+  * @param Integer $id
+  * @param StorePricePlan $request
+  */
   public function update($id, StorePricePlan $request){
-    $price_plan = $this->getPricePlan($id);
-    $this->setPricePlan($price_plan, $request);
+    $price_plan = PricePlan::findOrFail($id)->update($request->all());
 
-    return redirect()->route('price_plan_edit_path', $price_plan->id);
+    return redirect()->route('price_plan_edit_path', $id);
   }
 
   /**
   * @param Integer $id
   */
   public function destroy($id){
-    $price_plan = $this->getPricePlan($id);
-    $price_plan->delete();
+    $price_plan = PricePlan::findOrFail($id)->delete();
 
     return redirect()->route('price_plans_path');
-  }
-
-  /**
-  * @param Integer $id
-  * @return PricePlan
-  */
-  private function getPricePlan($id){
-    return PricePlan::findOrFail($id);
-  }
-
-  /**
-  * @param PricePlan $price_plan
-  * @param StorePricePlan $request
-  */
-  private function setPricePlan(PricePlan $price_plan, StorePricePlan $request){
-    $price_plan->name = $request->get('name');
-    $price_plan->price = $request->get('price');;
-    $price_plan->description = $request->get('description');
-    $price_plan->save();
   }
 }
