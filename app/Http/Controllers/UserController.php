@@ -57,4 +57,20 @@ class UserController extends Controller {
         return response($perfil, 200);
     }
 
+    public function newslleter($nameUser) {
+
+        $user = Auth::User();
+        $perfil = Storage::disk('local')->get('public/avatares/' . Auth::User()->image_perfil);
+
+        return view('auth/newsletter', ['user', $user, 'perfil' => $perfil])->with('user', $user);
+    }
+
+    public function appointment($nameUser) {
+
+        $user = Auth::User();
+        $perfil = Storage::disk('local')->get('public/avatares/' . Auth::User()->image_perfil);
+
+        return view('auth/appointment', ['user', $user, 'perfil' => $perfil])->with('user', $user);
+    }
+
 }

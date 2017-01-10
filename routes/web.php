@@ -33,6 +33,16 @@ Route::get('imagen_perfil/{id}', [
   'uses' => 'UserController@getPerfil',
   'as' => 'get_perfil_image_path'
 ]);
+Route::get('newsletter_show/{nombre}', [
+  'uses' => 'UserController@newslleter',
+  'as' => 'newsletter_show'
+]);
+Route::get('appointment/{nombre}', [
+  'uses' => 'UserController@appointment',
+  'as' => 'appointment_show'
+]);
+
+
 
 /**
 * Punctuation routes
