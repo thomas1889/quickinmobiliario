@@ -30,6 +30,8 @@ class CreateUsersTable extends Migration {
             $table->string('password')->default("")->nullable();
             $table->string('image_perfil')->default("")->nullable();
             $table->integer('user_type_id')->default(0)->nullable();
+            $table->string('newsletter')->default("")->nullable();
+
             $table->rememberToken();
             $table->timestamps();
         });

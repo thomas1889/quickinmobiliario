@@ -28,18 +28,14 @@ class UserController extends Controller {
         $user_update = User::findOrFail($id);
         $user_update->username = $data->get('username');
         $user_update->first_name = $data->get('first_name');
-        $user_update->last_name = $data->get('last_name');
         $user_update->business_name = $data->get('business_name');
-        $user_update->document_type = $data->get('document_type');
-        $user_update->document = $data->get('document');
-        $user_update->email = $data->get('email');
         $user_update->cell_phone = $data->get('cell_phone');
         $user_update->address = $data->get('address');
         $user_update->age = $data->get('age');
         $user_update->gender = $data->get('gender');
         $user_update->profession = $data->get('profession');
         $user_update->city = $data->get('city');
-
+        $user_update->newsletter = $data->get('newsletter');
         $file = $data->file('image');
         if ($file == "") {
             $user_update->save();
