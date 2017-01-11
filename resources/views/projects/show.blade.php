@@ -36,6 +36,15 @@
     <p><strong>Teléfono:</strong> {{ $project->phone }}</p>
     <p><strong>Área construida:</strong> {{ $project->built_area }} M2</p>
     <p><strong>Área lote:</strong> {{ $project->full_area }} M2</p>
+    <p><strong>Viviendas asosiadas:</strong>
+      @foreach ($properties as $type)
+      @if ($type->id == $project->property_id)
+      <i>{{ $type->name }}</i>
+      @else
+      <b value="{{ $type->id }}">{{ $type->name }}</b>
+      @endif
+      @endforeach
+    </p>
     <hr>
     <div class="row">
       <div class="col-sm-8">

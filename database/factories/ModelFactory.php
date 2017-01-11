@@ -97,3 +97,10 @@ $factory->define(QuickInmobiliario\PropertyImage::class, function (Faker\Generat
       'path' => $faker->imageUrl(800, 400, 'city', true, 'Faker'),
     ];
 });
+
+$factory->define(QuickInmobiliario\ProjectImage::class, function (Faker\Generator $faker) {
+    return [
+      'path' => $faker->imageUrl(800, 400, 'business', true, 'Faker'),
+      'extension' => $faker->randomElement(array('jpg','png','gif','jpeg')), 
+    ];
+});

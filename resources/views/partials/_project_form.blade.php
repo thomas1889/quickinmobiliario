@@ -51,6 +51,17 @@
 </div>
 
 <div class="form-group">
+    <label for="properties">Añada Propiedes a su proyecto</label>
+    <select class="form-control" name="property_id">
+      <option value="-1">No aplica</option>
+      @foreach ($properties as $property)
+        <option value="{{ $property->id }}">{{ $property->name }}</option>
+      @endforeach
+    </select>
+  </div>
+
+
+<div class="form-group">
   <label for="zone">Zona</label>
   <select class="form-control" name="zone" id="zone">
     <option value="Norte" @if ($project->zone == 'Norte') selected @endif>Norte</option>
@@ -149,6 +160,20 @@
     <option value="Centro" @if (old('zone') == 'Centro') selected @endif>Centro</option>
   </select>
 </div>
+
+<div class="form-group">
+    <label for="project">Añada propiedades a su proyecto</label>
+    <select class="form-control" name="property_id">
+      <option value="-1">No aplica</option>
+      @foreach ($properties as $property)
+        @if ($property->id == $project->property_id)
+          <option value="{{ $property->id }}" selected>{{ $property->name }}</option>
+        @else
+          <option value="{{ $property->id }}">{{ $property->name }}</option>
+        @endif
+      @endforeach
+    </select>
+  </div>
 
 <div class="form-group">
   <label for="city">Ciudad</label>

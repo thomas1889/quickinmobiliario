@@ -5,6 +5,7 @@ namespace QuickInmobiliario\Http\Controllers;
 use Illuminate\Http\Request;
 use QuickInmobiliario\Http\Requests\StoreProject;
 use QuickInmobiliario\Project;
+use QuickInmobiliario\Property;
 use QuickInmobiliario\ProjectImage;
 use QuickInmobiliario\PropertyType;
 use QuickInmobiliario\UseType;
@@ -28,6 +29,10 @@ class ProjectController extends Controller{
     return PropertyType::all();
   }
 
+  private function get_Properties(){
+    return Property::all();
+  }
+
   public function index()
   {
     $projects = Project::all();
@@ -42,7 +47,8 @@ class ProjectController extends Controller{
     return view('projects.create', [
       'property_types' => $this->get_property_types(),
       'use_types' => $this->get_use_types(),
-      'business_types' => $this->get_business_types()
+      'business_types' => $this->get_business_types(),
+      'properties' => $this->get_Properties()
     ]);
   }
   public function store(StoreProject $request){
@@ -73,7 +79,8 @@ class ProjectController extends Controller{
       'project' => $this->$project->getProject($id),
       'property_types' => $this->get_property_types(),
       'use_types' => $this->get_use_types(),
-      'business_types' => $this->get_business_types()
+      'business_types' => $this->get_business_types(),
+      'properties' => $this->get_Properties()
     ]);
   }
 
@@ -101,6 +108,7 @@ class ProjectController extends Controller{
     $project->property_type_id = $request->get('property_type_id');
     $project->use_type_id = $request->get('use_type_id');
     $project->business_type_id = $request->get('business_type_id');
+    $project->property_id = $request->get('property_id');
   }
 
 }
