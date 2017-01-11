@@ -11,6 +11,7 @@ use QuickInmobiliario\PropertyType;
 use QuickInmobiliario\UseType;
 use QuickInmobiliario\BusinessType;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\Request;
 
 class PropertyController extends Controller
 {
@@ -19,7 +20,7 @@ class PropertyController extends Controller
   * @return Response
   */
   public function index(){
-    return view('properties.index', ['properties' => Property::all()]);
+    return view('properties.index', ['properties' => Property::paginate(10)]);
   }
 
   /**
@@ -104,6 +105,23 @@ class PropertyController extends Controller
     $property->delete();
 
     return redirect()->route('properties_path');
+  }
+
+  public function search(Request $request){
+    $properties = Property::select('id','name', 'price', 'city', 'full_area', 'created_at');
+
+    if($request->has('city') && $request->get('city') != -1){
+      $properties->where('city', 'LIKE', '%'.$request->get('city').'%');
+    }
+    if($request->has('rooms')){
+      $properties->where('rooms', '=', $request->get('rooms'));
+    }
+    if($request->has('bathrooms')){
+      $properties->where('bathrooms', '=', $request->get('bathrooms'));
+    }
+
+    //return response()->json($properties->paginate(10)); Response for AJAX request
+    return view('properties.index', ['properties' => $properties->paginate(10)]);
   }
 
   /**

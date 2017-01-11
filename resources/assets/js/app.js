@@ -12,6 +12,7 @@ require('./bootstrap');
    * or customize the JavaScript scaffolding to fit your unique needs.
    */
   Vue.component('uploadimages', require('./components/UploadImages.vue'));
+  Vue.component('propertysearch', require('./components/PropertySearch.vue'));
 
   const app = new Vue({
   el: '#app',

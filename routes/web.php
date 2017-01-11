@@ -81,6 +81,10 @@ Route::get('inmueble/{id}', [
   'uses' => 'PropertyController@show',
   'as' => 'property_show_path'
 ]);
+Route::get('inmuebles/buscar', [
+  'uses' => 'PropertyController@search',
+  'as' => 'property_filter_path'
+]);
 Route::post('imagen_inmueble/upload', [
   'uses' => 'PropertyImageController@upload',
   'as' => 'property_image_upload_path'

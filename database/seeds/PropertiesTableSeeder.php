@@ -16,7 +16,7 @@ class PropertiesTableSeeder extends Seeder
       Property::truncate();
       Commission::truncate();
 
-      factory(QuickInmobiliario\Commission::class, 10)->create()->each(function($commission){
+      factory(QuickInmobiliario\Commission::class, 100)->create()->each(function($commission){
         $property = factory(Property::class)->make();
         $commission->property()->save($property);
       });
