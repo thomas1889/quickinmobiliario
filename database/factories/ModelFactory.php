@@ -97,3 +97,11 @@ $factory->define(QuickInmobiliario\PropertyImage::class, function (Faker\Generat
       'path' => $faker->imageUrl(800, 400, 'city', true, 'Faker'),
     ];
 });
+
+$factory->define(QuickInmobiliario\Punctuation::class, function (Faker\Generator $faker) {
+    return [
+      'punctuation' => $faker->randomElement([1, 2, 3, 4, 5]),
+      'user_id' => $faker->numberBetween(1, 10),
+      'comment' => $faker->randomElement(array('Bueno', 'Malo', 'Hay se va', 'Medio')),
+    ];
+});
