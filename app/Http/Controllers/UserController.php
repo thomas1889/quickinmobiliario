@@ -50,13 +50,13 @@ class UserController extends Controller {
         }
         return view('home');
     }
-
+    //VIEW IMAGE
     public function getPerfil($id) {
         $user = Auth::User();
         $perfil = Storage::disk('local')->get('public/avatares/' . Auth::User()->image_perfil);
         return response($perfil, 200);
     }
-
+    //VIEWS SUBMENU PERFIL
     public function newslleter($nameUser) {
 
         $user = Auth::User();
@@ -72,5 +72,15 @@ class UserController extends Controller {
 
         return view('auth/appointment', ['user', $user, 'perfil' => $perfil])->with('user', $user);
     }
+    
+     public function punctuation($nameUser) {
+
+        $user = Auth::User();
+        $perfil = Storage::disk('local')->get('public/avatares/' . Auth::User()->image_perfil);
+
+        return view('auth/punctuation', ['user', $user, 'perfil' => $perfil])->with('user', $user);
+    }
+    
+    
 
 }

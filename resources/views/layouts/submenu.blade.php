@@ -25,6 +25,11 @@
                     <a href="{{ route('appointment_show',Auth::user()->username) }}">Appointment</a>                    
                 </div>
                 @yield('end_style_appointment')
+                @yield('style_punctuation')
+                <div id="Schedule"  class="panel panel-body col-sm-7 col-md-10">
+                    <a href="{{ route('punctuation_show',Auth::user()->username) }}">Punctuation</a>                    
+                </div>
+                @yield('end_style_punctuation')
             </div>
         </div>
         <div class="col-xs-12 col-sm-9">

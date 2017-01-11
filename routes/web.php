@@ -17,10 +17,24 @@ Route::get('/', 'HomeController@index');
  * Authorization routes
  */
 Auth::routes();
+//SHOWS VIEWS SUBMENU PERFIL
 Route::get('profile/{nombre}', [
   'uses' => 'UserController@edit',
   'as' => 'profile_show_perfil'
 ]);
+Route::get('newsletter/{nombre}', [
+  'uses' => 'UserController@newslleter',
+  'as' => 'newsletter_show'
+]);
+Route::get('appointment/{nombre}', [
+  'uses' => 'UserController@appointment',
+  'as' => 'appointment_show'
+]);
+Route::get('punctuation/{nombre}', [
+  'uses' => 'UserController@punctuation',
+  'as' => 'punctuation_show'
+]);
+//VIEWS CONTROLS
 Route::put('user_update', [
   'uses' => 'UserController@update',
   'as' => 'user_update_path'
@@ -33,25 +47,15 @@ Route::get('imagen_perfil/{id}', [
   'uses' => 'UserController@getPerfil',
   'as' => 'get_perfil_image_path'
 ]);
-Route::get('newsletter_show/{nombre}', [
-  'uses' => 'UserController@newslleter',
-  'as' => 'newsletter_show'
-]);
-Route::get('appointment/{nombre}', [
-  'uses' => 'UserController@appointment',
-  'as' => 'appointment_show'
-]);
-
-
 
 /**
-* Punctuation routes
-*/
-Route::get('calificacion/crear',[
+ * Punctuation routes
+ */
+Route::get('calificacion/crear', [
   'uses' => 'PunctuationController@create',
   'as' => 'punctuation_create_path'
 ]);
-Route::post('calificacion/crear',[
+Route::post('calificacion/crear', [
   'uses' => 'PunctuationController@store',
   'as' => 'punctuation_create_path'
 ]);
