@@ -4,7 +4,7 @@
 <div class="row">
   <div class="col-sm-8 col-md-offset-2">
     <h1 class="text-center">
-      <a href="/projects" class="btn btn-info pull-left"> Volver</a>
+      <a href="{{ route('projects_path') }}" class="btn btn-info pull-left"> Volver</a>
       Detalles del Proyecto
       <a href="{{ route('projects_create_path') }}" class="btn btn-success pull-right">
         Publicar un Proyecto
@@ -27,17 +27,19 @@
     <p><strong>Tipo de Vivienda:</strong> {{ $project -> use_type_id }}</p>
     <p><strong>Tipo de venta:</strong> {{ $project -> business_type_id }}</p>
     <p><strong>Cantidad de Unidades:</strong> {{ $project->unit_quantity }}</p>
+    <p><strong>Unidades Restantes:</strong> - {{ $project->left_units }}</p>
     <p><strong>Descripción:</strong> {{ $project->description }}</p>
     <p><strong>Zona:</strong> {{ $project->zone }}</p>
     <p><strong>Ciudad:</strong> {{ $project->city }}</p>
     <p><strong>Barrio:</strong> {{ $project->neighborhood }}</p>
     <p><strong>Dirección:</strong> {{ $project->address }}</p>
+    <p><strong>Teléfono:</strong> {{ $project->phone }}</p>
     <p><strong>Área construida:</strong> {{ $project->built_area }} M2</p>
     <p><strong>Área lote:</strong> {{ $project->full_area }} M2</p>
     <hr>
     <div class="row">
       <div class="col-sm-8">
-        <a href="{{ route('projects_edit_path', $project->id)}}" class="btn btn-warning pull-left">
+        <a href="{{ route('projects_edit_path', $project->id) }}" class="btn btn-warning pull-left">
           Editar <span class="glyphicon glyphicon-pencil"></span>
         </a>
         <a href="" class="btn btn-danger" v-on:click.prevent="deleteProject($event)">

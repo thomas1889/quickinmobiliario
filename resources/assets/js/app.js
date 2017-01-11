@@ -43,6 +43,9 @@ require('./bootstrap');
     },
     createProject: function(){
       $('#form-create-project').submit();
+    },
+    updateProject: function(){
+      $('#form-edit-project').submit();
     }
   }
 });
