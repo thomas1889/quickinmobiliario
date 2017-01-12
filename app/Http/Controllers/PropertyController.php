@@ -92,7 +92,7 @@ class PropertyController extends Controller
 
     $commission = Commission::findOrFail($request->get('commission_id'))->update(['price' => $request->get('commission')]);
 
-    return redirect()->route('properties_path');
+    return redirect()->route('property_edit_path', $property->id);
   }
 
   public function destroy($id){
@@ -186,5 +186,6 @@ class PropertyController extends Controller
     $property->use_type_id = $request->get('use_type_id');
     $property->business_type_id = $request->get('business_type_id');
     $property->description = $request->get('description');
+    $property->video360 = $request->get('video360');
   }
 }

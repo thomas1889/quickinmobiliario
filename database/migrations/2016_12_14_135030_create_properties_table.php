@@ -38,6 +38,7 @@ class CreatePropertiesTable extends Migration
         $table->integer('use_type_id');
         $table->integer('business_type_id');
         $table->integer('commission_id');
+        $table->string('video360', 20);
         $table->timestamps();
       });
 

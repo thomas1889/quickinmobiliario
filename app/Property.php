@@ -13,7 +13,7 @@ class Property extends Model
    */
   protected $fillable = [
     'name', 'phone', 'address', 'description', 'antiquity', 'state', 'zone', 'city', 'neighborhood', 'built_area', 'full_area', 'rooms',
-    'stratum', 'parkings', 'bathrooms', 'floors', 'price', 'project_id', 'property_type_id', 'use_type_id', 'business_type_id'
+    'stratum', 'parkings', 'bathrooms', 'floors', 'price', 'project_id', 'property_type_id', 'use_type_id', 'business_type_id', '360video'
   ];
 
   public function property_images(){

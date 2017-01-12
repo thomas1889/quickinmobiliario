@@ -59,6 +59,7 @@ $factory->define(QuickInmobiliario\Property::class, function (Faker\Generator $f
       'property_type_id' => $faker->randomElement([1, 2, 3, 4]),
       'use_type_id' => $faker->randomElement([1, 2]),
       'business_type_id' => $faker->randomElement([1, 2, 3, 4]),
+      'video360' => '-xNN-bJQ4vI',
       'coordinates' => DB::raw("GeomFromText('POINT(18 -64)')"),
     ];
 });
@@ -101,6 +102,6 @@ $factory->define(QuickInmobiliario\PropertyImage::class, function (Faker\Generat
 $factory->define(QuickInmobiliario\ProjectImage::class, function (Faker\Generator $faker) {
     return [
       'path' => $faker->imageUrl(800, 400, 'business', true, 'Faker'),
-      'extension' => $faker->randomElement(array('jpg','png','gif','jpeg')), 
+      'extension' => $faker->randomElement(array('jpg','png','gif','jpeg')),
     ];
 });
