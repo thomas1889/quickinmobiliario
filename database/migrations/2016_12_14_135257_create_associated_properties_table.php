@@ -13,11 +13,11 @@ class CreateAssociatedPropertiesTable extends Migration
      */
     public function up()
     {
-      Schema::create('associated_properties', function(Blueprint $table){
+      /*Schema::create('associated_properties', function(Blueprint $table){
         $table->integer('property_id');
         $table->integer('associated_property_id');
         $table->primary(['property_id', 'associated_property_id']);
-      });
+      });*/
     }
 
     /**
