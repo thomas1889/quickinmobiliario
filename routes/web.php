@@ -153,7 +153,6 @@ Route::delete('borrar/proyectos/{id}', [
   'uses' => 'ProjectController@destroy',
   'as' => 'projects_delete_path'
 ]);
-
 Route::get('/Proyectos', [
   'uses' => 'ProjectController@index',
   'as' => 'projects_path'
@@ -162,6 +161,11 @@ Route::get('detallesProyecto/{id}', [
   'uses' => 'ProjectController@show',
   'as' => 'projects_show_path'
 ]);
+Route::get('Buscar/proyectos',[
+	'uses' => 'ProjectController@search',
+	'as' => 'project_filter_path'
+]);
+
 Route::post('imagen_proyecto/upload', [
   'uses' => 'ProjectImageController@upload',
   'as' => 'project_image_upload_path'

@@ -11,6 +11,29 @@
           Publicar Proyecto
         </a>
       </h1>
+
+						<div class="row">
+    <div class="col-md-12">
+      <div class="well well-lg">
+        <!--<propertysearch></propertysearch>-->
+        <form class="form form-inline" action="{{ route('project_filter_path') }}" method="get">
+									<div class="form-group">
+										<input type="text" min="0" step="1" class="form-control" name="city" placeholder="Ciudad">
+									</div>
+          <div class="form-group">
+            <select class="form-control" name="zone">
+              <option value="-1">Zona</option>
+              <option value="West">West</option>
+              <option value="North">North</option>
+              <option value="Center">Center</option>
+              <option value="South">South</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Buscar</button>
+        </form>
+      </div>
+    </div>
+  </div>
     <div class="table-responsive">
       <table class="table table-hover">
         <thead>
@@ -63,4 +86,12 @@
     </div>
   </div>
 </div>
+<!-- Paginación -->
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      {{ $projects->links() }}
+    </div>
+  </div>
+
+
 @stop

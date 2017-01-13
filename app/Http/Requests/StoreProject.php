@@ -28,13 +28,14 @@ class StoreProject extends FormRequest
       'name' => 'required|unique:projects,name|max:150',
       'address' => 'required|max:75',
       'phone' => 'required|max:12',
-      'description' => 'required',
+      'description' => 'required|max:400',
       'unit_quantity' => 'required',
       'built_area' => 'required',
       'full_area' => 'required',
       'zone' => 'required|max:45',
       'city' => 'required|max:45',
-      'neighborhood' => 'required|max:45'
+      'neighborhood' => 'required|max:45',
+						'video360' => 'string'
     ];
 
     if(!empty($this->request->get('images'))){
