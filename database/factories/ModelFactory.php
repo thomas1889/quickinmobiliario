@@ -37,7 +37,7 @@ $factory->define(QuickInmobiliario\User::class, function (Faker\Generator $faker
 
 $factory->define(QuickInmobiliario\Property::class, function (Faker\Generator $faker) {
     return [
-      'name' => $faker->sentence(6, true),
+      'name' => $faker->realText(75, 1),//$faker->sentence(6, true),
       'state' => $faker->randomElement(array(1, 2, 3)),
       'phone' => $faker->e164PhoneNumber,
       'address' => $faker->address,
