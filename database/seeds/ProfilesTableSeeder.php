@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use QuickInmobiliario\Profile;
 
 class ProfilesTableSeeder extends Seeder
 {
@@ -11,7 +12,8 @@ class ProfilesTableSeeder extends Seeder
      */
     public function run()
     {
-      DB::truncate('profiles');
+      Profile::truncate();
+
       DB::table('profiles')->insert([
         ['profile' => 'Admin'],
         ['profile' => 'Usuario común']
