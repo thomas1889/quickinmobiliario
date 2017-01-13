@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Punctuation extends Model
 {
-  protected $fillable = ['punctuation', 'comment', 'user_id'];
+  protected $fillable = ['punctuation', 'comment', 'user_id', 'user_coment'];
   
   public function user(){
     return $this->belongsTo(User::class);

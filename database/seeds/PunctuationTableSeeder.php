@@ -12,6 +12,7 @@ class PunctuationTableSeeder extends Seeder {
      * @return void
      */
     public function run() {
+        Punctuation::truncate();
         factory(Punctuation::class, 10)->create();
     }
 

@@ -15,6 +15,7 @@
                     <a  href="{{ route('profile_show_perfil',Auth::user()->username) }}">  My Perfil</a>
                 </div>
                 @yield('end_style_perfil')
+                @if ($user->user_type_id == 3 || $user->user_type_id == 2)
                 @yield('style_appointment')
                 <div id="Schedule"  class="panel panel-body col-sm-7 col-md-10">
                     <a href="{{ route('appointment_show',Auth::user()->username) }}">Appointment</a>                    
@@ -25,11 +26,14 @@
                     <a href="{{ route('punctuation_show',Auth::user()->username) }}">Punctuation</a>                    
                 </div>
                 @yield('end_style_punctuation')
+                @endif
+                @if ($user->newsletter =="Si")
                 @yield('style_letter')
                 <div  id="Neswletter" class="panel panel-body col-sm-7 col-md-10">
                     <a href="{{ route('newsletter_show',Auth::user()->username) }}"> Neswletter</a>
                 </div>
                 @yield('end_style_letter')
+                @endif
             </div>
         </div>
         <div class="col-xs-12 col-sm-9">
@@ -40,5 +44,4 @@
 
     </div>
 </div>
-
 @endsection
