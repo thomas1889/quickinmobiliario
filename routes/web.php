@@ -30,10 +30,7 @@ Route::get('appointment/{nombre}', [
   'uses' => 'UserController@appointment',
   'as' => 'appointment_show'
 ]);
-Route::get('punctuation/{nombre}', [
-  'uses' => 'UserController@punctuation',
-  'as' => 'punctuation_show'
-]);
+
 //VIEWS CONTROLS
 Route::put('user_update', [
   'uses' => 'UserController@update',

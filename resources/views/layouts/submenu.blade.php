@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <div class="container">
     <div class="main row">
@@ -23,7 +22,7 @@
                 @yield('end_style_appointment')
                 @yield('style_punctuation')
                 <div id="Schedule"  class="panel panel-body col-sm-7 col-md-10">
-                    <a href="{{ route('punctuation_show',Auth::user()->username) }}">Punctuation</a>                    
+                    <a href="{{ route('user_punctuations_path',Auth::user()->id) }}">Punctuation</a>                    
                 </div>
                 @yield('end_style_punctuation')
                 @endif

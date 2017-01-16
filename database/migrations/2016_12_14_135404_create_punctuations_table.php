@@ -17,7 +17,7 @@ class CreatePunctuationsTable extends Migration {
             $table->integer('punctuation')->default(0)->nullable();
             $table->string('comment', 150)->default("")->nullable();
             $table->integer('user_id')->default(0)->nullable();
-             $table->integer('user_coment')->default(0)->nullable();
+            $table->integer('user_coment')->default(0)->nullable();
             $table->timestamps();
         });
     }

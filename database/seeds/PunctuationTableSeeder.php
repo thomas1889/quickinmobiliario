@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use QuickInmobiliario\Punctuation;
-
+use QuickInmobiliario\User;
 
 class PunctuationTableSeeder extends Seeder {
 
@@ -13,7 +13,13 @@ class PunctuationTableSeeder extends Seeder {
      */
     public function run() {
         Punctuation::truncate();
-        factory(Punctuation::class, 10)->create();
+        User::all()->each(function ($users) {
+            for ($i = 0; $i < 10; $i++) {
+
+                $nameUsers = factory(Punctuation::class)->make();
+                $users->punctuations()->save($nameUsers);
+            }
+        });
     }
 
 }
