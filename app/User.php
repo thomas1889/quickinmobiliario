@@ -36,7 +36,7 @@ class User extends Authenticatable {
     }
 
     public function punctuations() {
-        return $this->hasMany(Punctuation::class, 'user_coment');
+        return $this->hasMany(Punctuation::class);
     }
 
     public function appointments() {

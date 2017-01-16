@@ -103,6 +103,7 @@ $factory->define(QuickInmobiliario\Punctuation::class, function (Faker\Generator
       'punctuation' => $faker->randomElement([1, 2, 3, 4, 5]),
       'user_id' => $faker->numberBetween(1, 10),
       'comment' => $faker->randomElement(array('Bueno', 'Malo', 'Hay se va', 'Medio')),
+      'user_comment_id' => $faker->numberBetween(1, 10),      
       
     ];
 });

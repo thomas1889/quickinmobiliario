@@ -6,9 +6,9 @@
 @section('style_perfil')
 
 <i class="text-uppercase">
-        @endsection
-        @section('end_style_perfil')
-    </i>
+    @endsection
+    @section('end_style_perfil')
+</i>
 
 @endsection
 <!--END SECTION-->
@@ -159,26 +159,6 @@
                 @endif
             </div>
         </div>
-        <div class="form-group{{ $errors->has('newsletter') ? ' has-error' : '' }}">
-            <label for="newsletter" class="col-md-4 control-label">Newsletter</label>
-            <div class="col-md-6">
-                <select id="newsletter"  class="form-control" name="newsletter"  >
-                    @if ($user->newsletter == "")
-                    <option value="Si">Si</option>
-                    <option value="No">No</option>
-                    @else
-                    @if ($user->newsletter == "Si")
-                    <option value="Si">Si</option>
-                    <option value="No">No</option>
-                    @else
-                    <option value="No">No</option>
-                    <option value="Si">Si</option>
-                    @endif
-                    @endif
-                </select>
-            </div>
-        </div>
-
         <div class="form-group">
             <div class="col-md-6 col-md-offset-4">
                 <button  type="submit" class="btn btn-primary">

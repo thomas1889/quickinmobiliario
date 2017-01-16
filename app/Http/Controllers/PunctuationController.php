@@ -37,24 +37,16 @@ class PunctuationController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
+
         $user = User::findOrFail($request->get('user'));
-        $punctuation = new Punctuation(['punctuation' => $request->get('punctuation'), 'comment' => $request->get('comment')]);
+
+        $punctuation = new Punctuation([
+          'punctuation' => $request->get('punctuation'),
+          'comment' => $request->get('comment'),
+          'user_comment_id' => Auth::user()->id
+        ]);
         $user->punctuations()->save($punctuation);
-
         return redirect()->route('user_punctuations_path', $user->id);
-    }
-
-
-    private function nameUsers($array) {
-
-        foreach ($array as $nameUser) {
-            $contador=1;
-            $users = User::select('username')->where('id', $nameUser->user_coment)->get();
-            $names = [$users];
-            $names= array_add($names, $contador, $users);
-            $contador=$contador+1;
-        }
-        dd($names);
     }
 
 }
