@@ -59,4 +59,8 @@ class User extends Authenticatable {
         return $this->belongsToMany(PricePlan::class, 'users_has_plans');
     }
 
+    public function profile(){
+      return $this->belongsTo(Profile::class);
+    }
+
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAssociatedPropertiesTable extends Migration
+class CreateProfilesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateAssociatedPropertiesTable extends Migration
      */
     public function up()
     {
-      /*Schema::create('associated_properties', function(Blueprint $table){
-        $table->integer('property_id');
-        $table->integer('associated_property_id');
-        $table->primary(['property_id', 'associated_property_id']);
-      });*/
+      Schema::create('profiles', function(Blueprint $table){
+        $table->increments('id');
+        $table->string('profile');
+      });
     }
 
     /**
@@ -27,6 +26,6 @@ class CreateAssociatedPropertiesTable extends Migration
      */
     public function down()
     {
-      Schema::dropIfExists('associated_properties');
+      Schema::dropIfExists('profiles');
     }
 }

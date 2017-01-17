@@ -46,7 +46,8 @@ class StoreProperty extends FormRequest
           'use_type_id' => 'required',
           'business_type_id' => 'required',
           'description' => 'required',
-          'commission' => 'required'
+          'commission' => 'required',
+          'video360' => 'string'
         ];
 
         if(!empty($this->request->get('images'))){

@@ -158,6 +158,22 @@
       <input type="hidden" name="commission_id" value="{{ $property->commission->id }}">
     </div>
   </div>
+  <div class="form-group">
+    <label for="video360">Código youtube video 360</label>
+    <input type="text" class="form-control" name="video360" id="video360" placeholder="-xNN-bJQ4vI" value="{{ old('video360', $property->video360) }}">
+  </div>
+  @if($property->video360 != '')
+    <div class="form-group">
+      <div class="row">
+        <label for="" class="col-md-12">Previsualización</label>
+        <div class="col-md-4">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe height="315" class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $property->video360 }}"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  @endif
   @if (!empty($property->property_images))
     @foreach ($property->property_images as $image)
       <input type="hidden" name="images[]" data-source="{{ route('get_property_image_path', $image->path) }}" id="{{ preg_replace('/(.png|.jpg|.jpeg|.gif)/', '', $image->path) }}" value="{{ $image->path }}">
@@ -305,6 +321,10 @@
       <div class="input-group-addon">$</div>
       <input type="number" id="commission" min="0" step="1" name="commission" class="form-control" value="{{ old('commission') }}">
     </div>
+  </div>
+  <div class="form-group">
+    <label for="video360">Código youtube video 360</label>
+    <input type="text" class="form-control" id="video360" name="video360" placeholder="-xNN-bJQ4vI" value="{{ old('video360') }}">
   </div>
   @if (!empty(old('images')))
     @foreach (old('images') as $image)

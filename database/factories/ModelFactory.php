@@ -38,7 +38,7 @@ $factory->define(QuickInmobiliario\User::class, function (Faker\Generator $faker
 
 $factory->define(QuickInmobiliario\Property::class, function (Faker\Generator $faker) {
     return [
-      'name' => $faker->sentence(6, true),
+      'name' => $faker->realText(75, 1), //$faker->sentence(6, true),
       'state' => $faker->randomElement(array(1, 2, 3)),
       'phone' => $faker->e164PhoneNumber,
       'address' => $faker->address,
@@ -60,6 +60,7 @@ $factory->define(QuickInmobiliario\Property::class, function (Faker\Generator $f
       'property_type_id' => $faker->randomElement([1, 2, 3, 4]),
       'use_type_id' => $faker->randomElement([1, 2]),
       'business_type_id' => $faker->randomElement([1, 2, 3, 4]),
+      'video360' => '-xNN-bJQ4vI',
       'coordinates' => DB::raw("GeomFromText('POINT(18 -64)')"),
     ];
 });
@@ -74,20 +75,23 @@ $factory->define(QuickInmobiliario\Commission::class, function (Faker\Generator 
 
 $factory->define(QuickInmobiliario\Project::class, function (Faker\Generator $faker) {
     return [
+
       'name' => $faker->catchPhrase,
       'address' => $faker->address,
       'phone' => $faker->e164PhoneNumber,
-      'description' => $faker->text(200),
+      'description' => $faker->text(400),
+      'unit_quantity' => $faker->numberBetween(1, 9999),
+      'left_units' => $faker->numberBetween(1, 9999),
       'project_code' => $faker->isbn10,
       'built_area' => $faker->numberBetween(50, 1500),
       'full_area' => $faker->numberBetween(50, 1500),
-      'unit_quantity' => $faker->numberBetween(1, 999),
-      'left_units' => $faker->numberBetween(1, 999),
       'zone' => $faker->randomElement(array('North', 'South', 'West', 'Center')),
       'city' => $faker->city,
       'neighborhood' => $faker->streetName,
+      'property_type_id' => $faker->numberBetween(1, 5),
       'use_type_id' => $faker->randomElement([1, 2]),
       'business_type_id' => $faker->randomElement([1, 2, 3, 4]),
+      'video360' => '-xNN-bJQ4vI',
       'coordinates' => DB::raw("GeomFromText('POINT(18 -64)')"),
     ];
 });
@@ -103,7 +107,12 @@ $factory->define(QuickInmobiliario\Punctuation::class, function (Faker\Generator
       'punctuation' => $faker->randomElement([1, 2, 3, 4, 5]),
       'user_id' => $faker->numberBetween(1, 10),
       'comment' => $faker->randomElement(array('Bueno', 'Malo', 'Hay se va', 'Medio')),
-      'user_comment_id' => $faker->numberBetween(1, 10),      
-      
+      'user_comment_id' => $faker->numberBetween(1, 10),
+    ];
+});
+$factory->define(QuickInmobiliario\ProjectImage::class, function (Faker\Generator $faker) {
+    return [
+      'path' => $faker->imageUrl(800, 400, 'business', true, 'Faker'),
+      'extension' => $faker->randomElement(array('jpg', 'png', 'gif', 'jpeg')),
     ];
 });

@@ -20,6 +20,9 @@
       <p><strong>Estrato:</strong> {{ $property->stratum }}</p>
       <p><strong>Pisos:</strong> {{ $property->floors }}</p>
       <p><strong>Precio:</strong> $ {{ $property->price }}</p>
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $property->video360 }}"></iframe>
+      </div>
     </div>
   </div>
 

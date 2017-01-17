@@ -110,6 +110,10 @@ Route::get('inmueble/{id}', [
   'uses' => 'PropertyController@show',
   'as' => 'property_show_path'
 ]);
+Route::get('inmuebles/buscar', [
+  'uses' => 'PropertyController@search',
+  'as' => 'property_filter_path'
+]);
 Route::post('imagen_inmueble/upload', [
   'uses' => 'PropertyImageController@upload',
   'as' => 'property_image_upload_path'
@@ -158,32 +162,48 @@ Route::get('planes', [
 /**
  * Project routes
  */
-Route::get('proyectos/crear', [
+Route::get('crear/proyecto', [
   'uses' => 'ProjectController@create',
   'as' => 'projects_create_path'
 ]);
-Route::post('proyectos/crear', [
+Route::post('crear/proyecto', [
   'uses' => 'ProjectController@store',
   'as' => 'projects_create_path'
 ]);
-Route::get('proyectos/{id}/editar', [
+Route::get('editar/proyecto/{id}', [
   'uses' => 'ProjectController@edit',
   'as' => 'projects_edit_path'
 ]);
-Route::put('proyectos/{id}/editar', [
-  'uses' => 'ProjectController@edit',
+Route::put('editar/proyecto/{id}', [
+  'uses' => 'ProjectController@update',
   'as' => 'projects_edit_path'
 ]);
-Route::delete('proyectos/{id}/borrar', [
+Route::delete('borrar/proyectos/{id}', [
   'uses' => 'ProjectController@destroy',
   'as' => 'projects_delete_path'
 ]);
-
-Route::get('/projects', [
+Route::get('/Proyectos', [
   'uses' => 'ProjectController@index',
   'as' => 'projects_path'
 ]);
-Route::get('project/{id}', [
+Route::get('detallesProyecto/{id}', [
   'uses' => 'ProjectController@show',
   'as' => 'projects_show_path'
+]);
+Route::get('Buscar/proyectos',[
+	'uses' => 'ProjectController@search',
+	'as' => 'project_filter_path'
+]);
+
+Route::post('imagen_proyecto/upload', [
+  'uses' => 'ProjectImageController@upload',
+  'as' => 'project_image_upload_path'
+]);
+Route::delete('imagen_proyecto/{img}', [
+  'uses' => 'ProjectImageController@delete',
+  'as' => 'project_image_delete_path'
+]);
+Route::get('imagen_proyecto/{img}', [
+  'uses' => 'ProjectImageController@getImage',
+  'as' => 'get_project_image_path'
 ]);
