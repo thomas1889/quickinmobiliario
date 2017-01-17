@@ -62,6 +62,24 @@ Route::get('usuario/{id}/calificaciones', [
 ]);
 
 /**
+ * Appointment routes
+ */
+Route::post('cita/crear', [
+  'uses' => 'AppointmentController@create',
+  'as' => 'appointment_create_path'
+]);
+
+Route::get('cita/{id}', [
+  'uses' => 'AppointmentController@index',
+  'as' => 'appointment_path'
+]);
+
+Route::get('schedule/{id}', [
+  'uses' => 'AppointmentController@schedule',
+  'as' => 'to_schedule_path'
+]);
+
+/**
  * Property routes
  */
 Route::get('inmueble/crear', [

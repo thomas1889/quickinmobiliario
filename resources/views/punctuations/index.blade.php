@@ -1,7 +1,5 @@
 @extends('layouts.submenu')
-@section('image')
-<img src="{{ route('get_perfil_image_path', $user->id) }}" class="col-xs-12 img-circle">
-@endsection
+
 <!--SECTION-->
 @section('style_punctuation')
 <i class="text-uppercase">

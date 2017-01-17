@@ -15,14 +15,15 @@ class CreateAppointmentsTable extends Migration
     {
       Schema::create('appointments', function(Blueprint $table){
         $table->increments('id');
-        $table->timestamp('date_time');
-        $table->string('place', 140);
-        $table->string('state', 45);
-        $table->tinyInteger('pending_invitations');
-        $table->integer('scheluder_id'); // Usuario quien crea la cita
-        $table->integer('user_id'); // Usuario quien acepta la cita
-        $table->integer('mediator_id')->default(0); // Usuario acelerador, si lo hay
-        $table->integer('property_id');
+        $table->date('date')->nullable();
+        $table->time('time')->nullable();
+        $table->string('place', 140)->default("")->nullable();
+        $table->string('state', 45)->default("")->nullable();
+        $table->tinyInteger('pending_invitations')->default(0)->nullable();
+        $table->integer('scheluder_id')->default(0)->nullable(); // Usuario quien crea la cita
+        $table->integer('user_id')->default(0)->nullable(); // Usuario quien acepta la cita
+        $table->integer('mediator_id')->default(0)->nullable(); // Usuario acelerador, si lo hay
+        $table->integer('property_id')->default(0)->nullable();
       });
     }
 
