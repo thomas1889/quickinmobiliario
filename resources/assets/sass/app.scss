@@ -1,6 +1,10 @@
 
 // Fonts
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,600,700,800);
+@import "montserrat.css";
+
+/*Icon*/
+@import "font-awesome.min.css";
 
 // Variables
 @import "variables";
@@ -9,4 +13,31 @@
 @import "dropzone";
 
 // Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "bootstrap.min.css"; //Importamos el archivo directamente en vez del archivo SASS de Bootstrap
+//@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+/* Sheltek template */
+/*Plugins*/
+@import "plugins/animate.css";
+@import "plugins/jquery-ui.min.css";
+@import "plugins/bootstrap-select.css";
+@import "plugins/meanmenu.min.css";
+@import "plugins/slick.css";
+@import "plugins/lightbox.min.css";
+@import "plugins/jquery.mb.YTPlayer.min.css";
+@import "plugins/textanimate.css";
+
+
+/*Shortcode*/
+@import "shortcode/default.css";
+@import "shortcode/header.css";
+@import "shortcode/slider.css";
+@import "shortcode/footer.css";
+
+
+/* Nivo slider */
+@import "nivo-slider.css";
+
+@import "style.css";
+@import "responsive.css";
+@import "style-customizer.css";
