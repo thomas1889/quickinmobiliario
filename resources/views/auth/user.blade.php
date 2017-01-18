@@ -1,7 +1,15 @@
 @extends('layouts.submenu')
-@section('image')
-<img src="{{ route('get_perfil_image_path', $user->id) }}" class="col-xs-12 img-circle">
+
+<!--SECTION-->
+@section('style_perfil')
+
+<i class="text-uppercase">
+    @endsection
+    @section('end_style_perfil')
+</i>
+
 @endsection
+<!--END SECTION-->
 @section('submenu')
 <div class="panel-body">
 
@@ -45,18 +53,6 @@
                 @endif
             </div>
         </div>
-        <div class="form-group{{ $errors->has('last_name') ? ' has-error' : '' }}">
-            <label for="last_name" class="col-md-4 control-label">Last Name</label>
-            <div class="col-md-6">
-                <input id="last_name" type="text" class="form-control" name="last_name" value="{{ $user->last_name}}"   autofocus>
-                @if ($errors->has('last_name'))
-                <span class="help-block">
-                    <strong>{{ $errors->first('last_name') }}</strong>
-                </span>
-                @endif
-            </div>
-        </div>
-
         <!--END Dates Natural Person-->
         @else
         <!--Dates Legal Person-->
@@ -161,11 +157,10 @@
                 @endif
             </div>
         </div>
-
         <div class="form-group">
             <div class="col-md-6 col-md-offset-4">
                 <button  type="submit" class="btn btn-primary">
-                    save changes
+                    Save Changes
                 </button>
             </div>
         </div>

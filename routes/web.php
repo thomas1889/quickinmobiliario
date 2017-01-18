@@ -17,10 +17,21 @@ Route::get('/', 'HomeController@index');
  * Authorization routes
  */
 Auth::routes();
+//SHOWS VIEWS SUBMENU PERFIL
 Route::get('profile/{nombre}', [
   'uses' => 'UserController@edit',
   'as' => 'profile_show_perfil'
 ]);
+Route::get('newsletter/{nombre}', [
+  'uses' => 'UserController@newslleter',
+  'as' => 'newsletter_show'
+]);
+Route::get('appointment/{nombre}', [
+  'uses' => 'UserController@appointment',
+  'as' => 'appointment_show'
+]);
+
+//VIEWS CONTROLS
 Route::put('user_update', [
   'uses' => 'UserController@update',
   'as' => 'user_update_path'
@@ -35,19 +46,37 @@ Route::get('imagen_perfil/{id}', [
 ]);
 
 /**
-* Punctuation routes
-*/
-Route::get('calificacion/crear',[
+ * Punctuation routes
+ */
+Route::get('calificacion/crear', [
   'uses' => 'PunctuationController@create',
   'as' => 'punctuation_create_path'
 ]);
-Route::post('calificacion/crear',[
+Route::post('calificacion/crear', [
   'uses' => 'PunctuationController@store',
   'as' => 'punctuation_create_path'
 ]);
 Route::get('usuario/{id}/calificaciones', [
   'uses' => 'PunctuationController@index',
   'as' => 'user_punctuations_path'
+]);
+
+/**
+ * Appointment routes
+ */
+Route::post('cita/crear', [
+  'uses' => 'AppointmentController@create',
+  'as' => 'appointment_create_path'
+]);
+
+Route::get('cita/{id}', [
+  'uses' => 'AppointmentController@index',
+  'as' => 'appointment_path'
+]);
+
+Route::get('schedule/{id}', [
+  'uses' => 'AppointmentController@schedule',
+  'as' => 'to_schedule_path'
 ]);
 
 /**

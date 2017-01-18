@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use QuickInmobiliario\Http\Controllers\Controller;
 use QuickInmobiliario\User;
+use QuickInmobiliario\Punctuation;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
@@ -28,18 +29,13 @@ class UserController extends Controller {
         $user_update = User::findOrFail($id);
         $user_update->username = $data->get('username');
         $user_update->first_name = $data->get('first_name');
-        $user_update->last_name = $data->get('last_name');
         $user_update->business_name = $data->get('business_name');
-        $user_update->document_type = $data->get('document_type');
-        $user_update->document = $data->get('document');
-        $user_update->email = $data->get('email');
         $user_update->cell_phone = $data->get('cell_phone');
         $user_update->address = $data->get('address');
         $user_update->age = $data->get('age');
         $user_update->gender = $data->get('gender');
         $user_update->profession = $data->get('profession');
         $user_update->city = $data->get('city');
-
         $file = $data->file('image');
         if ($file == "") {
             $user_update->save();
@@ -55,10 +51,24 @@ class UserController extends Controller {
         return view('home');
     }
 
+    //VIEW IMAGE
     public function getPerfil($id) {
         $user = Auth::User();
         $perfil = Storage::disk('local')->get('public/avatares/' . Auth::User()->image_perfil);
         return response($perfil, 200);
+    }
+
+    //VIEWS SUBMENU PERFIL
+    public function newslleter($nameUser) {
+        $user = Auth::User();
+        $perfil = Storage::disk('local')->get('public/avatares/' . Auth::User()->image_perfil);
+        return view('auth/newsletter', ['user', $user, 'perfil' => $perfil])->with('user', $user);
+    }
+
+    public function appointment($nameUser) {
+        $user = Auth::User();
+        $perfil = Storage::disk('local')->get('public/avatares/' . Auth::User()->image_perfil);
+        return view('auth/appointment', ['user', $user, 'perfil' => $perfil])->with('user', $user);
     }
 
 }
