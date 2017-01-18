@@ -12,6 +12,7 @@
  */
 
 Route::get('/', 'HomeController@index');
+Route::get('contacto', 'HomeController@contact');
 
 /**
  * Authorization routes

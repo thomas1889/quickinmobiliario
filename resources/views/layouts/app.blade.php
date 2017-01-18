@@ -77,18 +77,7 @@
                 </div>
             </nav>-->
 
-          <!-- SLIDER SECTION START -->
-          @include('partials._slider')
-          <!-- SLIDER SECTION END -->
-
-          <!-- Start page content -->
-          <section id="page-content" class="page-wrapper">
-            @yield('content')
-
-            <!-- NEWSLETTER AREA START -->
-            @include('partials._newsletter')
-            <!-- NEWSLETTER AREA END -->
-          </section>
+          @yield('content')
           <!-- Body main wrapper end -->
 
           <!-- Start footer area -->
