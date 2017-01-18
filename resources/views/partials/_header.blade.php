@@ -37,7 +37,7 @@
               <button class="search-icon" type="submit">
                 <img src="images/icons/search.png" alt="">
               </button>
-              <input type="text" placeholder="Search...">
+              <input type="text" placeholder="Buscar...">
             </form>
           </div>
         </div>
@@ -51,7 +51,7 @@
           <div class="col-md-12">
             <div class="sticky-logo">
               <a href="index.html">
-                <img src="images/logo/logo.png" alt="">
+                <img src="images/logo/logo.png" alt="Quick Inmobiliario">
               </a>
             </div>
             <nav id="primary-menu">
