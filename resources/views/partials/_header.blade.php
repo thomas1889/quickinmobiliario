@@ -59,7 +59,7 @@
                 <li><a href="{{ url('/') }}">Home</a></li>
                 <li><a href="#">Publicar</a></li>
                 <li><a href="#">Acelerador</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#">Contacto</a></li>
               </ul>
             </nav>
           </div>
