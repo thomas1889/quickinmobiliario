@@ -28,6 +28,8 @@ class PropertyController extends Controller
   * @return Response
   */
   public function show($id){
+    $property = $this->getProperty($id);
+    dd($property->users());
     return view('properties.show', ['property' => $this->getProperty($id)]);
   }
 

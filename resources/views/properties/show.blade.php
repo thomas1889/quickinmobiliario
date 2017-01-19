@@ -2,30 +2,7 @@
 
 @section('content')
 
-  <!--<div class="row">
-    <div class="col-md-10 col-md-offset-1">
-      <h1>Detalle del Inmueble <small> <a href="{{ route('properties_path') }}" class="btn btn-link pull-right"><< Volver</a></small></h1>
-      <hr>
-
-      <h2>{{ $property->name }}</h2>
-      <h3>código: {{ $property->property_code }}</h3>
-      <p><strong>Descripción:</strong> {{ $property->description }}</p>
-      <p><strong>Zona:</strong> {{ $property->zone }}</p>
-      <p><strong>Ciudad:</strong> {{ $property->city }}</p>
-      <p><strong>Barrio:</strong> {{ $property->neighborhood }}</p>
-      <p><strong>Dirección:</strong> {{ $property->address }}</p>
-      <p><strong>Área construida:</strong> {{ $property->built_area }} M2</p>
-      <p><strong>Área lote:</strong> {{ $property->full_area }} M2</p>
-      <p><strong>Habitaciones:</strong> {{ $property->rooms }}</p>
-      <p><strong>Estrato:</strong> {{ $property->stratum }}</p>
-      <p><strong>Pisos:</strong> {{ $property->floors }}</p>
-      <p><strong>Precio:</strong> $ {{ $property->price }}</p>
-      <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $property->video360 }}"></iframe>
-      </div>
-    </div>
-  </div>
-
+  <!-- Pendiente para agregar imagenes redimensionadas
   <div class="row">
     @foreach ($property->property_images as $image)
       <div class="col-xs-6 col-md-3">
@@ -135,23 +112,24 @@
               <div class="row">
                 <div class="col-sm-6 col-xs-12">
                   <div class="pro-details-condition">
-                    <h5>Condition</h5>
+                    <h5>Condición</h5>
                     <div class="pro-details-condition-inner bg-gray">
                       <ul class="condition-list">
-                        <li><img src="/images/icons/5.png" alt="">Area 450 sqft</li>
-                        <li><img src="/images/icons/6.png" alt="">Bedroom 5</li>
-                        <li><img src="/images/icons/7.png" alt="">Bathroom 3</li>
-                        <li><img src="/images/icons/13.png" alt="">Garage 2</li>
-                        <li><img src="/images/icons/14.png" alt="">Kitchen 2</li>
-                        <li>$52,350</li>
+                        <li><i class="fa fa-th-large icon-size-normal"></i> Área {{ $property->built_area }} M2</li>
+                        <li><i class="fa fa-bed icon-size-normal"></i> Habitaciones {{ $property->rooms }}</li>
+                        <li><i class="fa fa-s15 icon-size-normal"></i> Baños {{ $property->bathrooms }}</li>
+                        <li><i class="fa fa-automobile icon-size-normal"></i> Parqueaderos {{ $property->parkings }}</li>
+                        <li><i class="fa fa-level-up icon-size-normal"></i> Pisos {{ $property->floors }}</li>
+                        <li><i class="fa fa-history icon-size-normal"></i> Antiguedad {{ $property->antiquity }}</li>
+                        <li><i class="fa fa-usd"></i> {{ number_format($property->price, 2, ',', '.') }}</li>
                       </ul>
-                      <p><img src="/images/icons/location.png" alt="">568 E 1st Ave, Ney Jersey, USA</p>
+                      <p><i class="fa fa-map-marker icon-size-sub"></i> {{ $property->address }}</p>
                     </div>
                   </div>
                 </div>
                 <div class="col-sm-6 col-xs-12">
                   <div class="pro-details-amenities">
-                    <h5>Amenities</h5>
+                    <h5>Comodidades</h5>
                     <div class="pro-details-amenities-inner bg-gray">
                       <ul class="amenities-list">
                         <li>Air Conditioning</li>
@@ -159,7 +137,7 @@
                         <li>Balcony</li>
                         <li>Cable TV</li>
                         <li>Internet</li>
-                        <li>Parking</li>
+                        <li>Parqueadero</li>
                         <li>Lift</li>
                         <li>Pool</li>
                         <li>Dishwasher</li>
@@ -172,43 +150,7 @@
             </div>
             <!-- pro-details-description -->
             <div class="pro-details-description mb-50">
-              <p><span data-placement="top" data-toggle="tooltip" data-original-title="The name you can trust" class="tooltip-content">Sheltek</span> is  ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna iqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut quipx ea codo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolo</p>
-              <p>Sheltek is the Best  should be the consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore lore magna iqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex eacm emod tempor incididunt ut labore lore magna iqua. Ut enim ad minim veniamco laboris nisi ut aliqu</p>
-              <p>Sheltek is the Best  should be the consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore lore magna iqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex eacm</p>
-            </div>
-            <!-- pro-details-feedback -->
-            <div class="pro-details-feedback mb-40">
-              <h5>3 Feedback</h5>
-              <!-- media -->
-              <div class="media">
-                <a class="media-left" href="#">
-                  <img src="/images/avatar/1.jpg" alt="">
-                </a>
-                <div class="media-body">
-                  <h6 class="media-heading"><a href="#">David Backhum</a></h6>
-                  <p><span>6 hour ago</span>There are some business lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiu tempor inc ididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudt </p>
-                </div>
-              </div>
-              <!-- media -->
-              <div class="media">
-                <a class="media-left" href="#">
-                  <img src="/images/avatar/2.jpg" alt="">
-                </a>
-                <div class="media-body">
-                  <h6 class="media-heading"><a href="#">Saniya Mirza</a></h6>
-                  <p><span>8 hour ago</span>There are some business lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiu tempor inc ididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudt </p>
-                </div>
-              </div>
-              <!-- media -->
-              <div class="media">
-                <a class="media-left" href="#">
-                  <img src="/images/avatar/3.jpg" alt="">
-                </a>
-                <div class="media-body">
-                  <h6 class="media-heading"><a href="#">Lionel Messi</a></h6>
-                  <p><span>10 hour ago</span>There are some business lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiu tempor inc ididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudt </p>
-                </div>
-              </div>
+              <p>{{ $property->description }}</p>
             </div>
             <!-- agent-review -->
             <div class="pro-details-agent-review">
@@ -476,7 +418,8 @@
               <div class="properties-video">
                 <div class="embed-responsive embed-responsive-16by9">
                   <!-- <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/40934652"></iframe> -->
-                  <iframe src="https://player.vimeo.com/video/117765418?title=0&byline=0&portrait=0" allowfullscreen></iframe>
+                  <!--<iframe src="https://player.vimeo.com/video/117765418?title=0&byline=0&portrait=0" allowfullscreen></iframe>-->
+                  <iframe src="https://www.youtube.com/embed/{{ $property->video360 }}"></iframe>
                 </div>
               </div>
             </aside>
