@@ -183,7 +183,7 @@ Route::delete('borrar/proyectos/{id}', [
   'uses' => 'ProjectController@destroy',
   'as' => 'projects_delete_path'
 ]);
-Route::get('/Proyectos', [
+Route::get('/proyectos', [
   'uses' => 'ProjectController@index',
   'as' => 'projects_path'
 ]);
@@ -191,7 +191,7 @@ Route::get('detallesProyecto/{id}', [
   'uses' => 'ProjectController@show',
   'as' => 'projects_show_path'
 ]);
-Route::get('Buscar/proyectos',[
+Route::get('buscar/proyectos',[
 	'uses' => 'ProjectController@search',
 	'as' => 'project_filter_path'
 ]);

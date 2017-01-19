@@ -29,8 +29,4 @@ class Project extends Model
   public function business_type(){
     return $this->belongsTo(BusinessType::class);
   }
-
-  public function users(){
-    return $this->belongsToMany(User::class, 'users_has_projects');
-  }
 }
