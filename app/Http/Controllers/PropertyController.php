@@ -29,7 +29,7 @@ class PropertyController extends Controller
   */
   public function show($id){
     $property = $this->getProperty($id);
-    dd($property->users());
+    dd($property->user());
     return view('properties.show', ['property' => $this->getProperty($id)]);
   }
 
