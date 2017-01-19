@@ -1,6 +1,23 @@
 @extends('layouts.app')
 
 @section('content')
+
+<div class="breadcrumbs-area bread-bg-1 bg-opacity-black-70">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="breadcrumbs">
+					<h2 class="breadcrumbs-title">Proyectos</h2>
+					<ul class="breadcrumbs-list">
+						<li><a href="index.html">Inicio</a></li>
+						<li>Proyectos</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
 <!-- Start page content -->
 <section id="page-content" class="page-wrapper">
 
@@ -95,11 +112,11 @@
 				<div class="col-md-4">
 					<!-- widget-search-property -->
 					<aside class="widget widget-search-property mb-30">
-						<h5>Search For Property</h5>
+						<h5>Realiza tu búsqueda aquí</h5>
 						<div class="row">
 							<div class="col-md-6 col-sm-3 col-xs-12">
 								<div class="find-home-item custom-select">
-									<select class="selectpicker" title="Location" data-hide-disabled="true" data-live-search="true">
+									<select class="selectpicker" title="Ciudad" data-hide-disabled="true" data-live-search="true">
 										<optgroup disabled="disabled" label="disabled">
 											<option>Hidden</option>
 										</optgroup>
@@ -118,7 +135,7 @@
 							</div>
 							<div class="col-md-6 col-sm-3 col-xs-12">
 								<div class="find-home-item custom-select">
-									<select class="selectpicker" title="Sub - Location" data-hide-disabled="true" data-live-search="true">
+									<select class="selectpicker" title="Zona" data-hide-disabled="true" data-live-search="true">
 										<optgroup disabled="disabled" label="disabled">
 											<option>Hidden</option>
 										</optgroup>
@@ -137,17 +154,17 @@
 							</div>
 							<div class="col-md-6 col-sm-3 col-xs-12">
 								<div class="find-home-item">
-									<input type="text" name="min-area" placeholder="Min area (sqft)">
+									<input type="text" name="min-area" placeholder="Área Min (M2)">
 								</div>
 							</div>
 							<div class="col-md-6 col-sm-3 col-xs-12">
 								<div class="find-home-item">
-									<input type="text" name="max-area" placeholder="Max area (sqft)">
+									<input type="text" name="max-area" placeholder="Área Max (M2)">
 								</div>
 							</div>
 							<div class="col-md-6 col-sm-3 col-xs-12">
 								<div class="find-home-item  custom-select">
-									<select class="selectpicker" title="No. of Beadrooms" data-hide-disabled="true">
+									<select class="selectpicker" title="Tipo de Negocio" data-hide-disabled="true">
 										<optgroup  label="1">
 											<option label="1">1 Beadrooms</option>
 											<option>2 Beadrooms</option>
@@ -160,13 +177,13 @@
 							</div>
 							<div class="col-md-6 col-sm-3 col-xs-12">
 								<div class="find-home-item custom-select">
-									<select class="selectpicker" title="No. of Bathrooms" data-hide-disabled="true">
-										<optgroup label="2">
-											<option>1 Bathrooms</option>
-											<option>2 Bathrooms</option>
-											<option>3 Bathrooms</option>
-											<option>4 Bathrooms</option>
-											<option>5 Bathrooms</option>
+									<select class="selectpicker" title="Habitaciones" data-hide-disabled="true">
+										<optgroup label="Habitaciones">
+											<option>1 <i class="fa fa-bed" aria-hidden="true"></i></option>
+											<option>2 <i class="fa fa-bed" aria-hidden="true"></i></option>
+											<option>3 <i class="fa fa-bed" aria-hidden="true"></i></option>
+											<option>4 <i class="fa fa-bed" aria-hidden="true"></i></option>
+											<option>5 <i class="fa fa-bed" aria-hidden="true"></i></option>
 										</optgroup>
 									</select>
 								</div>
@@ -180,7 +197,7 @@
 												<div class="price_filter">
 													<div class="price_slider_amount">
 														<input type="submit"  value="You range :"/>
-														<input type="text" id="amount" name="price"  placeholder="Add Your Price" />
+														<input type="text" id="amount" name="price"  placeholder="Rago de Precio" />
 													</div>
 													<div id="slider-range"></div>
 												</div>
@@ -301,8 +318,6 @@
 							</div>
 						</div>
 					</aside>
-
-
 				</div>
 			</div>
 		</div>

@@ -56,7 +56,7 @@
             </div>
             <nav id="primary-menu">
               <ul class="main-menu text-center">
-                <li><a href="{{ url('/') }}">Home</a></li>
+                <li><a href="{{ url('/') }}">Inicio</a></li>
                 <li>
                 <a href="#">Publicar</a>
                   <ul class="drop-menu">
