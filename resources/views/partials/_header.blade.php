@@ -5,7 +5,7 @@
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="logo">
             <a href="{{ url('/') }}">
-              <img src="images/logo/logo.png" alt="">
+              <img src="{{ asset('images/logo/logo.png') }}" alt="Quick Inmobiliario">
             </a>
           </div>
         </div>
@@ -13,7 +13,7 @@
           <div class="company-info clearfix">
             <div class="company-info-item">
               <div class="header-icon">
-                <img src="images/icons/phone.png" alt="">
+                <img src="{{ asset('images/icons/phone.png') }}" alt="Teléfono">
               </div>
               <div class="header-info">
                 <h6>+88 (012) 564 979 56</h6>
@@ -22,7 +22,7 @@
             </div>
             <div class="company-info-item">
               <div class="header-icon">
-                <img src="images/icons/mail-open.png" alt="">
+                <img src="{{ asset('images/icons/mail-open.png') }}" alt="Email">
               </div>
               <div class="header-info">
                 <h6><a href="mailto:info@quickinmobiliario.com">info@quickinmobiliario.com</a></h6>
@@ -35,9 +35,9 @@
           <div class="header-search clearfix">
             <form action="#">
               <button class="search-icon" type="submit">
-                <img src="images/icons/search.png" alt="">
+                <img src="{{ asset('images/icons/search.png') }}" alt="Buscar">
               </button>
-              <input type="text" placeholder="Search...">
+              <input type="text" placeholder="Buscar...">
             </form>
           </div>
         </div>
@@ -50,8 +50,8 @@
         <div class="row">
           <div class="col-md-12">
             <div class="sticky-logo">
-              <a href="index.html">
-                <img src="images/logo/logo.png" alt="">
+              <a href="{{ url('/') }}">
+                <img src="{{ asset('images/logo/logo.png') }}" alt="Quick Inmobiliario">
               </a>
             </div>
             <nav id="primary-menu">
