@@ -50,11 +50,7 @@ class User extends Authenticatable {
     public function properties() {
         return $this->hasMany(Property::class);
     }
-
-    public function projects() {
-        return $this->belongsToMany(Project::class, 'users_has_projects');
-    }
-
+    
     public function price_plans() {
         return $this->belongsToMany(PricePlan::class, 'users_has_plans');
     }

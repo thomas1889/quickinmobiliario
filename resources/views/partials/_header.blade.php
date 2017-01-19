@@ -57,8 +57,15 @@
             <nav id="primary-menu">
               <ul class="main-menu text-center">
                 <li><a href="{{ url('/') }}">Home</a></li>
-                <li><a href="#">Publicar</a></li>
+                <li>
+                <a href="#">Publicar</a>
+                  <ul class="drop-menu">
+                    <li><a href="">Inmueble</a></li>
+                    <li><a href="">Proyecto de Construcción</a></li>
+                  </ul>
+                </li>
                 <li><a href="#">Acelerador</a></li>
+                <li><a href="#">Planes</a></li>
                 <li><a href="{{ url('contacto') }}">Contacto</a></li>
               </ul>
             </nav>

@@ -2,8 +2,8 @@
   <div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
     <div class="find-home-box">
       <div class="section-title text-white">
-        <h3>FIND YOUR</h3>
-        <h2 class="h1">HOME HERE</h2>
+        <h3>Encuentre</h3>
+        <h2 class="h1">Su vivienda Aquí!</h2>
       </div>
       <div class="find-homes">
         <div class="row">
