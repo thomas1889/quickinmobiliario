@@ -2,6 +2,8 @@
 /public/storage
 /public/build
 /public/css
+/public/css/app.css.map
+/public/build/css/app.css.map
 /public/js
 /storage/*.key
 /storage/app/public
