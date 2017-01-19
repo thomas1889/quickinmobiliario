@@ -89,7 +89,7 @@
           <div class="breadcrumbs">
             <h2 class="breadcrumbs-title">Inmuebles</h2>
             <ul class="breadcrumbs-list">
-              <li><a href="index.html">Home</a></li>
+              <li><a href="{{ url('/') }}">Inicio</a></li>
               <li>Inmuebles</li>
             </ul>
           </div>

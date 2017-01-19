@@ -13,11 +13,6 @@ class CreateUsersHasProjectsTable extends Migration
      */
     public function up()
     {
-      Schema::create('users_has_projects', function(Blueprint $table){
-        $table->integer('user_id');
-        $table->integer('project_id');
-        $table->index(['user_id', 'project_id']);
-      });
     }
 
     /**

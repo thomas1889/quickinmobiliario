@@ -2,7 +2,6 @@
 
 use Illuminate\Database\Seeder;
 use QuickInmobiliario\Punctuation;
-use QuickInmobiliario\User;
 
 class PunctuationTableSeeder extends Seeder {
 
