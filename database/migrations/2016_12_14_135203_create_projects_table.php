@@ -30,7 +30,8 @@ class CreateProjectsTable extends Migration
       $table->integer('property_type_id');
       $table->integer('use_type_id');
       $table->integer('business_type_id');
-						$table->string('video360', 20);
+      $table->integer('user_id');
+			$table->string('video360', 20);
       $table->timestamps();
     });
     DB::statement('ALTER TABLE projects ADD coordinates POINT');
