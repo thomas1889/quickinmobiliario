@@ -93,6 +93,7 @@ $factory->define(QuickInmobiliario\Project::class, function (Faker\Generator $fa
       'use_type_id' => $faker->randomElement([1, 2]),
       'business_type_id' => $faker->randomElement([1, 2, 3, 4]),
       'video360' => '-xNN-bJQ4vI',
+      'user_id' => 4,
       'coordinates' => DB::raw("GeomFromText('POINT(18 -64)')"),
     ];
 });
