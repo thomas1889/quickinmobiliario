@@ -60,7 +60,7 @@
                 <li>
                 <a href="#">Publicar</a>
                   <ul class="drop-menu">
-                    <li><a href="">Inmueble</a></li>
+                    <li><a href="{{ route('property_create_path') }}">Inmueble</a></li>
                     <li><a href="">Proyecto de Construcción</a></li>
                   </ul>
                 </li>

@@ -156,27 +156,28 @@
             <div class="pro-details-agent-review">
               <div class="row">
                 <!-- single-agent -->
+                @if($property->user->user_type_id == 3)
                 <div class="col-md-5 col-sm-5 col-xs-12">
                   <div class="pro-details-agent">
-                    <h5>Contact Agent</h5>
+                    <h5>Acelerador</h5>
                     <div class="single-agent">
                       <div class="agent-image">
                         <img src="/images/agents/2.jpg" alt="">
                       </div>
                       <div class="agent-info">
                         <div class="agent-name">
-                          <h5><a href="#">Eva Sharlin</a></h5>
-                          <p>Real Estate Broker</p>
+                          <h5><a href="#">{{ $property->user->first_name }} {{ $property->user->last_name }}</a></h5>
+                          <p>Acelerador</p>
                         </div>
                       </div>
                       <div class="agent-info-hover">
                         <div class="agent-name">
-                          <h5><a href="#">Eva Sharlin</a></h5>
-                          <p>Real Estate Broker</p>
+                          <h5><a href="#">{{ $property->user->first_name }} {{ $property->user->last_name }}</a></h5>
+                          <p>Acelerador</p>
                         </div>
                         <ul class="agent-address">
-                          <li><img src="/images/icons/phone-2.png" alt="">+1245  785  659 </li>
-                          <li><img src="/images/icons/mail-close.png" alt="">eva@gmail.com </li>
+                          <li><i class="fa fa-mobile icon-size-sub"></i> {{ $property->user->cell_phone }}</li>
+                          <li><i class="fa fa-envelope-o"></i> {{ $property->user->email }} </li>
                         </ul>
                         <ul class="social-media">
                           <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -188,15 +189,16 @@
                     </div>
                   </div>
                 </div>
+                @endif
                 <!-- leave-massage -->
                 <div class="col-md-7  col-sm-7 col-xs-12">
                   <div class="leave-review">
-                    <h5>Leave a Review</h5>
+                    <h5>Contacta al anunciante</h5>
                     <form action="#">
-                      <input type="text" name="name" placeholder="Your name">
-                      <input type="email" name="email" placeholder="Email here">
+                      <input type="text" name="name" placeholder="Tu nombre">
+                      <input type="email" name="email" placeholder="Email">
                       <textarea></textarea>
-                      <button type="button" class="submit-btn-1">SUBMIT REVIEW</button>
+                      <button type="button" class="submit-btn-1">CONTACTAR</button>
                     </form>
                   </div>
                 </div>
@@ -206,7 +208,7 @@
           <div class="col-md-4">
             <!-- widget-search-property -->
             <aside class="widget widget-search-property">
-              <h5>Search For Property</h5>
+              <h5>Buscar Inmuebles</h5>
               <div class="row">
                 <div class="col-md-6 col-sm-3 col-xs-12">
                   <div class="find-home-item custom-select">
