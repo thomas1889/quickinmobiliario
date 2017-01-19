@@ -410,4 +410,10 @@
   vertical-align: sub;
 }
 
+.contact-messge .leave-review input,
+.contact-messge .leave-review textarea {
+  background: white;
+  margin-bottom: 20px;
+}
+
 /*# sourceMappingURL=app.css.map */

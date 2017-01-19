@@ -180,14 +180,14 @@
     @endforeach
   @endif
 @else
-  <div class="form-group">
+  <!--<div class="form-group">-->
     <label for="name">Nombre Inmueble</label>
-    <input type="text" id="name" name="name" class="form-control" value="{{ old('name') }}">
-  </div>
-  <div class="form-group">
+    <input type="text" id="name" name="name" value="{{ old('name') }}">
+  <!--</div>-->
+  <!--<div class="form-group">-->
     <label for="phone">Teléfono</label>
-    <input type="tel" id="phone" name="phone" class="form-control" value="{{ old('phone') }}">
-  </div>
+    <input type="tel" id="phone" name="phone" value="{{ old('phone') }}">
+  <!--</div>-->
   <div class="form-group">
     <label for="address">Dirección</label>
     <input type="text" id="address" name="address" class="form-control" value="{{ old('address') }}">

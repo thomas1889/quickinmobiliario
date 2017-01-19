@@ -83,23 +83,23 @@ Route::get('schedule/{id}', [
 /**
  * Property routes
  */
-Route::get('inmueble/crear', [
+Route::get('inmuebles/crear', [
   'uses' => 'PropertyController@create',
   'as' => 'property_create_path'
 ]);
-Route::post('inmueble/crear', [
+Route::post('inmuebles/crear', [
   'uses' => 'PropertyController@store',
   'as' => 'property_create_path'
 ]);
-Route::get('inmueble/{id}/editar', [
+Route::get('inmuebles/{id}/editar', [
   'uses' => 'PropertyController@edit',
   'as' => 'property_edit_path'
 ]);
-Route::put('inmueble/{id}/editar', [
+Route::put('inmuebles/{id}/editar', [
   'uses' => 'PropertyController@update',
   'as' => 'property_edit_path'
 ]);
-Route::delete('inmueble/{id}/borrar', [
+Route::delete('inmuebles/{id}/borrar', [
   'uses' => 'PropertyController@destroy',
   'as' => 'property_delete_path'
 ]);
@@ -107,7 +107,7 @@ Route::get('inmuebles', [
   'uses' => 'PropertyController@index',
   'as' => 'properties_path'
 ]);
-Route::get('inmueble/{id}', [
+Route::get('inmuebles/{id}', [
   'uses' => 'PropertyController@show',
   'as' => 'property_show_path'
 ]);

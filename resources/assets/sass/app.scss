@@ -42,12 +42,5 @@
 @import "responsive.css";
 /*@import "style-customizer.css";*/
 
-/* Custom Styles */
-.icon-size-normal {
-  font-size: 26px;
-  vertical-align: middle;
-}
-.icon-size-sub {
-  font-size: 18px;
-  vertical-align: sub;
-}
+/* Custom Styles for Quick Inmobiliario */
+@import "quick-styles";
