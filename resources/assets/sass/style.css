@@ -757,7 +757,7 @@
     position: relative;
 }
 .bread-bg-1 {
-    background: rgba(0, 0, 0, 0) url("images/bg/5.jpg") no-repeat scroll 0 0 / cover;
+    background: rgba(0, 0, 0, 0) url("/images/bg/5.jpg") no-repeat scroll 0 0 / cover;
 }
 .breadcrumbs {} .breadcrumbs-title {
     color: #fff;
@@ -1381,7 +1381,7 @@
     display: none;
 }
 .contact-bg {
-    background: rgba(0, 0, 0, 0.1) url("images/others/contact-2.jpg") no-repeat scroll right center / cover;
+    background: rgba(0, 0, 0, 0.1) url("/images/others/contact-2.jpg") no-repeat scroll right center / cover;
 }
 .contact-messge {
     padding: 50px;
@@ -1403,7 +1403,7 @@
 }*/
 
 .error-area {
-    background: rgba(0, 0, 0, 0.9) url("images/others/error.jpg") no-repeat scroll right top;
+    background: rgba(0, 0, 0, 0.9) url("/images/others/error.jpg") no-repeat scroll right top;
     position: relative;
 }
 .error-area:before {

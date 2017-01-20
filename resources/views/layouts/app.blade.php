@@ -55,7 +55,6 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->username }} <span class="caret"></span>
                                 </a>
-
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
                                         <a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
@@ -77,18 +76,7 @@
                 </div>
             </nav>-->
 
-          <!-- SLIDER SECTION START -->
-          @include('partials._slider')
-          <!-- SLIDER SECTION END -->
-
-          <!-- Start page content -->
-          <section id="page-content" class="page-wrapper">
-            @yield('content')
-
-            <!-- NEWSLETTER AREA START -->
-            @include('partials._newsletter')
-            <!-- NEWSLETTER AREA END -->
-          </section>
+          @yield('content')
           <!-- Body main wrapper end -->
 
           <!-- Start footer area -->

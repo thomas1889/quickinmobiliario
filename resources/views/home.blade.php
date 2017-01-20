@@ -1,37 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-    <!-- Old Home
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-          <div class="jumbotron">
-            <h1>Quick Inmobiliario</h1>
-            <p>This gonna be something unreal :V</p>
-            <p><a class="btn btn-primary btn-lg" href="#" role="button">Próximamente</a></p>
-          </div>
 
-          <div class="panel panel-primary">
-            <div class="panel-heading">Proyectos</div>
-            <div class="panel-body">
-              <h3>Acceda a la lista de Proyectos: <small><a href="{{ route('projects_path') }}" class="btn btn-success">Proyectos >></a></small></h3>
-            </div>
-          </div>
+  <!-- SLIDER SECTION START -->
+  @include('partials._slider')
+  <!-- SLIDER SECTION END -->
 
-          <div class="panel panel-primary">
-            <div class="panel-heading">Inmuebles</div>
-            <div class="panel-body">
-              <h3>Acceso a listado de Inmuebles: <small><a href="{{ route('properties_path') }}" class="btn btn-success">Inmuebles >></a></small></h3>
-            </div>
-          </div>
-
-          <div class="panel panel-primary">
-            <div class="panel-heading">Planes</div>
-            <div class="panel-body">
-              <h3>Acceso a listado de planes: <small><a href="{{ route('price_plans_path') }}" class="btn btn-success">Planes >></a></small></h3>
-            </div>
-          </div>
-        </div>
-    </div>-->
+  <!-- Start page content -->
+  <section id="page-content" class="page-wrapper">
     <!-- SERVICES AREA START -->
     <div class="services-area pt-115 pb-60">
       <div class="container">
@@ -891,4 +867,9 @@
       </div>
     </div>
     <!-- BRAND AREA END -->
+
+    <!-- NEWSLETTER AREA START -->
+    @include('partials._newsletter')
+    <!-- NEWSLETTER AREA END -->
+  </section>
 @stop
