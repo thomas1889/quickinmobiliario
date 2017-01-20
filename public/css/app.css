@@ -473,8 +473,8 @@
 
 /* footer Styles */
 .socialnet {
-  margin-top: 5%;
-  margin-left: 5%;
+  margin-left: 0;
+  margin-top: 10%;
 }
 
 .socialnet span {
@@ -483,6 +483,10 @@
 
 .socialnet span a i {
   color: white;
+}
+
+.socialnet span a i:hover {
+  color: #95c41f;
 }
 
 /*# sourceMappingURL=app.css.map */
