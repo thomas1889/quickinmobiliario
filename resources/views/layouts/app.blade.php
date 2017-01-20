@@ -77,7 +77,6 @@
             </nav>-->
 
           @yield('content')
-          <!-- Body main wrapper end -->
 
           <!-- Start footer area -->
           @include('partials._footer')

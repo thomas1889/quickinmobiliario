@@ -39,7 +39,8 @@ class PropertyController extends Controller
       'projects' => $this->get_projects(),
       'property_types' => $this->get_property_types(),
       'use_types' => $this->get_use_types(),
-      'business_types' => $this->get_business_types()
+      'business_types' => $this->get_business_types(),
+      'section_text' => 'Crear'
     ]);
   }
 
@@ -76,7 +77,8 @@ class PropertyController extends Controller
       'projects' => $this->get_projects(),
       'property_types' => $this->get_property_types(),
       'use_types' => $this->get_use_types(),
-      'business_types' => $this->get_business_types()
+      'business_types' => $this->get_business_types(),
+      'section_text' => 'Editar'
     ]);
   }
 

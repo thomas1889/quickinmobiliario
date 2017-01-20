@@ -44,7 +44,7 @@ class Property extends Model
     return $this->belongsTo(Commission::class);
   }
 
-  public function users(){
-    return $this->belongsToMany(User::class, 'users_has_properties');
+  public function user(){
+    return $this->belongsTo(User::class);
   }
 }

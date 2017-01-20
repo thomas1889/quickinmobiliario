@@ -9,7 +9,7 @@
             <ul class="footer-address">
               <li>
                 <div class="address-icon">
-                  <img src="images/icons/location-2.png" alt="">
+                  <img src="{{ asset('images/icons/location-2.png') }}" alt="Ícono ubicación">
                 </div>
                 <div class="address-info">
                   <span>8901 Marmora Raod,</span>
@@ -18,7 +18,7 @@
               </li>
               <li>
                 <div class="address-icon">
-                  <img src="images/icons/phone-3.png" alt="">
+                  <img src="{{ asset('images/icons/phone-3.png') }}" alt="Ícono teléfono">
                 </div>
                 <div class="address-info">
                   <span>Telephone : (801) 4256  9856</span>
@@ -27,7 +27,7 @@
               </li>
               <li>
                 <div class="address-icon">
-                  <img src="images/icons/world.png" alt="">
+                  <img src="{{ asset('images/icons/world.png') }}" alt="Ícono planeta">
                 </div>
                 <div class="address-info">
                   <span>Email : info@sheltek.com</span>
@@ -44,7 +44,7 @@
             <ul class="footer-latest-news">
               <li>
                 <div class="latest-news-image">
-                  <a href="single-blog.html"><img src="images/blog/1.jpg" alt=""></a>
+                  <a href="single-blog.html"><img src="{{ asset('images/blog/1.jpg') }}" alt="Ícono Blog"></a>
                 </div>
                 <div class="latest-news-info">
                   <h6><a href="single-blog.html">Beautiful Home</a></h6>
@@ -53,7 +53,7 @@
               </li>
               <li>
                 <div class="latest-news-image">
-                  <a href="single-blog.html"><img src="images/blog/2.jpg" alt=""></a>
+                  <a href="single-blog.html"><img src="{{ asset('images/blog/2.jpg') }}" alt="Ícono Blog"></a>
                 </div>
                 <div class="latest-news-info">
                   <h6><a href="single-blog.html">Beautiful Home</a></h6>
@@ -62,7 +62,7 @@
               </li>
               <li>
                 <div class="latest-news-image">
-                  <a href="single-blog.html"><img src="images/blog/3.jpg" alt=""></a>
+                  <a href="single-blog.html"><img src="{{ asset('images/blog/3.jpg') }}" alt="Ícono Blog"></a>
                 </div>
                 <div class="latest-news-info">
                   <h6><a href="single-blog.html">Beautiful Home</a></h6>

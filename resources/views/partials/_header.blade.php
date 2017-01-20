@@ -66,27 +66,32 @@
             </div>
         </div>
     </div>
-    <div id="sticky-header" class="header-middle-area  transparent-header hidden-xs">
-        <div class="container">
-            <div class="full-width-mega-drop-menu">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="sticky-logo">
-                            <a href="index.html">
-                                <img src="images/logo/logo.png" alt="">
-                            </a>
-                        </div>
-                        <nav id="primary-menu">
-                            <ul class="main-menu text-center">
-                                <li><a href="{{ url('/') }}">Home</a></li>
-                                <li><a href="#">Publicar</a></li>
-                                <li><a href="#">Acelerador</a></li>
-                                <li><a href="{{ url('contacto') }}">Contacto</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
+  <div id="sticky-header" class="header-middle-area  transparent-header hidden-xs">
+    <div class="container">
+      <div class="full-width-mega-drop-menu">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="sticky-logo">
+              <a href="{{ url('/') }}">
+                <img src="{{ asset('images/logo/logo.png') }}" alt="Quick Inmobiliario">
+              </a>
             </div>
+            <nav id="primary-menu">
+              <ul class="main-menu text-center">
+                <li><a href="{{ url('/') }}">Inicio</a></li>
+                <li>
+                <a href="#">Publicar</a>
+                  <ul class="drop-menu">
+                    <li><a href="{{ route('property_create_path') }}">Inmueble</a></li>
+                    <li><a href="">Proyecto de Construcción</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Acelerador</a></li>
+                <li><a href="#">Planes</a></li>
+                <li><a href="{{ url('contacto') }}">Contacto</a></li>
+              </ul>
+            </nav>
+          </div>
         </div>
     </div>
 </header>

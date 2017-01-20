@@ -1,5 +1,5 @@
 /* -----------------------------------
-  Template Name: Sheltek - Real Estate HTML Template 
+  Template Name: Sheltek - Real Estate HTML Template
 
   NOTE: This is Header style file. All Header related style included in this file.
 
@@ -27,10 +27,6 @@
     float: left;
     width: 82%;
 }
-.company-info .company-info-item:nth-child(2) {
-  padding-left: 5%;
-}
-
 
 .header-info h6 {
   font-family: montserrat;
@@ -123,7 +119,7 @@
 .drop-menu > li:hover > a,
 .single-mega-item > li:hover > a {
 	color: #95c41f;
-} 
+}
 /*drop-menu Style*/
 .drop-menu {
   background: #ffffff none repeat scroll 0 0;
@@ -192,7 +188,7 @@
 }
 .single-mega-item li:last-child{
 	border-bottom: 0px solid #000;
-} 
+}
 .single-mega-item li a{
   padding: 13px 0px;
 	display: block;
@@ -264,6 +260,3 @@
   padding: 10px 0;
   width: 70px;
 }
-
-
-

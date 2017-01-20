@@ -22,13 +22,13 @@ class ProjectController extends Controller{
 	public function show($id){
 		return view('projects.show', ['project' => $this->getProject($id)]);
 	}
-	/*
+
 	public function create(){
 		return view('projects.create', [
 			'property_types' => $this->get_property_types(),
 			'use_types' => $this->get_use_types(),
 			'business_types' => $this->get_business_types(),
-			'properties' => $this->get_Properties()
+			// 'properties' => $this->get_Properties()
 		]);
 	}
 
@@ -52,7 +52,7 @@ class ProjectController extends Controller{
 			'property_types' => $this->get_property_types(),
 			'use_types' => $this->get_use_types(),
 			'business_types' => $this->get_business_types(),
-			'properties' => $this->get_Properties()
+			// 'properties' => $this->get_Properties()
 		]);
 	}
 
@@ -63,7 +63,7 @@ class ProjectController extends Controller{
 
 		return redirect()->route('projects_edit_path', $project->id);
 	}
-*/
+
 	public function destroy($id){
 		$project = $this->getProject($id);
 		// $project->project_images()->each(function($image){
@@ -124,7 +124,7 @@ class ProjectController extends Controller{
 		$project->property_type_id = $request->get('property_type_id');
 		$project->use_type_id = $request->get('use_type_id');
 		$project->business_type_id = $request->get('business_type_id');
-		$project->property_id = $request->get('property_id');
+		// $project->property_id = $request->get('property_id');
 		$project->video360 = $request->get('video360');
 	}
 
