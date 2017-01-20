@@ -40,7 +40,7 @@
                   {{ csrf_field() }}
                   @include('partials._property_form')
                 </form>
-                <uploadimages form="my-awesome-dropzone" principal="form-create-property" title="Imágenes inmueble" save="{{ route('property_image_upload_path') }}" delete="/imagen_inmueble" token="{{ csrf_token() }}"></uploadimages>
+                <!--<uploadimages form="my-awesome-dropzone" principal="form-create-property" title="Imágenes inmueble" save="{{ route('property_image_upload_path') }}" delete="/imagen_inmueble" token="{{ csrf_token() }}"></uploadimages>-->
                 <div class="form-group">
                   <button type="button" class="submit-btn-1" v-on:click="createProperty">
                     Crear Inmueble
@@ -52,10 +52,6 @@
         </div>
       </div>
     </div>
-
-    <!-- NEWSLETTER AREA START -->
-    @include('partials._newsletter')
-    <!-- NEWSLETTER AREA END -->
   </section>
 
 @stop

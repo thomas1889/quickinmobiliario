@@ -99,4 +99,26 @@
                     </div>
                 </div>
             </div>
-            </header>
+            <nav id="primary-menu">
+                <ul class="main-menu text-center">
+                    <li><a href="{{ url('/') }}">Inicio</a></li>
+                    <li>
+                        <a href="#">Publicar</a>
+                        <ul class="drop-menu">
+                            <li><a href="{{ route('property_create_path') }}">Inmueble</a></li>
+                            <li><a href="">Proyecto de Construcción</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Acelerador</a></li>
+                    <li><a href="#">Planes</a></li>
+                    <li><a href="{{ url('contacto') }}">Contacto</a></li>
+                    <li><a href="">Preguntas Frecuentes</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</header>
+
