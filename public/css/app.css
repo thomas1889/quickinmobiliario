@@ -441,20 +441,6 @@
   margin-bottom: 0px;
 }
 
-<<<<<<< HEAD
-/* footer Styles */
-.socialnet {
-  margin-top: 5%;
-  margin-left: 5%;
-}
-
-.socialnet span {
-  margin-right: 10%;
-}
-
-.socialnet span a i {
-  color: white;
-=======
 .edition .form-edition .input-group {
   margin-bottom: 20px;
 }
@@ -468,7 +454,24 @@
 .form-division i {
   margin-right: 15px;
   vertical-align: text-top;
->>>>>>> origin/master
+}
+
+/* footer Styles */
+.socialnet {
+  margin-left: 0;
+  margin-top: 10%;
+}
+
+.socialnet span {
+  margin-right: 10%;
+}
+
+.socialnet span a i {
+  color: white;
+}
+
+.socialnet span a i:hover {
+  color: #95c41f;
 }
 
 /*# sourceMappingURL=app.css.map */
