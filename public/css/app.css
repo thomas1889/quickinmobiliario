@@ -417,4 +417,18 @@
   margin-bottom: 0px;
 }
 
+/* footer Styles */
+.socialnet {
+  margin-top: 5%;
+  margin-left: 5%;
+}
+
+.socialnet span {
+  margin-right: 10%;
+}
+
+.socialnet span a i {
+  color: white;
+}
+
 /*# sourceMappingURL=app.css.map */
