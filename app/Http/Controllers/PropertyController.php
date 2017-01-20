@@ -10,6 +10,7 @@ use QuickInmobiliario\Commission;
 use QuickInmobiliario\PropertyType;
 use QuickInmobiliario\UseType;
 use QuickInmobiliario\BusinessType;
+use QuickInmobiliario\Feature;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
@@ -40,6 +41,7 @@ class PropertyController extends Controller
       'property_types' => $this->get_property_types(),
       'use_types' => $this->get_use_types(),
       'business_types' => $this->get_business_types(),
+      'features' => $this->get_features(),
       'section_text' => 'Crear'
     ]);
   }
@@ -152,6 +154,13 @@ class PropertyController extends Controller
   */
   private function get_business_types(){
     return BusinessType::all();
+  }
+
+  /**
+  * @return Feature
+  */
+  private function get_features(){
+    return Feature::all();
   }
 
   /**

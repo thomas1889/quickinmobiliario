@@ -441,20 +441,6 @@
   margin-bottom: 0px;
 }
 
-<<<<<<< HEAD
-/* footer Styles */
-.socialnet {
-  margin-top: 5%;
-  margin-left: 5%;
-}
-
-.socialnet span {
-  margin-right: 10%;
-}
-
-.socialnet span a i {
-  color: white;
-=======
 .edition .form-edition .input-group {
   margin-bottom: 20px;
 }
@@ -468,7 +454,35 @@
 .form-division i {
   margin-right: 15px;
   vertical-align: text-top;
->>>>>>> origin/master
+}
+
+/* CheckBoxes Formularios */
+.checkbox {
+  width: 200px;
+}
+
+.flex-checkboxes {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  -webkit-box-align: baseline;
+  align-items: baseline;
+}
+
+/* footer Styles */
+.socialnet {
+  margin-top: 5%;
+  margin-left: 5%;
+}
+
+.socialnet span {
+  margin-right: 10%;
+}
+
+.socialnet span a i {
+  color: white;
 }
 
 /*# sourceMappingURL=app.css.map */

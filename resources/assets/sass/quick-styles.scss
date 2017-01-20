@@ -48,6 +48,17 @@
   }
 }
 
+/* CheckBoxes Formularios */
+.checkbox {
+  width: 200px;
+}
+.flex-checkboxes {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
 /* footer Styles */
 //social networks
 
@@ -59,7 +70,7 @@ margin-left:5%;
 	margin-right: 10%;
 }
 .socialnet span a:hover{
-	
+
 }
 .socialnet span a i{
 	color: white;
