@@ -25,22 +25,18 @@
   <section id="page-content" class="page-wrapper">
 
     <!-- PROPERTIES DETAILS AREA START -->
-    <div class="properties-details-area pt-115 pb-60">
+    <div class="properties-details-area pt-50 pb-60">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <div class="contact-messge bg-gray">
-              <!-- blog-details-reply -->
-              <div class="leave-review">
-                <!--<h1>Crear Inmueble <small class="pull-right"><a href="{{ route('properties_path') }}" class="btn btn-link"><< Regresar</a></small></h1>-->
-
+            <div class="contact-messge edition bg-gray">
+              <div class="leave-review form-edition">
                 @include('errors._validation_errors')
-
                 <form id="form-create-property" class="form" action="{{ route('property_create_path') }}" method="post">
                   {{ csrf_field() }}
                   @include('partials._property_form')
                 </form>
-                <!--<uploadimages form="my-awesome-dropzone" principal="form-create-property" title="Imágenes inmueble" save="{{ route('property_image_upload_path') }}" delete="/imagen_inmueble" token="{{ csrf_token() }}"></uploadimages>-->
+                <uploadimages form="my-awesome-dropzone" principal="form-create-property" title="Imágenes del inmueble" save="{{ route('property_image_upload_path') }}" delete="/imagen_inmueble" token="{{ csrf_token() }}"></uploadimages>
                 <div class="form-group">
                   <button type="button" class="submit-btn-1" v-on:click="createProperty">
                     Crear Inmueble

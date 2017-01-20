@@ -411,12 +411,37 @@
   vertical-align: sub;
 }
 
-.contact-messge .leave-review input,
-.contact-messge .leave-review textarea {
+.edition .form-edition input,
+.edition .form-edition textarea {
   background: white;
+}
+
+.edition .form-edition select {
+  background: white;
+  border: 1px solid #e1e1e1;
+  color: #606060;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  height: 40px;
+  margin-bottom: 20px;
+  padding: 0 10px;
+  width: 100%;
+}
+
+.edition .form-edition select:focus {
+  border: 1px solid #95c41f;
+}
+
+.edition .form-edition label {
+  color: #3b5265;
+}
+
+.edition .form-edition .input-group input {
   margin-bottom: 0px;
 }
 
+<<<<<<< HEAD
 /* footer Styles */
 .socialnet {
   margin-top: 5%;
@@ -429,6 +454,21 @@
 
 .socialnet span a i {
   color: white;
+=======
+.edition .form-edition .input-group {
+  margin-bottom: 20px;
+}
+
+.form-division {
+  padding: 10px 0;
+  border-bottom: 4px solid #95c41f;
+  color: #3b5265;
+}
+
+.form-division i {
+  margin-right: 15px;
+  vertical-align: text-top;
+>>>>>>> origin/master
 }
 
 /*# sourceMappingURL=app.css.map */
