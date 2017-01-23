@@ -86,7 +86,6 @@
         </div>
     </div>
 </div>
->>>>>>> origin/master
 </div>
 </div>
 </header>
