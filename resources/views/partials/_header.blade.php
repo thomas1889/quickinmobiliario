@@ -34,37 +34,31 @@
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="header-search clearfix">
                         @if (Auth::guest())
-                        <div class="col-xs-2 col-md-1"></div>
+                         <div class="col-xs-2 col-md-1"></div>
                         <div class="col-md-5 col-xs-5 ">
                             <a href="{{ url('/login') }}">
                                 <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>Sesión
                             </a>
                         </div>
                         <div class="col-md-5 col-xs-5">
-
                             <a href="{{ url('/register') }}">
                                 <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Registro
                             </a>
                         </div>
                         @else
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->username }} <span class="caret"></span>
+                        <div class="col-md-8 col-xs-8">
+                            <a href="{{ route('profile_show_perfil',Auth::user()->username) }}" >
+                                <span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{ Auth::user()->username }} 
                             </a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li>
-                                    <a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                        Salir
-                                    </a>
-                                    <a href="{{ route('profile_show_perfil',Auth::user()->username) }}">
-                                        Perfil
-                                    </a>
-                                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                        {{ csrf_field() }}
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
+                        </div>
+                        <div class="col-md-4 col-xs-4">
+                            <a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>Salir
+                            </a>
+                        </div>
+                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
                         @endif
                     </div>
                 </div>
@@ -73,32 +67,6 @@
     </div>
     <div id="sticky-header" class="header-middle-area  transparent-header hidden-xs">
         <div class="container">
-            <div class="full-width-mega-drop-menu">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="sticky-logo">
-                            <a href="{{ url('/') }}">
-                                <img src="{{ asset('images/logo/logo.png') }}" alt="Quick Inmobiliario">
-                            </a>
-                        </div>
-                        <nav id="primary-menu">
-                            <ul class="main-menu text-center">
-                                <li><a href="{{ url('/') }}">Inicio</a></li>
-                                <li>
-                                    <a href="#">Publicar</a>
-                                    <ul class="drop-menu">
-                                        <li><a href="{{ route('property_create_path') }}">Inmueble</a></li>
-                                        <li><a href="">Proyecto de Construcción</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Acelerador</a></li>
-                                <li><a href="#">Planes</a></li>
-                                <li><a href="{{ url('contacto') }}">Contacto</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
             <nav id="primary-menu">
                 <ul class="main-menu text-center">
                     <li><a href="{{ url('/') }}">Inicio</a></li>

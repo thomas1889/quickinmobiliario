@@ -100,7 +100,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <div class="col-md-6 col-md-offset-4">
+                                            <div class="col-md-6 ">
                                                 <div class="checkbox">
                                                     <label>
                                                         <input type="checkbox" name="remember"> Remember Me
@@ -109,14 +109,14 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <div class="col-md-8 col-md-offset-4">
+                                            <div class="col-md-8 ">
                                                 <button type="submit" class="submit-btn-1">
                                                     Login
                                                 </button>
                                             </div>                                            
                                         </div>
                                         <div class="form-group">
-                                            <div class="col-md-8 col-md-offset-4">
+                                            <div class="col-md-8 ">
                                                 <p><a  href="{{ url('/password/reset') }}">  Forgot Your Password?</a></p>
                                             </div>                                            
                                         </div>
