@@ -31,13 +31,6 @@
                 </div>
                 @yield('end_style_punctuation')
                 @endif
-                @if ($user->newsletter =="Si")
-                @yield('style_letter')
-                <div  id="Neswletter" class="panel panel-body col-sm-7 col-md-10">
-                    <a href="{{ route('newsletter_show',Auth::user()->username) }}"> Neswletter</a>
-                </div>
-                @yield('end_style_letter')
-                @endif
             </div>
         </div>
         <div class="col-xs-12 col-sm-9">
