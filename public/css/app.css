@@ -473,6 +473,7 @@
   flex-wrap: wrap;
   -webkit-box-align: baseline;
   align-items: baseline;
+  width: 200px;
 }
 
 /* footer Styles */
