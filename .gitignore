@@ -16,3 +16,9 @@ Homestead.yaml
 /nbproject
 *.lock
 composer.lock
+public/build/css/app.css.map
+public/build/rev-manifest.json
+public/css/app.css.map
+public/js/app.js
+public/js/app.js
+public/build/css/app.css.map
