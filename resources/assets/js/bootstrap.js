@@ -17,6 +17,7 @@ require('bootstrap-sass');
 require('./jquery.nivo.slider');
 require('./ajax-mail');
 require('./plugins');
+require('./quick');
 
 /**
  * Vue is a modern JavaScript library for building interactive web interfaces

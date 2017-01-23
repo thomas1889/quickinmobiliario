@@ -1,11 +1,12 @@
 /* Custom Styles */
 .icon-size-normal {
-	font-size: 26px;
-	vertical-align: middle;
+    font-size: 26px;
+    vertical-align: middle;
 }
 .icon-size-sub {
-	font-size: 18px;
-	vertical-align: sub;
+    font-size: 18px;
+    vertical-align: sub;
+
 }
 /* Styles for create and update property form */
 .edition .form-edition {
@@ -39,14 +40,14 @@
 	}
 }
 .form-division {
-	padding: 10px 0;
-	border-bottom: 4px solid #95c41f;
-	color: #3b5265;
+    padding: 10px 0;
+    border-bottom: 4px solid #95c41f;
+    color: #3b5265;
 
-	i {
-		margin-right: 15px;
-		vertical-align: text-top;
-	}
+    i {
+        margin-right: 15px;
+        vertical-align: text-top;
+    }
 }
 .condition-list > li {
 	vertical-align: top;
@@ -54,28 +55,31 @@
 
 /* CheckBoxes Formularios */
 .checkbox {
-  width: 200px;
+    width: 200px;
 }
 .flex-checkboxes {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  align-items: baseline;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: baseline;
 }
 
 /* footer Styles */
 //social networks
 
 .socialnet{
-	margin-left:0;
-	margin-top: 10%;
+    margin-left:0;
+    margin-top: 10%;
 }
 .socialnet span{
-	margin-right: 10%;
+    margin-right: 10%;
 }
 .socialnet span a i{
-	color:white;
+    color:white;
 }
 .socialnet span a i:hover{
-	color:#95c41f;
+    color:#95c41f;
+}
+.boton-registro{
+    width: 100%;
 }

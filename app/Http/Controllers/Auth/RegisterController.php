@@ -71,7 +71,7 @@ use RegistersUsers;
             'image_perfil' => $data['image_perfil'],
             'password' => bcrypt($data['password']),
             'user_type_id' => $data['select'],
-            'newsletter' => "Si",
+            'newsletter' => $data['newsletter'],
         ]);
     }
 
