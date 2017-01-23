@@ -47,4 +47,8 @@ class Property extends Model
   public function user(){
     return $this->belongsTo(User::class);
   }
+
+  public function features(){
+    return $this->belongsToMany(Features::class, 'property_has_features');
+  }
 }

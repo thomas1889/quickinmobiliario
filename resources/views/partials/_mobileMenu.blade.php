@@ -16,6 +16,7 @@
               <li><a href="#">Acelerador</a></li>
 														<li><a href="#">Planes</a></li>
               <li><a href="{{ url('contacto') }}">Contacto</a></li>
+              <li><a href="{{ url('preguntasfrecuentes') }}">Preguntas Frecuentes</a></li>
             </ul>
           </nav>
         </div>

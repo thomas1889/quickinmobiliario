@@ -8,10 +8,10 @@
       <div class="row">
         <div class="col-xs-12">
           <div class="breadcrumbs">
-            <h2 class="breadcrumbs-title">Contact</h2>
+            <h2 class="breadcrumbs-title">Contátenos</h2>
             <ul class="breadcrumbs-list">
-              <li><a href="index.html">Home</a></li>
-              <li>Contact</li>
+              <li><a href="index.html">Inicio</a></li>
+              <li>Contacto</li>
             </ul>
           </div>
         </div>
@@ -31,11 +31,15 @@
             <!-- get-in-toch -->
             <div class="get-in-toch">
               <div class="section-title mb-30">
-                <h3>GET IN</h3>
-                <h2>TOUCH</h2>
+                <h3>¿Tíenes alguna duda o sugerencia?</h3>
+                <h2></h2>
               </div>
               <div class="contact-desc mb-50">
-                <p><span data-placement="top" data-toggle="tooltip" data-original-title="The name you can trust" class="tooltip-content">Sheltek</span> is the best theme for  elit, sed do eiusmod tempor dolor sit ame   tse ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et lorna aliquatd minim veniam, quis nostrud exercitation oris nisi ut aliquip</p>
+                <p>
+																	En
+																	<span data-placement="top" data-toggle="tooltip" data-original-title="The name you can trust" class="tooltip-content">QuickInmobiliario</span>
+																	Valoramos todas las opiniones, Sí lo desea puede escribirnos, sus comentarios son muy importantes para nosotros...
+																</p>
               </div>
               <ul class="contact-address">
                 <li>
@@ -43,8 +47,8 @@
                     <img src="/images/icons/location-2.png" alt="">
                   </div>
                   <div class="contact-address-info">
-                    <span>8901 Marmora Raod, New Yourk City  </span>
-                    <span>25 Glasgow, D04  89GR</span>
+                    <span>Calle 94a #11a -27</span>
+                    <span>Bogotá DC, Zipcode: 110011.</span>
                   </div>
                 </li>
                 <li>
@@ -52,8 +56,8 @@
                     <img src="/images/icons/phone-3.png" alt="">
                   </div>
                   <div class="contact-address-info">
-                    <span>Telephone : (801) 4256  9856</span>
-                    <span>Telephone : (801) 4256  9658</span>
+                    <span>Teléfono: (+57) 622 03 85.</span>
+                    <span>Celular : (+57) 322 874 32 88.</span>
                   </div>
                 </li>
                 <li>
@@ -61,8 +65,8 @@
                     <img src="/images/icons/world.png" alt="">
                   </div>
                   <div class="contact-address-info">
-                    <span>Email : info@sheltek.com</span>
-                    <span>Web :<a href="#" target="_blank"> www.sheltek.com</a></span>
+                    <span>Email : info@quickinmobiliario.com</span>
+                    <span>Skype :<a href="#" target="_blank"> quickinmobiliario</a></span>
                   </div>
                 </li>
               </ul>
@@ -72,12 +76,12 @@
             <div class="contact-messge contact-bg">
               <!-- blog-details-reply -->
               <div class="leave-review">
-                <h5>Leave a Message</h5>
+                <h5>Escriba su mensaje a continuación:</h5>
                 <form  id="contact-form" action="mail.php" method="post">
-                  <input type="text" name="name" placeholder="Your name">
-                  <input type="email" name="email" placeholder="Email">
-                  <textarea name="message" placeholder="Write here"></textarea>
-                  <button type="submit" class="submit-btn-1">SUBMIT</button>
+                  <input type="text" name="name" placeholder="Su Nombre:">
+                  <input type="email" name="email" placeholder="Su E-mail:">
+                  <textarea name="message" placeholder="Mensaje:"></textarea>
+                  <button type="submit" class="submit-btn-1">Envíar</button>
                 </form>
                 <p class="form-messege mb-0"></p>
               </div>

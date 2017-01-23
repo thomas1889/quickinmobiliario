@@ -1,6 +1,6 @@
 <template>
   <div class="form-group">
-    <label :for="form">{{ title }}</label>
+    <h3 class="form-division mb-30 mt-30"><i class="fa fa-picture-o"></i>{{ title }}</h3>
     <form :action="save" class="dropzone" :id="form">
       <input type="hidden" name="_token" :value="token">
     </form>

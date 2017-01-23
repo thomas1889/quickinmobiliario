@@ -34,7 +34,7 @@
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="header-search clearfix">
                         @if (Auth::guest())
-                         <div class="col-xs-2 col-md-1"></div>
+                        <div class="col-xs-2 col-md-1"></div>
                         <div class="col-md-5 col-xs-5 ">
                             <a href="{{ url('/login') }}">
                                 <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>Sesión
@@ -80,7 +80,7 @@
                     <li><a href="#">Acelerador</a></li>
                     <li><a href="#">Planes</a></li>
                     <li><a href="{{ url('contacto') }}">Contacto</a></li>
-                    <li><a href="">Preguntas Frecuentes</a></li>
+                    <li><a href="{{ url('preguntasfrecuentes') }}">Preguntas Frecuentes</a></li>
                 </ul>
             </nav>
         </div>
