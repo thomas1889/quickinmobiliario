@@ -473,7 +473,26 @@
   flex-wrap: wrap;
   -webkit-box-align: baseline;
   align-items: baseline;
-  width: 200px;
+}
+
+/* Precio inmueble */
+.price-item h2 {
+  font-family: 'montserrat';
+  font-size: 34px;
+  font-weight: 400;
+  margin-bottom: 0;
+  color: #95c41f;
+}
+
+.price-item span {
+  color: #1f223e;
+}
+
+.price-item p {
+  color: #1f223e;
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 0;
 }
 
 /* footer Styles */
