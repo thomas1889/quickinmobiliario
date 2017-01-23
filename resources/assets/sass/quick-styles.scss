@@ -7,10 +7,7 @@
 	font-size: 18px;
 	vertical-align: sub;
 }
-.edition .form-edition input,
-.edition .form-edition textarea {
-	background: white;
-}
+/* Styles for create and update property form */
 .edition .form-edition {
 	select {
 		background: white;
@@ -30,12 +27,16 @@
 	label {
 		color: #3b5265;
 	}
-}
-.edition .form-edition .input-group input {
-	margin-bottom: 0px;
+	input, textarea {
+		background: white;
+	}
 }
 .edition .form-edition .input-group {
 	margin-bottom: 20px;
+
+	input {
+		margin-bottom: 0px;
+	}
 }
 .form-division {
 	padding: 10px 0;
@@ -46,6 +47,9 @@
 		margin-right: 15px;
 		vertical-align: text-top;
 	}
+}
+.condition-list > li {
+	vertical-align: top;
 }
 
 /* CheckBoxes Formularios */

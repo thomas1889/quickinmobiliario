@@ -13,10 +13,13 @@ use QuickInmobiliario\BusinessType;
 use QuickInmobiliario\Feature;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class PropertyController extends Controller
-{
+class PropertyController extends Controller {
 
+  public function __construct(){
+    $this->middleware('auth')->only(['create', 'store', 'edit', 'update', 'destroy']);
+  }
   /**
   * @return Response
   */
@@ -60,6 +63,8 @@ class PropertyController extends Controller
     $commission = Commission::create(['price' => $request->get('commission')]);
     $commission->property()->save($property);
 
+    $property->features()->attach($request->get('features'));
+
     if(is_array($request->get('images')) && !empty($request->get('images'))){
       foreach ($request->get('images') as $value) {
         $images = new PropertyImage(['path' => $value]);
@@ -80,6 +85,7 @@ class PropertyController extends Controller
       'property_types' => $this->get_property_types(),
       'use_types' => $this->get_use_types(),
       'business_types' => $this->get_business_types(),
+      'features' => $this->get_features(),
       'section_text' => 'Editar'
     ]);
   }
@@ -198,5 +204,6 @@ class PropertyController extends Controller
     $property->business_type_id = $request->get('business_type_id');
     $property->description = $request->get('description');
     $property->video360 = $request->get('video360');
+    $property->user_id = Auth::user()->id;
   }
 }

@@ -41,13 +41,13 @@ class StoreProperty extends FormRequest
           'stratum' => 'required',
           'floors' => 'required',
           'price' => 'required',
-          'project_id' => 'required',
           'property_type_id' => 'required',
           'use_type_id' => 'required',
           'business_type_id' => 'required',
           'description' => 'required',
           'commission' => 'required',
-          'video360' => 'string'
+          'video360' => 'string',
+          'features' => 'filled|array'
         ];
 
         if(!empty($this->request->get('images'))){
