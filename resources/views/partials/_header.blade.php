@@ -83,9 +83,10 @@
 								<li><a href="#"><i class="fa fa-pencil fa-1x" aria-hidden="true"></i> Publicar</a>
 									<ul class="drop-menu">
 										<li><a href="{{ route('property_create_path') }}">Inmueble</a></li>
-										<li><a href="">Proyecto de Construcción</a></li>
+										<li><a href="{{ route('projects_create_path') }}">Proyecto de Construcción</a></li>
 									</ul>
 								</li>
+								<li><a href="#"><i class="fa fa-universal-access fa-1x" aria-hidden="true"></i> Acelerador</a></li>
 								<li><a href="{{ url('preciosyplanes') }}"><i class="fa fa-shopping-basket fa-1x" aria-hidden="true" alt="Ícono Canasta"></i> Planes</a></li>
 								<li><a href="{{ url('contacto') }}">
 									<i class="fa fa-mobile fa-1x" aria-hidden="true"></i> Contacto
