@@ -50,13 +50,13 @@
 
 /* CheckBoxes Formularios */
 .checkbox {
-  width: 200px;
+	width: 200px;
 }
 .flex-checkboxes {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  align-items: baseline;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	align-items: baseline;
 }
 
 /* footer Styles */
@@ -65,13 +65,13 @@
 .socialnet{
 	margin-left:0;
 	margin-top: 10%;
-}
-.socialnet span{
-	margin-right: 10%;
-}
-.socialnet span a i{
-	color:white;
-}
-.socialnet span a i:hover{
-	color:#95c41f;
+	span{
+		margin-right: 10%;
+	}
+	span a i{
+		color:white;
+	}
+	span a i:hover{
+		color:#95c41f;
+	}
 }

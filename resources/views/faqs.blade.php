@@ -12,7 +12,7 @@
 						<h2 class="breadcrumbs-title">Preguntas Frecuentes</h2>
 						<ul class="breadcrumbs-list">
 							<li><a href="index.html">Inicio</a></li>
-							<li>Preguntas Frecuentes</li>
+							<li>Ayuda</li>
 						</ul>
 					</div>
 				</div>
@@ -196,6 +196,86 @@
 							</div>
 						</div>
 						<!-- ending 2nd toogle -->
+					</div>
+					<!-- <br><br> -->
+					<!-- starts 3rd toogle  -->
+					<div class="row">
+						<div class="col-md-6">
+							<h3 class="form-division mb-30">3- ¿Qué tipos de publicación hay?</h3>
+							<div class="panel-group" id="accordion_3">
+								<div class="panel panel-default">
+									<div class="panel-heading" id="headingOne">
+										<h5 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordion_3" href="#collapseOne_3" aria-expanded="true">
+												<i class="fa fa-bolt" aria-hidden="true"></i> ¿Cómo publicar un inmueble?
+											</a>
+										</h5>
+									</div>
+									<div id="collapseOne_1" class="panel-collapse collapse in" >
+										<div class="panel-body">
+											Otorgamos 30 días de la herramienta, no se realiza ningún tipo de cargo.
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading" id="headingTwo">
+										<h5 class="panel-title">
+											<a class="collapsed" data-toggle="collapse" data-parent="#accordion_3" href="#collapseTwo_3" aria-expanded="false">
+												<i class="fa fa-bolt" aria-hidden="true"></i> ¿Cómo publicar un Proyecto?
+											</a>
+										</h5>
+									</div>
+									<div id="collapseTwo_3" class="panel-collapse collapse">
+										<div class="panel-body">
+											No, en lo absoluto, QuickInmobiliario es un servicio 100% en la nube, es decir, ingresar a <a href="#">QuickInmobiliario.com</a> es el único requisito.
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading" id="headingThree">
+										<h5 class="panel-title">
+											<a class="collapsed" data-toggle="collapse" data-parent="#accordion_3" href="#collapseThree_3" aria-expanded="false">
+												<i class="fa fa-bolt" aria-hidden="true"></i> ¿Quien puede publicar en <a href="#">QuickInmobiliario</a>?
+											</a>
+										</h5>
+									</div>
+									<div id="collapseThree_3" class="panel-collapse collapse"  aria-labelledby="headingThree">
+										<div class="panel-body">
+											No, no solicitamos información de pago (tarjetas de crédito o cuentas bancarias) para registrarte a QuickInmobiliario, en el momento que decidas contratar un plan, deberás ingresar estos datos para proceder con la contratación
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading" id="headingFour">
+										<h5 class="panel-title">
+											<a class="collapsed" data-toggle="collapse" data-parent="#accordion_3" href="#collapseFour_3" aria-expanded="false">
+												<i class="fa fa-bolt" aria-hidden="true"></i> ¿Cómo publicar mi requerimiento de vivienda?
+											</a>
+										</h5>
+									</div>
+									<div id="collapseFour_3" class="panel-collapse collapse"  aria-labelledby="headingFour">
+										<div class="panel-body">
+											No, no realizamos cargo de ningún tipo al vencer tu período promocional a menos de que solicites la activación de cualquiera de nuestros planes.
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading" id="headingSix">
+										<h5 class="panel-title">
+											<a class="collapsed" data-toggle="collapse" data-parent="#accordion_3" href="#collapseSix_3" aria-expanded="false">
+												<i class="fa fa-bolt" aria-hidden="true"></i> ¿Cuáles funcionalidades están activas durante el período promocional?
+											</a>
+										</h5>
+									</div>
+									<div id="collapseSix_3" class="panel-collapse collapse"  aria-labelledby="headingSix">
+										<div class="panel-body">
+											Durante este período disfrutarás al 100% del plan Empresarial
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- ending 3rd toogle  -->
 					</div>
 				</div>
 			</div>

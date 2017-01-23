@@ -88,6 +88,14 @@
 							</li>
 							<li>
 								<div class="latest-news-info">
+									<h6>
+										<a href="{{ url('preciosyplanes') }}">
+											<i class="fa fa-shopping-basket fa-1x" aria-hidden="true" alt="Ícono Canasta"></i>&nbsp;&nbsp;Precios y Planes
+									</a></h6>
+								</div>
+							</li>
+							<li>
+								<div class="latest-news-info">
 									<h6><a href="">
 										<i class="fa fa-bell" aria-hidden="true"></i>&nbsp;&nbsp;Contactenos
 									</a>
@@ -98,10 +106,11 @@
 								<div class="latest-news-info">
 									<h6>
 										<a href="{{ url('preguntasfrecuentes') }}">
-											<i class="fa fa-life-ring" aria-hidden="true"></i>&nbsp;&nbsp;Preguntas Frecuentes
+											<i class="fa fa-life-ring" aria-hidden="true"></i>&nbsp;&nbsp;Ayuda
 									</a></h6>
 								</div>
 							</li>
+
 						</ul>
 					</div>
 				</div>

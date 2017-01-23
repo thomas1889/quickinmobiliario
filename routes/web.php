@@ -14,6 +14,7 @@
 Route::get('/', 'HomeController@index');
 Route::get('contacto', 'HomeController@contact');
 Route::get('preguntasfrecuentes', 'HomeController@faqs');
+Route::get('preciosyplanes', 'HomeController@pricing');
 
 /**
  * Authorization routes
