@@ -290,11 +290,19 @@
   <h3 class="form-division mb-30 mt-30"><i class="fa fa-check-square"></i>Características del inmueble</h3>
   <div class="form-group flex-checkboxes">
     @foreach ($features as $feature)
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" id="feature-{{ $feature->id }}" value="{{ $feature->id }}"> {{ $feature->name }}
-        </label>
-      </div>
+      @if (is_array(old('features')) && in_array($feature->id, old('features')))
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="features[]" checked id="feature-{{ $feature->id }}" value="{{ $feature->id }}"> {{ $feature->name }}
+          </label>
+        </div>
+      @else
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="features[]" id="feature-{{ $feature->id }}" value="{{ $feature->id }}"> {{ $feature->name }}
+          </label>
+        </div>
+      @endif
     @endforeach
   </div>
 
@@ -307,4 +315,5 @@
       <input type="hidden" name="images[]" data-source="{{ route('get_property_image_path', $image) }}" id="{{ preg_replace('/(.png|.jpg|.jpeg|.gif)/', '', $image) }}" value="{{ $image }}">
     @endforeach
   @endif
+  <input type="hidden" name="project_id" value="-1">
 @endif

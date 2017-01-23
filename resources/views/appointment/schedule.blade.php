@@ -19,7 +19,7 @@
         <input id="image_perfil" type="hidden" name="image_perfil" value="quick.png">
 
         <div class="form-group{{ $errors->has('select') ? ' has-error' : '' }}">
-            <label for="user_id"  class="col-md-4 control-label">Select</label>
+            <label for="user_id"  class="col-md-4 control-label">Create an Appointment</label>
             <div class="col-md-6">
                 <select id="user_id"  class="form-control" name="user_id"  >
                     @foreach ($perfils as $perfil)

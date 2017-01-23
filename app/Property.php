@@ -49,6 +49,6 @@ class Property extends Model
   }
 
   public function features(){
-    return $this->belongsToMany(Features::class, 'property_has_features');
+    return $this->belongsToMany(Feature::class, 'property_has_features');
   }
 }

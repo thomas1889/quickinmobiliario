@@ -132,16 +132,9 @@
                     <h5>Comodidades</h5>
                     <div class="pro-details-amenities-inner bg-gray">
                       <ul class="amenities-list">
-                        <li>Air Conditioning</li>
-                        <li>Bedding</li>
-                        <li>Balcony</li>
-                        <li>Cable TV</li>
-                        <li>Internet</li>
-                        <li>Parqueadero</li>
-                        <li>Lift</li>
-                        <li>Pool</li>
-                        <li>Dishwasher</li>
-                        <li>Toaster</li>
+                        @foreach ($property->features as $feature)
+                          <li>{{ $feature->name }}</li>
+                        @endforeach
                       </ul>
                     </div>
                   </div>
