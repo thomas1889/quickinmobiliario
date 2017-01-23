@@ -32,7 +32,7 @@
 										</div>
 								</div>
 								<div class="col-md-3 col-sm-6 col-xs-12">
-										<div class="header-search clearfix">
+										<div class="clearfix">
 											<div class="header-search clearfix">
 													@if (Auth::guest())
 													<div class="col-xs-2 col-md-1"></div>
