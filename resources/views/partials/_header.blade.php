@@ -37,23 +37,23 @@
               <div class="col-xs-2 col-md-1"></div>
               <div class="col-md-5 col-xs-5 ">
                 <a href="{{ url('/login') }}">
-                  <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>Sesión
+                  <i class="fa fa-sign-in" aria-hidden="true"></i>Sesión
                 </a>
               </div>
               <div class="col-md-5 col-xs-5">
                 <a href="{{ url('/register') }}">
-                  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Registro
+                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>Registro
                 </a>
               </div>
             @else
               <div class="col-md-8 col-xs-8">
                 <a href="{{ route('profile_show_perfil',Auth::user()->username) }}" >
-                  <span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{ Auth::user()->username }}
+                  <i class="fa fa-user-circle" aria-hidden="true"></i> {{ Auth::user()->username }}
                 </a>
               </div>
               <div class="col-md-4 col-xs-4">
                 <a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                  <span class="glyphicon glyphicon-off" aria-hidden="true"></span>Salir
+                  <i class="fa fa-power-off" aria-hidden="true"></i>Salir
                 </a>
               </div>
               <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
