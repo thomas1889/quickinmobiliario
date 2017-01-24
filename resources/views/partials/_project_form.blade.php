@@ -1,29 +1,29 @@
 @if (isset($project))
-  <div class="form-group">
+  
     <label for="name">Nombre del Proyecto</label>
-    <input type="text" id="name" name="name" class="form-control" value="{{ old('name', $project->name) }}">
-  </div>
-  <div class="form-group">
+    <input type="text" id="name" name="name" value="{{ old('name', $project->name) }}">
+  
+  
     <label for="phone">Teléfono</label>
-    <input type="tel" id="phone" name="phone" class="form-control" value="{{ old('phone', $project->phone) }}">
-  </div>
-  <div class="form-group">
-    <label for="address">Dirección</label>
-    <input type="text" id="address" name="address" class="form-control" value="{{ old('address', $project->address) }}">
-  </div>
+    <input type="tel" id="phone" name="phone" value="{{ old('phone', $project->phone) }}">
+  
 
-  <div class="form-group">
+    <label for="address">Dirección</label>
+    <input type="text" id="address" name="address" value="{{ old('address', $project->address) }}">
+
+
+ 
     <label for="zone">Zona</label>
-    <select class="form-control" name="zone" id="zone">
+    <select name="zone" id="zone">
       <option value="Norte" @if ($project->zone == 'Norte') selected @endif>Norte</option>
       <option value="Sur" @if ($project->zone == 'Sur') selected @endif>Sur</option>
       <option value="Occidente" @if ($project->zone == 'Occidente') selected @endif>Occidente</option>
       <option value="Centro" @if ($project->zone == 'Centro') selected @endif>Centro</option>
     </select>
-  </div>
-  <div class="form-group">
+  
+
     <label for="city">Ciudad</label>
-    <select class="form-control" name="city" id="city">
+    <select name="city" id="city">
       <option value="Bogotá" selected>Bogotá</option>
       <option value="Chocontá">Chocontá</option>
       <option value="Machetá">Machetá</option>
@@ -33,19 +33,18 @@
       <option value="Tibirita">Tibirita</option>
       <option value="Villapinzón">Villapinzón</option>
     </select>
-  </div>
-  <div class="form-group">
+  
+ 
     <label for="neighborhood">Barrio</label>
-    <input type="text" id="neighborhood" name="neighborhood" class="form-control" value="{{ old('neighborhood', $project->neighborhood) }}">
-  </div>
-  <div class="form-group">
+    <input type="text" id="neighborhood" name="neighborhood" value="{{ old('neighborhood', $project->neighborhood) }}">
+
+ 
     <label for="built_area">Área construida</label>
     <div class="input-group">
-      <input type="text" id="built_area" name="built_area" class="form-control" value="{{ old('built_area', $project->built_area) }}">
+      <input type="text" id="built_area" name="built_area" value="{{ old('built_area', $project->built_area) }}">
       <div class="input-group-addon">m<sup>2</sup></div>
     </div>
-  </div>
-  <div class="form-group">
+  
     <label for="full_area">Área lote</label>
     <div class="input-group">
       <input type="text" id="full_area" name="full_area" class="form-control" value="{{ old('full_area', $project->full_area) }}">
@@ -55,7 +54,7 @@
   <div class="form-group">
     <label for="unit_quantity">Cantidad de Unidades Totales</label>
     <div class="input-group">
-      <input type="text" id="unit_quantity" name="unit_quantity" class="form-control" value="{{ old('unit_quantity', $project->unit_quantity) }}">
+      <input type="text" id="unit_quantity" name="unit_quantity" value="{{ old('unit_quantity', $project->unit_quantity) }}">
     </div>
   </div>
   <div class="form-group">
@@ -81,7 +80,7 @@
   </div>
   -->
 
-  <div class="form-group">
+  
     <label for="property_type">Tipo de propiedad</label>
     <select class="form-control" name="property_type_id">
       @foreach ($property_types as $type)
@@ -92,8 +91,8 @@
         @endif
       @endforeach
     </select>
-  </div>
-  <div class="form-group">
+  
+ 
     <label for="use_type">Tipo de uso</label>
     <select class="form-control" name="use_type_id">
       @foreach ($use_types as $type)
@@ -104,8 +103,8 @@
         @endif
       @endforeach
     </select>
-  </div>
-  <div class="form-group">
+ 
+  
     <label for="business_type">Tipo de negocio</label>
     <select class="form-control" name="business_type_id">
       @foreach ($business_types as $type)
@@ -116,11 +115,11 @@
         @endif
       @endforeach
     </select>
-  </div>
-  <div class="form-group">
+  
+  
     <label for="description">Descripción</label>
-    <textarea name="description" id="description" rows="8" cols="80" class="form-control" placeholder="Descripción del inmueble">{{ old('description', $project->description) }}</textarea>
-  </div>
+    <textarea name="description" id="description" rows="8" cols="80" placeholder="Descripción del inmueble">{{ old('description', $project->description) }}</textarea>
+ 
 
   <div class="form-group">
     <label for="video360">Código youtube video 360</label>
@@ -146,19 +145,42 @@
   @endif
   -->
 @else
-  <div class="form-group">
+  <<h3 class="form-division mb-30"><i class="fa fa-home"></i>Datos de la Publicacion</h3>
     <label for="name">Nombre del Proyecto</label>
     <input type="text" id="name" name="name" class="form-control" value="{{ old('name') }}">
+  
+<div class="row">
+    <div class="col-md-4">
+      <label for="business_type">Tipo de negocio</label>
+      <select name="business_type_id">
+        @foreach ($business_types as $type)
+          <option value="{{ $type->id }}">{{ $type->name }}</option>
+        @endforeach
+      </select>
+    </div>
+    <div class="col-md-4">
+      <label for="property_type">Tipo de propiedad</label>
+      <select name="property_type_id">
+        @foreach ($property_types as $type)
+          <option value="{{ $type->id }}">{{ $type->name }}</option>
+        @endforeach
+      </select>
+    </div>
+    <div class="col-md-4">
+      <label for="use_type">Tipo de uso</label>
+      <select name="use_type_id">
+        @foreach ($use_types as $type)
+          <option value="{{ $type->id }}">{{ $type->name }}</option>
+        @endforeach
+      </select>
+    </div>
   </div>
-  <div class="form-group">
-    <label for="phone">Teléfono</label>
-    <input type="tel" id="phone" name="phone" class="form-control" value="{{ old('phone') }}">
-  </div>
-  <div class="form-group">
-    <label for="address">Dirección</label>
-    <input type="text" id="address" name="address" class="form-control" value="{{ old('address') }}">
-  </div>
-  <div class="form-group">
+
+<!-- Ubicación del inmueble -->
+  <h3 class="form-division mb-30 mt-30"><i class="fa fa-map"></i>Ubicación del Proyecto</h3>
+<div class="row">
+<div class="col-md-4">
+  
     <label for="zone">Zona</label>
     <select class="form-control" name="zone" id="zone">
       <option value="Norte" @if (old('zone') == 'Norte') selected @endif>Norte</option>
@@ -167,7 +189,8 @@
       <option value="Centro" @if (old('zone') == 'Centro') selected @endif>Centro</option>
     </select>
   </div>
-  <div class="form-group">
+
+  <div class="col-md-4">
     <label for="city">Ciudad</label>
     <select class="form-control" name="city" id="city">
       <option value="Bogotá" selected>Bogotá</option>
@@ -180,32 +203,54 @@
       <option value="Villapinzón">Villapinzón</option>
     </select>
   </div>
-  <div class="form-group">
+
+  <div class="col-md-4">
     <label for="neighborhood">Barrio</label>
     <input type="text" id="neighborhood" name="neighborhood" class="form-control" value="{{ old('neighborhood') }}">
   </div>
-  <div class="form-group">
+  
+</div>
+<div class="row">
+<div class="col-md-8">
+    <label for="phone">Teléfono</label>
+    <input type="tel" id="phone" name="phone" class="form-control" value="{{ old('phone') }}">
+  </div>
+  <div class="col-md-4">
+    <label for="address">Dirección</label>
+    <input type="text" id="address" name="address" class="form-control" value="{{ old('address') }}">
+  </div>
+  </div>
+<h3 class="form-division mb-30 mt-30"><i class="fa fa-info-circle"></i>Descripción del Proyecto</h3>
+<div class="row">
+  <div class="col-md-3">
     <label for="built_area">Área construida</label>
     <div class="input-group">
       <input type="text" id="built_area" name="built_area" class="form-control" value="{{ old('built_area') }}">
       <div class="input-group-addon">m<sup>2</sup></div>
     </div>
   </div>
-  <div class="form-group">
+  <div class="col-md-3">
     <label for="full_area">Área lote</label>
     <div class="input-group">
       <input type="text" id="full_area" name="full_area" class="form-control" value="{{ old('full_area') }}">
       <div class="input-group-addon">m<sup>2</sup></div>
     </div>
   </div>
-  <div class="form-group">
+  <div class="col-md-3">
     <label for="unit_quantity">Cantidad de Unidades Totales</label>
     <input type="number" min="1" step="1" id="unit_quantity" name="unit_quantity" class="form-control" value="{{ old('unit_quantity') }}">
   </div>
-  <div class="form-group">
+  <div class="col-md-3">
     <label for="left_units">Cantidade de Unidades Restantes...</label>
     <input type="number" min="1" step="1" id="left_units" name="left_units" class="form-control" value="{{ old('left_units') }}">
   </div>
+  </div>
+
+
+    <label for="description">Descripción</label>
+    <textarea name="description" id="description" rows="8" cols="80" class="form-control" placeholder="Descripción del inmueble">{{ old('description') }}</textarea>
+
+
   <!-- Aquí va los inmuebles relacionados con el proyecto
   <div class="form-group">
     <label for="project">Proyecto</label>
@@ -217,39 +262,13 @@
     </select>
   </div>
   -->
-  <div class="form-group">
-    <label for="property_type">Tipo de propiedad</label>
-    <select class="form-control" name="property_type_id">
-      @foreach ($property_types as $type)
-        <option value="{{ $type->id }}">{{ $type->name }}</option>
-      @endforeach
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="use_type">Tipo de uso</label>
-    <select class="form-control" name="use_type_id">
-      @foreach ($use_types as $type)
-        <option value="{{ $type->id }}">{{ $type->name }}</option>
-      @endforeach
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="business_type">Tipo de negocio</label>
-    <select class="form-control" name="business_type_id">
-      @foreach ($business_types as $type)
-        <option value="{{ $type->id }}">{{ $type->name }}</option>
-      @endforeach
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="description">Descripción</label>
-    <textarea name="description" id="description" rows="8" cols="80" class="form-control" placeholder="Descripción del inmueble">{{ old('description') }}</textarea>
-  </div>
+  
+  
+  <h3 class="form-division mb-30 mt-30"><i class="fa fa-youtube"></i>Video 360 del inmueble (opcional)</h3>
 
-  <div class="form-group">
     <label for="video360">Código youtube video 360</label>
     <input type="text" class="form-control" id="video360" name="video360" placeholder="-xNN-bJQ4vI" value="{{ old('video360') }}">
-  </div>
+
   <!--
   @if (!empty(old('images')))
     @foreach (old('images') as $image)
@@ -257,4 +276,5 @@
     @endforeach
   @endif
   -->
+  
 @endif
