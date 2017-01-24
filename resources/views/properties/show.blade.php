@@ -19,7 +19,7 @@
       <div class="row">
         <div class="col-xs-12">
           <div class="breadcrumbs">
-            <h2 class="breadcrumbs-title">Detalles Inmueble</h2>
+            <h2 class="breadcrumbs-title">{{ $property->name }}</h2>
             <ul class="breadcrumbs-list">
               <li><a href="{{ url('/') }}">Inicio</a></li>
               <li><a href="{{ route('properties_path') }}">Inmuebles</a></li>
@@ -107,6 +107,24 @@
                 </div>
               </div>
             </div>
+            <div class="pro-details-description mb-50 text-center">
+              <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                  <div class="agent-details-contact">
+                    <h6>Código Inmueble</h6>
+                    <p>{{ $property->property_code }}</p>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                  <div class="price-item">
+                    <h2>
+                      $<span class="price-quantity">{{ number_format($property->price, 0, ',', '.') }}</span>
+                    </h2>
+                    <p>Precio de Venta</p>
+                  </div>
+                </div>
+              </div>
+            </div>
             <!-- pro-details-short-info -->
             <div class="pro-details-short-info mb-60">
               <div class="row">
@@ -120,11 +138,13 @@
                         <li><i class="fa fa-s15 icon-size-normal"></i> Baños {{ $property->bathrooms }}</li>
                         <li><i class="fa fa-automobile icon-size-normal"></i> Parqueaderos {{ $property->parkings }}</li>
                         <li><i class="fa fa-level-up icon-size-normal"></i> Pisos {{ $property->floors }}</li>
-                        <li><i class="fa fa-hourglass-half icon-size-normal"></i> Antiguedad {{ $property->antiquity }}</li>
-                        <li><i class="fa fa-map icon-size-normal"></i> {{ $property->city }} Zona {{ $property->zone }}</li>
-                        <li><i class="fa fa-map icon-size-normal"></i> Barrio {{ $property->neighborhood }}</li>
+                        <li><i class="fa fa-location-arrow icon-size-normal"></i> {{ $property->city }}</li>
+                        <li><i class="fa fa-map icon-size-normal"></i> Zona {{ $property->zone }}</li>
+                        <li><i class="fa fa-street-view icon-size-normal"></i> Barrio {{ $property->neighborhood }}</li>
                         <li><i class="fa fa-star-half-empty icon-size-normal"></i> Estrato {{ $property->stratum }}</li>
+                        <li><i class="fa fa-hourglass-half icon-size-normal"></i> Antiguedad {{ $property->antiquity }}</li>
                       </ul>
+                      <p><i class="fa fa-money icon-size-sub"></i> Comisión $<span>{{ number_format($property->commission->price, 0, ',', '.') }}</span></p>
                       <p><i class="fa fa-map-marker icon-size-sub"></i> {{ $property->address }}</p>
                     </div>
                   </div>
@@ -139,26 +159,6 @@
                         @endforeach
                       </ul>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="pro-details-description mb-50 text-center">
-              <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <div class="price-item">
-                    <h2>
-                      $<span class="price-quantity">{{ number_format($property->price, 2, ',', '.') }}</span>
-                    </h2>
-                    <p>Precio</p>
-                  </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                  <div class="price-item">
-                    <h2>
-                      $<span>{{ number_format($property->commission->price, 2, ',', '.') }}</span>
-                    </h2>
-                    <p>Comisión</p>
                   </div>
                 </div>
               </div>
