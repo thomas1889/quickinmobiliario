@@ -77,13 +77,13 @@
                                     <div class="login-account p-30 box-shadow">
                                         <p>If you have an account with us, Please log in.</p>
 
-                                        <div class="{{ $errors->has('username') ? ' has-error' : '' }}">
+                                        <div class="{{ $errors->has('email') ? ' has-error' : '' }}">
                                             <label for="username" ></label>
                                             <div class="col-md-12">
-                                                <input placeholder="Username" id="username" type="text"  name="username" value="{{ old('username') }}" required autofocus>
-                                                @if ($errors->has('username'))
+                                                <input placeholder="Email" id="email" type="text"  name="email" value="{{ old('email') }}" required autofocus>
+                                                @if ($errors->has('email'))
                                                 <span class="help-block">
-                                                    <strong>{{ $errors->first('username') }}</strong>
+                                                    <strong>{{ $errors->first('email') }}</strong>
                                                 </span>
                                                 @endif
                                             </div>
