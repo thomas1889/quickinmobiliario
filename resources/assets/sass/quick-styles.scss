@@ -10,34 +10,34 @@
 }
 /* Styles for create and update property form */
 .edition .form-edition {
-	select {
-		background: white;
-		border: 1px solid #e1e1e1;
-		color: #606060;
-		font-family: 'Montserrat', sans-serif;
-		font-size: 14px;
-		font-weight: 300;
-		height: 40px;
-		margin-bottom: 20px;
-		padding: 0 10px;
-		width: 100%;
-	}
-	select:focus {
-		border: 1px solid #95c41f;
-	}
-	label {
-		color: #3b5265;
-	}
-	input, textarea {
-		background: white;
-	}
+    select {
+        background: white;
+        border: 1px solid #e1e1e1;
+        color: #606060;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+        font-weight: 300;
+        height: 40px;
+        margin-bottom: 20px;
+        padding: 0 10px;
+        width: 100%;
+    }
+    select:focus {
+        border: 1px solid #95c41f;
+    }
+    label {
+        color: #3b5265;
+    }
+    input, textarea {
+        background: white;
+    }
 }
 .edition .form-edition .input-group {
-	margin-bottom: 20px;
+    margin-bottom: 20px;
 
-	input {
-		margin-bottom: 0px;
-	}
+    input {
+        margin-bottom: 0px;
+    }
 }
 .form-division {
     padding: 10px 0;
@@ -50,37 +50,37 @@
     }
 }
 .condition-list > li {
-	vertical-align: top;
+    vertical-align: top;
 }
 
 /* CheckBoxes Formularios */
 .checkbox {
-	width: 200px;
+    width: 200px;
 }
 .flex-checkboxes {
-	display: flex;
-	justify-content: space-between;
-	flex-wrap: wrap;
-	align-items: baseline;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: baseline;
 }
 /* Precio inmueble */
 .price-item{
-	h2 {
-		font-family: 'montserrat';
-		font-size: 34px;
-		font-weight: 400;
-		margin-bottom: 0;
-		color: #95c41f;
-	}
-	span {
-		color: #1f223e;
-	}
-	p {
-		color: #1f223e;
-		font-size: 15px;
-		font-weight: 400;
-		margin-bottom: 0;
-	}
+    h2 {
+        font-family: 'montserrat';
+        font-size: 34px;
+        font-weight: 400;
+        margin-bottom: 0;
+        color: #95c41f;
+    }
+    span {
+        color: #1f223e;
+    }
+    p {
+        color: #1f223e;
+        font-size: 15px;
+        font-weight: 400;
+        margin-bottom: 0;
+    }
 }
 
 
@@ -88,19 +88,43 @@
 //social networks
 
 .socialnet{
-	margin-left:0;
-	margin-top: 10%;
-	span{
-		margin-right: 10%;
-	}
-	span a i{
-		color:white;
-	}
-	span a i:hover{
-		color:#95c41f;
-	}
+    margin-left:0;
+    margin-top: 10%;
+    span{
+        margin-right: 10%;
+    }
+    span a i{
+        color:white;
+    }
+    span a i:hover{
+        color:#95c41f;
+    }
 }
 .boton-registro{
     width: 100%;
 
 }
+// Estrelas Punctutations
+.barra{width:150px; height:30px; background:#ebebeb; position:relative;}
+.stars{position:absolute; left:0; top:0; width:100%;}
+.star{
+    float:left;
+    width:30px;
+    height:30px;
+    text-align:center;
+    position:relative;
+    cursor:pointer;
+}
+.star.full{background:linear-gradient(to bottom, #fee24f, #f4bb2f)}
+
+.bg{float:left;height:30px; width:30%; background:linear-gradient(to bottom, #fee24f, #f4bb2f);}
+.starAbsolute{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:url(/images/starpng.png) top left no-repeat;
+    background-size:cover;
+}
+//End Estrellas

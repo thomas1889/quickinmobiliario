@@ -91,7 +91,7 @@
                                         <div class="{{ $errors->has('password') ? ' has-error' : '' }}">
                                             <label for="password" ></label>
                                             <div class="col-md-12">
-                                                <input placeholder="Password" id="password" type="password"  name="password" required>
+                                                <input placeholder="Contraseña" id="password" type="password"  name="password" required>
                                                 @if ($errors->has('password'))
                                                 <span class="help-block">
                                                     <strong>{{ $errors->first('password') }}</strong>

@@ -134,8 +134,8 @@
                     <div class="breadcrumbs">
                         <a href="{{ url('/login') }}"> <h2 class="breadcrumbs-title">Login</h2></a>
                         <ul class="breadcrumbs-list">
-                            <li><a href="{{ url('/') }}">Home</a></li>
-                            <li> <a href="{{ url('/login') }}">Login</a></li>
+                            <li><a href="{{ url('/') }}">INICIO</a></li>
+                            <li> <a href="{{ url('/login') }}">INICIAR SESIÒN</a></li>
                         </ul>
                     </div>
                 </div>
@@ -156,14 +156,14 @@
                                 <!--FORMULARIO-->
                                 <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}" >
                                     {{ csrf_field() }}
-                                    <h5 class="mb-50">REGISTER</h5>
+                                    <h5 class="mb-50">REGISTRO</h5>
                                     <div class="login-account p-30 box-shadow">
                                         <div class="row">
                                             <div class="{{ $errors->has('select') ? ' has-error' : '' }}">
                                                 <div class="col-sm-6">
                                                     <select id="select" class="custom-select-2" name="select"  >
-                                                        <option value="1">Natural Person</option>
-                                                        <option value="2">Legal Person</option>
+                                                        <option value="1">Persona Natural</option>
+                                                        <option value="2">Persona Juridica</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -171,7 +171,7 @@
                                             <div id="date_legal">
                                                 <div  class="{{ $errors->has('business_name') ? ' has-error' : '' }}"> 
                                                     <div class="col-sm-6">
-                                                        <input placeholder="Business Name" id="business_name" type="text"  name="business_name" value="{{ old('business_name') }}"  autofocus>
+                                                        <input placeholder="Razon Social" id="business_name" type="text"  name="business_name" value="{{ old('business_name') }}"  autofocus>
                                                         @if ($errors->has('business_name'))
                                                         <span class="help-block">       
                                                             <strong>{{ $errors->first('business_name') }}</strong>
@@ -185,7 +185,7 @@
                                             <div id="date_natural">
                                                 <div class="{{ $errors->has('first_name') ? ' has-error' : '' }}">
                                                     <div class="col-sm-6">
-                                                        <input placeholder="Full Name" id="first_name" type="text"  name="first_name" value="{{ old('first_name') }}" required  autofocus>
+                                                        <input placeholder="Nombre" id="first_name" type="text"  name="first_name" value="{{ old('first_name') }}" required  autofocus>
                                                         @if ($errors->has('first_name'))
                                                         <span class="help-block">
                                                             <strong>{{ $errors->first('first_name') }}</strong>
@@ -206,7 +206,7 @@
                                             </div>
                                             <div  class="{{ $errors->has('document') ? ' has-error' : '' }}">
                                                 <div class="col-sm-6">
-                                                    <input placeholder="Document" id="document" type="text"  name="document" value="{{ old('business_name') }}" required   autofocus>
+                                                    <input placeholder="Documento" id="document" type="text"  name="document" value="{{ old('business_name') }}" required   autofocus>
                                                     @if ($errors->has('document'))
                                                     <span class="help-block">
                                                         <strong>{{ $errors->first('document') }}</strong>
@@ -226,7 +226,7 @@
                                             </div>
                                             <div class="{{ $errors->has('username') ? ' has-error' : '' }}">
                                                 <div class="col-sm-6">
-                                                    <input id="username" type="text" placeholder="Username" name="username" value="{{ old('username') }}" required>
+                                                    <input id="username" type="text" placeholder="Nombre de Usuario" name="username" value="{{ old('username') }}" required>
                                                     @if ($errors->has('username'))
                                                     <span class="help-block">
                                                         <strong>{{ $errors->first('username') }}</strong>
@@ -236,14 +236,14 @@
                                             </div>
                                         </div>
                                         <div class="{{ $errors->has('password') ? ' has-error' : '' }}">
-                                            <input id="password" type="password" placeholder="Password" name="password" required>
+                                            <input id="password" type="password" placeholder="Contraseña" name="password" required>
                                             @if ($errors->has('password'))
                                             <span class="help-block">
                                                 <strong>{{ $errors->first('password') }}</strong>
                                             </span>
                                             @endif
                                         </div>                                            
-                                        <input id="password-confirm" type="password" placeholder="Password Confirmation" name="password_confirmation" required>
+                                        <input id="password-confirm" type="password" placeholder="Confirmar Contraseña" name="password_confirmation" required>
 
                                         <input id="image_perfil" type="hidden" name="image_perfil" value="quick.png">
 
