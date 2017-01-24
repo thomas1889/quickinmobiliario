@@ -37,7 +37,7 @@
 			<div class="row">
 				<div class="agents-carousel">
 					<!-- single-agent -->
-					<div class="col-md-12">
+					<div class="col-md-12 col-xs-12">
 						<div class="single-agent">
 							<div class="agent-image">
 								<img src="images/agents/1.jpg" alt="">
@@ -74,7 +74,7 @@
 						</ul>
 					</div>
 					<!-- single-agent -->
-					<div class="col-md-12">
+					<div class="col-md-12 col-xs-12">
 						<div class="single-agent">
 							<div class="agent-image">
 								<img src="images/agents/2.jpg" alt="">
@@ -111,7 +111,7 @@
 						</ul>
 					</div>
 					<!-- single-agent -->
-					<div class="col-md-12">
+					<div class="col-md-12 col-xs-12">
 						<div class="single-agent">
 							<div class="agent-image">
 								<img src="images/agents/3.jpg" alt="">
@@ -148,7 +148,7 @@
 						</ul>
 					</div>
 					<!-- single-agent -->
-					<div class="col-md-12">
+					<div class="col-md-12 col-xs-12">
 						<div class="single-agent">
 							<div class="agent-image">
 								<img src="images/agents/4.jpg" alt="">
@@ -185,7 +185,7 @@
 						</ul>
 					</div>
 					<!-- single-agent -->
-					<div class="col-md-12">
+					<div class="col-md-12 col-xs-12">
 						<div class="single-agent">
 							<div class="agent-image">
 								<img src="images/agents/3.jpg" alt="">
