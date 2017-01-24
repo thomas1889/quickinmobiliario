@@ -79,6 +79,7 @@ class PropertyController extends Controller {
   * @param Property $id
   */
   public function edit($id){
+    //dd($this->getProperty($id)->features);
     return view('properties.edit', [
       'property' => $this->getProperty($id),
       'projects' => $this->get_projects(),

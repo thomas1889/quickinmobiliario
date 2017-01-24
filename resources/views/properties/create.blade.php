@@ -23,7 +23,6 @@
 
   <!-- Start page content -->
   <section id="page-content" class="page-wrapper">
-
     <!-- PROPERTIES DETAILS AREA START -->
     <div class="properties-details-area pt-50 pb-60">
       <div class="container">
@@ -38,9 +37,7 @@
                 </form>
                 <uploadimages form="my-awesome-dropzone" principal="form-create-property" title="Imágenes del inmueble" save="{{ route('property_image_upload_path') }}" delete="/imagen_inmueble" token="{{ csrf_token() }}"></uploadimages>
                 <div class="form-group">
-                  <button type="button" class="submit-btn-1" v-on:click="createProperty">
-                    Crear Inmueble
-                  </button>
+                  <button type="button" class="submit-btn-1" v-on:click="createProperty">Crear Inmueble</button>
                 </div>
               </div>
             </div>
