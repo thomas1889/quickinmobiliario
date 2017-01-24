@@ -13,7 +13,7 @@
 					<div class="company-info clearfix">
 						<div class="company-info-item">
 							<div class="header-icon">
-								<img src="{{ asset('images/icons/phone.png') }}" alt="">
+								<i class="fa fa-volume-control-phone fa-2x" aria-hidden="true" alt="Ícono teléfono"></i>
 							</div>
 							<div class="header-info">
 								<h6>+88 (012) 564 979 56</h6>
@@ -22,7 +22,7 @@
 						</div>
 						<div class="company-info-item">
 							<div class="header-icon">
-								<img src="{{ asset('images/icons/mail-open.png') }}" alt="">
+								<i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i>
 							</div>
 							<div class="header-info">
 								<h6><a href="mailto:hnasir770@gmail.com">info@quickinmobiliario.com</a></h6>
@@ -83,7 +83,7 @@
 								<li><a href="#"><i class="fa fa-pencil fa-1x" aria-hidden="true"></i> Publicar</a>
 									<ul class="drop-menu">
 										<li><a href="{{ route('property_create_path') }}">Inmueble</a></li>
-										<li><a href="{{ route('project_create_path') }}">Proyecto de Construcción</a></li>
+										<li><a href="{{ route('projects_create_path') }}">Proyecto de Construcción</a></li>
 									</ul>
 								</li>
 								<li><a href="#"><i class="fa fa-universal-access fa-1x" aria-hidden="true"></i> Acelerador</a></li>
