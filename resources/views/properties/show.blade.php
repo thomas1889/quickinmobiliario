@@ -120,8 +120,10 @@
                         <li><i class="fa fa-s15 icon-size-normal"></i> Baños {{ $property->bathrooms }}</li>
                         <li><i class="fa fa-automobile icon-size-normal"></i> Parqueaderos {{ $property->parkings }}</li>
                         <li><i class="fa fa-level-up icon-size-normal"></i> Pisos {{ $property->floors }}</li>
-                        <li><i class="fa fa-history icon-size-normal"></i> Antiguedad {{ $property->antiquity }}</li>
-                        <li><i class="fa fa-usd"></i> {{ number_format($property->price, 2, ',', '.') }}</li>
+                        <li><i class="fa fa-hourglass-half icon-size-normal"></i> Antiguedad {{ $property->antiquity }}</li>
+                        <li><i class="fa fa-map icon-size-normal"></i> {{ $property->city }} Zona {{ $property->zone }}</li>
+                        <li><i class="fa fa-map icon-size-normal"></i> Barrio {{ $property->neighborhood }}</li>
+                        <li><i class="fa fa-star-half-empty icon-size-normal"></i> Estrato {{ $property->stratum }}</li>
                       </ul>
                       <p><i class="fa fa-map-marker icon-size-sub"></i> {{ $property->address }}</p>
                     </div>
@@ -137,6 +139,26 @@
                         @endforeach
                       </ul>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pro-details-description mb-50 text-center">
+              <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                  <div class="price-item">
+                    <h2>
+                      $<span class="price-quantity">{{ number_format($property->price, 2, ',', '.') }}</span>
+                    </h2>
+                    <p>Precio</p>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                  <div class="price-item">
+                    <h2>
+                      $<span>{{ number_format($property->commission->price, 2, ',', '.') }}</span>
+                    </h2>
+                    <p>Comisión</p>
                   </div>
                 </div>
               </div>
@@ -408,16 +430,18 @@
               </div>
             </aside>
             <!-- widget-video -->
-            <aside class="widget widget-video">
-              <h5>Take A Look</h5>
-              <div class="properties-video">
-                <div class="embed-responsive embed-responsive-16by9">
-                  <!-- <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/40934652"></iframe> -->
-                  <!--<iframe src="https://player.vimeo.com/video/117765418?title=0&byline=0&portrait=0" allowfullscreen></iframe>-->
-                  <iframe src="https://www.youtube.com/embed/{{ $property->video360 }}"></iframe>
+            @if ($property->video360 != '')
+              <aside class="widget widget-video">
+                <h5>Take A Look</h5>
+                <div class="properties-video">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <!-- <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/40934652"></iframe> -->
+                    <!--<iframe src="https://player.vimeo.com/video/117765418?title=0&byline=0&portrait=0" allowfullscreen></iframe>-->
+                    <iframe src="https://www.youtube.com/embed/{{ $property->video360 }}"></iframe>
+                  </div>
                 </div>
-              </div>
-            </aside>
+              </aside>
+            @endif
           </div>
         </div>
       </div>

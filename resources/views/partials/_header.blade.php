@@ -86,7 +86,7 @@
 																		<li><a href="">Proyecto de Construcción</a></li>
 				                        	</ul>
 																</li>
-																<li><a href="#"><i class="fa fa-universal-access fa-1x" aria-hidden="true"></i> Agent</a></li>
+																<li><a href="#"><i class="fa fa-universal-access fa-1x" aria-hidden="true"></i> Acelerador</a></li>
 																<li><a href="{{ url('preciosyplanes') }}"><i class="fa fa-shopping-basket fa-1x" aria-hidden="true" alt="Ícono Canasta"></i> Planes</a></li>
 																<li><a href="{{ url('contacto') }}"><i class="fa fa-bell fa-1x" aria-hidden="true" alt="Ícono Campana"></i> Contacto</a></li>
 						                    <li><a href="{{ url('preguntasfrecuentes') }}"><i class="fa fa-life-ring" aria-hidden="true"></i> Ayuda</a></li>

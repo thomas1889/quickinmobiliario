@@ -18,10 +18,10 @@
     <form class="form-horizontal" role="form" method="POST" action="{{ route('user_update_path') }}"enctype="multipart/form-data" >
         {{ csrf_field() }}
         {{ method_field('PUT') }}
-        <div class="{{ $errors->has('username') ? ' has-error' : '' }}">
+        <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
             <label for="username" class="col-md-4 control-label">Username</label>
             <div class="col-md-6">
-                <input id="username" type="text"  name="username" value="{{ $user->username }}" required readonly>
+                <input id="username" type="text" class="form-control" name="username" value="{{ $user->username }}" required readonly>
                 @if ($errors->has('username'))
                 <span class="help-block">
                     <strong>{{ $errors->first('username') }}</strong>
@@ -29,10 +29,10 @@
                 @endif
             </div>
         </div>
-        <div  class="{{ $errors->has('document') ? ' has-error' : '' }}">
+        <div  class="form-group{{ $errors->has('document') ? ' has-error' : '' }}">
             <label for="document" class="col-md-4 control-label">Document</label>
             <div class="col-md-6">
-                <input id="document" type="text"  name="document" value="{{ $user->document }}" required   readonly>
+                <input id="document" type="text" class="form-control" name="document" value="{{ $user->document }}" required   readonly>
                 @if ($errors->has('document'))
                 <span class="help-block">
                     <strong>{{ $errors->first('document') }}</strong>
@@ -42,10 +42,10 @@
         </div>
         <!--Date Natural Person-->
         @if ($user->user_type_id == 1)
-        <div class="{{ $errors->has('first_name') ? ' has-error' : '' }}">
+        <div class="form-group{{ $errors->has('first_name') ? ' has-error' : '' }}">
             <label for="first_name" class="col-md-4 control-label">Name</label>
             <div class="col-md-6">
-                <input id="first_name" type="text"  name="first_name" value="{{ $user->first_name}}" required  autofocus>
+                <input id="first_name" type="text" class="form-control" name="first_name" value="{{ $user->first_name}}" required  autofocus>
                 @if ($errors->has('first_name'))
                 <span class="help-block">
                     <strong>{{ $errors->first('first_name') }}</strong>
@@ -67,10 +67,10 @@
                 @endif
             </div>
         </div>
-        <div  class="{{ $errors->has('business_name') ? ' has-error' : '' }}">
+        <div  class="form-group{{ $errors->has('business_name') ? ' has-error' : '' }}">
             <label for="business_name" class="col-md-4 control-label">Business Name</label>
             <div class="col-md-6">
-                <input id="business_name" type="text"  name="business_name" value="{{ $user->business_name }}" required autofocus>
+                <input id="business_name" type="text" class="form-control" name="business_name" value="{{ $user->business_name }}" required autofocus>
                 @if ($errors->has('business_name'))
                 <span class="help-block">
                     <strong>{{ $errors->first('business_name') }}</strong>
@@ -83,10 +83,10 @@
         @endif
 
         <!--DATOS DE PERFIL DE USUARIO-->
-        <div class="{{ $errors->has('cell_phone') ? ' has-error' : '' }}">
+        <div class="form-group{{ $errors->has('cell_phone') ? ' has-error' : '' }}">
             <label for="cell_phone" class="col-md-4 control-label">Cell Phone</label>
             <div class="col-md-6">
-                <input id="cell_phone" type="text"  name="cell_phone" value="{{ $user->cell_phone }}" >
+                <input id="cell_phone" type="text" class="form-control" name="cell_phone" value="{{ $user->cell_phone }}" >
                 @if ($errors->has('cell_phone'))
                 <span class="help-block">
                     <strong>{{ $errors->first('cell_phone') }}</strong>
@@ -94,10 +94,10 @@
                 @endif
             </div>
         </div>
-        <div class="{{ $errors->has('address') ? ' has-error' : '' }}">
+        <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
             <label for="address" class="col-md-4 control-label">Address</label>
             <div class="col-md-6">
-                <input id="address" type="text"  name="address" value="{{ $user->address }}" >
+                <input id="address" type="text" class="form-control" name="address" value="{{ $user->address }}" >
                 @if ($errors->has('address'))
                 <span class="help-block">
                     <strong>{{ $errors->first('address') }}</strong>
@@ -105,10 +105,10 @@
                 @endif
             </div>
         </div>
-        <div class="{{ $errors->has('age') ? ' has-error' : '' }}">
+        <div class="form-group{{ $errors->has('age') ? ' has-error' : '' }}">
             <label for="age" class="col-md-4 control-label">Age</label>
             <div class="col-md-6">
-                <input id="age" type="number"  name="age" value="{{ $user->age }}" >
+                <input id="age" type="number" class="form-control" name="age" value="{{ $user->age }}" >
                 @if ($errors->has('age'))
                 <span class="help-block">
                     <strong>{{ $errors->first('age') }}</strong>
@@ -119,7 +119,7 @@
         <div class="form-group{{ $errors->has('gender') ? ' has-error' : '' }}">
             <label for="gender" class="col-md-4 control-label">Gender</label>
             <div class="col-md-6">
-                <select id="gender"   name="gender" >
+                <select id="gender"  class="form-control" name="gender" >
                     @if ($user->gender == "")
                     <option value="Mujer">Mujer</option>
                     <option value="Hombre">Hombre</option>
@@ -135,10 +135,10 @@
                 </select>
             </div>
         </div>
-        <div class="{{ $errors->has('profession') ? ' has-error' : '' }}">
+        <div class="form-group{{ $errors->has('profession') ? ' has-error' : '' }}">
             <label for="profession" class="col-md-4 control-label">Profession</label>
             <div class="col-md-6">
-                <input id="profession" type="text"  name="profession" value="{{ $user->profession }}" >
+                <input id="profession" type="text" class="form-control" name="profession" value="{{ $user->profession }}" >
                 @if ($errors->has('profession'))
                 <span class="help-block">
                     <strong>{{ $errors->first('profession') }}</strong>
@@ -146,10 +146,10 @@
                 @endif
             </div>
         </div>
-        <div class="{{ $errors->has('city') ? ' has-error' : '' }}">
+        <div class="form-group{{ $errors->has('city') ? ' has-error' : '' }}">
             <label for="city" class="col-md-4 control-label">City</label>
             <div class="col-md-6">
-                <input id="city" type="text"  name="city" value="{{ $user->city }}" >
+                <input id="city" type="text" class="form-control" name="city" value="{{ $user->city }}" >
                 @if ($errors->has('city'))
                 <span class="help-block">
                     <strong>{{ $errors->first('city') }}</strong>
@@ -157,11 +157,14 @@
                 @endif
             </div>
         </div>
+        <div class="form-group">
             <div class="col-md-6 col-md-offset-4">
-                <button  type="submit" class="submit-btn-1">
+                <button  type="submit" class="btn btn-primary">
                     Save Changes
                 </button>
             </div>
+        </div>
     </form>
 </div>
+
 @endsection
