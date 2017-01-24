@@ -19,7 +19,7 @@
       <div class="row">
         <div class="col-xs-12">
           <div class="breadcrumbs">
-            <h2 class="breadcrumbs-title">Detalles Inmueble</h2>
+            <h2 class="breadcrumbs-title">{{ $property->name }}</h2>
             <ul class="breadcrumbs-list">
               <li><a href="{{ url('/') }}">Inicio</a></li>
               <li><a href="{{ route('properties_path') }}">Inmuebles</a></li>
