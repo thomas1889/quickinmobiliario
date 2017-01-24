@@ -11,8 +11,13 @@ use QuickInmobiliario\UseType;
 use QuickInmobiliario\BusinessType;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProjectController extends Controller{
+
+	public function ___construct(){
+		$this->middleware('auth')->only(['create', 'strore', 'edit', 'update', 'destroy']);
+	}
 
 	public function index()
 	{
@@ -28,7 +33,7 @@ class ProjectController extends Controller{
 			'property_types' => $this->get_property_types(),
 			'use_types' => $this->get_use_types(),
 			'business_types' => $this->get_business_types(),
-			// 'properties' => $this->get_Properties()
+			'section_text' => 'Crear'
 		]);
 	}
 
@@ -43,7 +48,7 @@ class ProjectController extends Controller{
 				$project->project_images()->save($images);
 			}
 		}
-		return redirect()->route('projects_show_path',$project->id);
+		return redirect()->route('projects_show_path', $project->id);
 	}
 
 	public function edit($id){
@@ -52,7 +57,7 @@ class ProjectController extends Controller{
 			'property_types' => $this->get_property_types(),
 			'use_types' => $this->get_use_types(),
 			'business_types' => $this->get_business_types(),
-			// 'properties' => $this->get_Properties()
+			'section_text' => 'Editar'
 		]);
 	}
 
@@ -66,15 +71,14 @@ class ProjectController extends Controller{
 
 	public function destroy($id){
 		$project = $this->getProject($id);
-		// $project->project_images()->each(function($image){
-		// 	Storage::delete('public/projects'.$image->path);
-		// })
-		// $project->project_images()->delete();
+		$project->project_images()->each(function($image){
+			Storage::delete('public/projects'.$image->path);
+		})
+		$project->project_images()->delete();
 		$project->delete();
 
 		return redirect()->route('projects_path');
 	}
-
 
 	public function search(Request $request){
 		$projects = Project::select('id','name','city','zone','created_at');

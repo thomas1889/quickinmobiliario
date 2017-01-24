@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model
 {
   protected $fillable =[
-    'name', 'phone', 'address', 'description', 'zone', 'city', 'neighborhood', 'built_area', 'full_area', 'unit_quantity', 'left_units', 'property_type_id', 'use_type_id', 'business_type_id', '360video'
   ];
 
   public function properties(){
@@ -28,5 +27,8 @@ class Project extends Model
 
   public function business_type(){
     return $this->belongsTo(BusinessType::class);
+  }
+  public function features(){
+    return $this->belongsToMany(Feature::class, 'project_has_features');
   }
 }
