@@ -100,7 +100,6 @@
         <option value="1" @if ($property->state == '1') selected @endif>Nuevo</option>
         <option value="2" @if ($property->state == '2') selected @endif>Usuado</option>
         <option value="3" @if ($property->state == '3') selected @endif>Remodelado</option>
-        <option value="4" @if ($property->state == '4') selected @endif>Proyecto</option>
       </select>
     </div>
     <div class="col-md-4">

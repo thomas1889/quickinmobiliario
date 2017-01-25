@@ -9,99 +9,77 @@
         <div class="row">
           <div class="col-sm-6 col-xs-12">
             <div class="find-home-item custom-select">
-              <select class="selectpicker" title="Location" data-hide-disabled="true" data-live-search="true">
+              <select class="selectpicker" title="Zona" data-hide-disabled="true" data-live-search="true">
                 <optgroup disabled="disabled" label="disabled">
                   <option>Hidden</option>
                 </optgroup>
-                <optgroup label="Australia">
-                  <option>Sydney</option>
-                  <option>Melbourne</option>
-                  <option>Cairns</option>
-                </optgroup>
-                <optgroup label="USA">
-                  <option>South Carolina</option>
-                  <option>Florida</option>
-                  <option>Rhode Island</option>
+                <optgroup label="Zona">
+                  <option>Norte</option>
+                  <option>Sur</option>
+                  <option>Occidente</option>
+                  <option>Centro</option>
                 </optgroup>
               </select>
             </div>
           </div>
           <div class="col-sm-6 col-xs-12">
             <div class="find-home-item custom-select">
-              <select class="selectpicker" title="Sub - Location" data-hide-disabled="true" data-live-search="true">
+              <select class="selectpicker" title="Ciudad" data-hide-disabled="true" data-live-search="true">
                 <optgroup disabled="disabled" label="disabled">
                   <option>Hidden</option>
                 </optgroup>
-                <optgroup label="Australia">
-                  <option>southeastern coast</option>
-                  <option>southeastern tip</option>
-                  <option>northwest corner</option>
-                </optgroup>
-                <optgroup label="USA">
-                  <option>Charleston</option>
-                  <option>St. Petersburg</option>
-                  <option>Newport</option>
+                <optgroup label="Cundinamarca">
+                  <option value="Chocontá">Chocontá</option>
+                  <option value="Machetá">Machetá</option>
+                  <option value="Manta">Manta</option>
+                  <option value="Sesquilé">Sesquilé</option>
+                  <option value="Suesca">Suesca</option>
+                  <option value="Tibirita">Tibirita</option>
+                  <option value="Villapinzón">Villapinzón</option>
+                  <option value="Bogotá">Bogotá</option>
                 </optgroup>
               </select>
             </div>
           </div>
           <div class="col-sm-6 col-xs-12">
-            <div class="find-home-item">
-              <input type="text" name="min-area" placeholder="Min area (sqft)">
-            </div>
-          </div>
-          <div class="col-sm-6 col-xs-12">
-            <div class="find-home-item">
-              <input type="text" name="max-area" placeholder="Max area (sqft)">
+            <div class="find-home-item custom-select">
+              <select class="selectpicker" title="Tipo Inmueble">
+                @foreach ($property_types as $type)
+                  <option value="{{ $type->id }}">{{ $type->name }}</option>
+                @endforeach
+              </select>
             </div>
           </div>
           <div class="col-sm-6 col-xs-12">
             <div class="find-home-item  custom-select">
-              <select class="selectpicker" title="No. of Beadrooms" data-hide-disabled="true">
-                <optgroup  label="1">
-                  <option label="1">1 Beadrooms</option>
-                  <option>2 Beadrooms</option>
-                  <option>3 Beadrooms</option>
-                  <option>4 Beadrooms</option>
-                  <option>5 Beadrooms</option>
+              <select class="selectpicker" title="No. de Habitaciones" data-hide-disabled="true">
+                <optgroup  label="1 Habitación">
+                  <option label="1">1 Habitación</option>
+                  <option>2 Habitaciones</option>
+                  <option>3 Habitaciones</option>
+                  <option>4 Habitaciones</option>
+                  <option>5 Habitaciones</option>
                 </optgroup>
               </select>
             </div>
           </div>
-          <div class="col-sm-6 col-xs-12">
-            <div class="find-home-item custom-select">
-              <select class="selectpicker" title="No. of Bathrooms" data-hide-disabled="true">
-                <optgroup label="2">
-                  <option>1 Bathrooms</option>
-                  <option>2 Bathrooms</option>
-                  <option>3 Bathrooms</option>
-                  <option>4 Bathrooms</option>
-                  <option>5 Bathrooms</option>
-                </optgroup>
-              </select>
-            </div>
-          </div>
-          <div class="col-xs-12">
-            <div class="row">
-              <div class="col-sm-7 col-xs-12">
-                <div class="find-home-item">
-                  <!-- shop-filter -->
-                  <div class="shop-filter">
-                    <div class="price_filter">
-                      <div class="price_slider_amount">
-                        <input type="submit"  value="You range :"/>
-                        <input type="text" id="amount" name="price"  placeholder="Add Your Price" />
-                      </div>
-                      <div id="slider-range"></div>
-                    </div>
+          <div class="col-sm-12 col-xs-12">
+            <div class="find-home-item">
+              <!-- shop-filter -->
+              <div class="shop-filter">
+                <div class="price_filter">
+                  <div class="price_slider_amount">
+                    <input type="submit"  value="Precio :"/>
+                    <input type="text" id="amount" name="price"  placeholder="Add Your Price" />
                   </div>
+                  <div id="slider-range"></div>
                 </div>
               </div>
-              <div class="col-sm-5 col-xs-12">
-                <div class="find-home-item">
-                  <a class="button-1 btn-block btn-hover-1" href="#">SEARCH</a>
-                </div>
-              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-xs-12">
+            <div class="find-home-item">
+              <a class="button-1 btn-block btn-hover-1" href="#">Buscar</a>
             </div>
           </div>
         </div>

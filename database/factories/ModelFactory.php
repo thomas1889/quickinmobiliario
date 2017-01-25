@@ -127,3 +127,12 @@ $factory->define(QuickInmobiliario\ProjectImage::class, function (Faker\Generato
       'extension' => $faker->randomElement(array('jpg', 'png', 'gif', 'jpeg')),
     ];
 });
+
+$factory->define(QuickInmobiliario\Messages::class, function (Faker\Generator $faker) {
+    return [
+      'email' => $faker->unique()->safeEmail,
+      'message' => $faker->randomElement(array('Bueno', 'Malo', 'Hay se va', 'Medio')),
+      'user_id' => $faker->numberBetween(1, 10),
+      'user_message_id' => $faker->numberBetween(1, 10),
+    ];
+});
