@@ -563,4 +563,13 @@
   background-size: cover;
 }
 
+/* Rango de precios buscador inmuebles */
+.price_slider_amount input:first-child {
+  width: 36%;
+}
+
+.price_slider_amount input:last-child {
+  width: 60%;
+}
+
 /*# sourceMappingURL=app.css.map */

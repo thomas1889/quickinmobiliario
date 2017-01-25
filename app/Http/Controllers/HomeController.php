@@ -3,6 +3,7 @@
 namespace QuickInmobiliario\Http\Controllers;
 
 use Illuminate\Http\Request;
+use QuickInmobiliario\PropertyType;
 
 class HomeController extends Controller
 {
@@ -22,7 +23,7 @@ class HomeController extends Controller
 	* @return \Illuminate\Http\Response
 	*/
 	public function index(){
-		return view('home');
+		return view('home', ['property_types' => PropertyType::all()]);
 	}
 
 	/**
@@ -32,7 +33,7 @@ class HomeController extends Controller
 	public function contact(){
 		return view('contact');
 	}
-	
+
 	public function faqs(){
 		return view('faqs');
 	}

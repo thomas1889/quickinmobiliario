@@ -128,3 +128,13 @@
     background-size:cover;
 }
 //End Estrellas
+
+/* Rango de precios buscador inmuebles */
+.price_slider_amount {
+  input:first-child {
+    width: 36%;
+  }
+  input:last-child {
+    width: 60%;
+  }
+}

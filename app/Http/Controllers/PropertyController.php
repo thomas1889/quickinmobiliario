@@ -24,7 +24,7 @@ class PropertyController extends Controller {
   * @return Response
   */
   public function index(){
-    return view('properties.index', ['properties' => Property::paginate(10)]);
+    return view('properties.index', ['properties' => Property::paginate(10), 'property_types' => PropertyType::all()]);
   }
 
   /**
@@ -79,7 +79,6 @@ class PropertyController extends Controller {
   * @param Property $id
   */
   public function edit($id){
-    //dd($this->getProperty($id)->features);
     return view('properties.edit', [
       'property' => $this->getProperty($id),
       'projects' => $this->get_projects(),

@@ -16,7 +16,7 @@ class CreatePropertiesTable extends Migration
       Schema::create('properties', function(Blueprint $table){
         $table->increments('id');
         $table->string('name', 75);
-        $table->tinyInteger('state');
+        $table->tinyInteger('state')->default(1);//1: Creado, 2: Suspendido, 3: Finalizado
         $table->string('phone', 45);
         $table->string('address', 75);
         $table->text('description');
