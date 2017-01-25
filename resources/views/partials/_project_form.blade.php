@@ -1,9 +1,47 @@
 @if (isset($project))
-  
+    
+    <h3 class="form-division mb-30"><i class="fa fa-home"></i>Datos de la Publicación 
     <label for="name">Nombre del Proyecto</label>
     <input type="text" id="name" name="name" value="{{ old('name', $project->name) }}">
-  
-  
+  <div class="row">
+    <div class="col-md-4">
+      <label for="property_type">Tipo de Proyecto</label>
+      <select name="property_type_id">
+        @foreach ($property_types as $type)
+          @if ($type->id == $project->property_type_id)
+            <option value="{{ $type->id }}" selected>{{ $type->name }}</option>
+          @else
+            <option value="{{ $type->id }}">{{ $type->name }}</option>
+          @endif
+        @endforeach
+      </select>
+    </div>
+    <div class="col-md-4">
+      <label for="use_type">Tipo de uso</label>
+    <select class="form-control" name="use_type_id">
+      @foreach ($use_types as $type)
+        @if ($type->id == $project->use_type_id)
+          <option value="{{ $type->id }}" selected>{{ $type->name }}</option>
+        @else
+          <option value="{{ $type->id }}">{{ $type->name }}</option>
+        @endif
+      @endforeach
+    </select>
+    </div>
+    <div class="col-md-4">
+      <label for="use_type">Estrato Social</label>
+    <select class="form-control" name="stratum">
+      @foreach ($use_types as $type)
+        @if ($type->id == $project->use_type_id)
+          <option value="{{ $type->id }}" selected>{{ $type->name }}</option>
+        @else
+          <option value="{{ $type->id }}">{{ $type->name }}</option>
+        @endif
+      @endforeach
+    </select>
+    </div>
+
+
     <label for="phone">Teléfono</label>
     <input type="tel" id="phone" name="phone" value="{{ old('phone', $project->phone) }}">
   
@@ -62,59 +100,7 @@
     <div class="input-group">
       <input type="text" id="left_units" name="left_units" class="form-control" value="{{ old('left_units', $project->left_units) }}">
     </div>
-  </div>
-
-<!-- Aquí va los inmuebles relacionados con el proyecto
-  <div class="form-group">
-    <label for="project">Proyecto</label>
-    <select class="form-control" name="project_id">
-      <option value="-1">No aplica</option>
-      @foreach ($projects as $project)
-        @if ($project->id == $property->project_id)
-          <option value="{{ $project->id }}" selected>{{ $project->name }}</option>
-        @else
-          <option value="{{ $project->id }}">{{ $project->name }}</option>
-        @endif
-      @endforeach
-    </select>
-  </div>
-  -->
-
-  
-    <label for="property_type">Tipo de propiedad</label>
-    <select class="form-control" name="property_type_id">
-      @foreach ($property_types as $type)
-        @if ($type->id == $project->property_type_id)
-          <option value="{{ $type->id }}" selected>{{ $type->name }}</option>
-        @else
-          <option value="{{ $type->id }}">{{ $type->name }}</option>
-        @endif
-      @endforeach
-    </select>
-  
- 
-    <label for="use_type">Tipo de uso</label>
-    <select class="form-control" name="use_type_id">
-      @foreach ($use_types as $type)
-        @if ($type->id == $project->use_type_id)
-          <option value="{{ $type->id }}" selected>{{ $type->name }}</option>
-        @else
-          <option value="{{ $type->id }}">{{ $type->name }}</option>
-        @endif
-      @endforeach
-    </select>
- 
-  
-    <label for="business_type">Tipo de negocio</label>
-    <select class="form-control" name="business_type_id">
-      @foreach ($business_types as $type)
-        @if ($type->id == $project->business_type_id)
-          <option value="{{ $type->id }}" selected>{{ $type->name }}</option>
-        @else
-          <option value="{{ $type->id }}">{{ $type->name }}</option>
-        @endif
-      @endforeach
-    </select>
+  </div> 
   
   
     <label for="description">Descripción</label>

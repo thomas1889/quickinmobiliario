@@ -32,7 +32,7 @@ class ProjectController extends Controller{
 		return view('projects.create', [
 			'property_types' => $this->get_property_types(),
 			'use_types' => $this->get_use_types(),
-			'business_types' => $this->get_business_types(),
+			// 'business_types' => $this->get_business_types(),
 			'section_text' => 'Crear'
 		]);
 	}
