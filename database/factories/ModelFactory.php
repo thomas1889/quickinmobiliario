@@ -133,6 +133,6 @@ $factory->define(QuickInmobiliario\Messages::class, function (Faker\Generator $f
       'email' => $faker->unique()->safeEmail,
       'message' => $faker->randomElement(array('Bueno', 'Malo', 'Hay se va', 'Medio')),
       'user_id' => $faker->numberBetween(1, 10),
-      'user_message_id' => $faker->numberBetween(1, 10),
+      'user_contacted_id' => $faker->numberBetween(1, 10),
     ];
 });
