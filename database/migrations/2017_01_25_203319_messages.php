@@ -12,14 +12,14 @@ class Messages extends Migration {
      * @return void
      */
     public function up() {
-        Schema::create('messages', function(Blueprint $table) {
-            $table->increments('id');
-            $table->string('email', 45)->default("")->nullable();
-            $table->string('message', 150)->default("")->nullable();
-            $table->integer('user_id')->default(0)->nullable();
-            $table->integer('user_message_id')->default(0)->nullable();
-            $table->timestamps();
-        });
+      Schema::create('messages', function(Blueprint $table) {
+        $table->increments('id');
+        $table->string('email', 45)->default("")->nullable();
+        $table->string('message', 150)->default("")->nullable();
+        $table->integer('user_id')->default(0)->nullable();
+        //$table->integer('user_message_id')->default(0)->nullable();
+        $table->timestamps();
+      });
     }
 
     /**
@@ -28,7 +28,7 @@ class Messages extends Migration {
      * @return void
      */
     public function down() {
-        Schema::dropIfExists('messages');
+      Schema::dropIfExists('messages');
     }
 
 }
