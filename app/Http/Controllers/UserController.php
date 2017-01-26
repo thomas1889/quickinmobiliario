@@ -48,7 +48,10 @@ class UserController extends Controller {
             $user_update->image_perfil = $nombre;
             $user_update->save();
         }
-        return view('home');
+       $user = Auth::User();
+        $perfil = Storage::disk('local')->get('public/avatares/' . Auth::User()->image_perfil);
+
+        return view('auth/user', ['user', $user, 'perfil' => $perfil])->with('user', $user);
     }
 
     //VIEW IMAGE

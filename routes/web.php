@@ -77,9 +77,16 @@ Route::get('cita/{id}', [
   'as' => 'appointment_path'
 ]);
 
-Route::get('schedule/{id}', [
-  'uses' => 'AppointmentController@schedule',
-  'as' => 'to_schedule_path'
+/**
+ * Messages routes
+ */
+Route::get('message/{id}', [
+  'uses' => 'MessageController@index',
+  'as' => 'to_message_path'
+]);
+Route::get('user_contact/{id}', [
+  'uses' => 'MessageController@show',
+  'as' => 'get_user_contact_path'
 ]);
 
 /**
@@ -193,9 +200,9 @@ Route::get('detallesProyecto/{id}', [
   'uses' => 'ProjectController@show',
   'as' => 'projects_show_path'
 ]);
-Route::get('buscar/proyectos',[
-	'uses' => 'ProjectController@search',
-	'as' => 'project_filter_path'
+Route::get('buscar/proyectos', [
+  'uses' => 'ProjectController@search',
+  'as' => 'project_filter_path'
 ]);
 
 Route::post('imagen_proyecto/upload', [

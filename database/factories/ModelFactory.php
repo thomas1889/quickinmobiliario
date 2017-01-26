@@ -21,7 +21,7 @@ $factory->define(QuickInmobiliario\User::class, function (Faker\Generator $faker
       'business_name' => $faker->company,
       'cell_phone' => $faker->e164PhoneNumber,
       'address' => $faker->address,
-      'document_type' => $faker->randomNumber(),
+      'document' => $faker->randomNumber(),
       'age' => $faker->randomDigit,
       'gender' => $faker->randomElement($array = array('Hombre', 'Mujer')),
       'username' => $faker->word,

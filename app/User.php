@@ -58,5 +58,8 @@ class User extends Authenticatable {
     public function profile(){
       return $this->belongsTo(Profile::class);
     }
+    public function messages() {
+        return $this->hasMany(Messages::class, 'user_id');
+    }
 
 }
