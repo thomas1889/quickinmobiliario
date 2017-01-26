@@ -22,6 +22,7 @@ class CreateProjectsTable extends Migration
       $table->string('cellphone', 45);
       $table->tinyInteger('rooms');
       $table->tinyInteger('bathrooms');
+      $table->integer('floors');
       $table->text('description');
       $table->integer('state')->default(1); // 1 = Vivienda nueva
       $table->integer('status')->default(1); // 1 = Creado -- 2 = Suspendido -- 3 = Finalizado
@@ -34,10 +35,10 @@ class CreateProjectsTable extends Migration
       $table->integer('stratum');
       $table->integer('property_type_id');
       $table->integer('use_type_id');
+      $table->decimal('price', 18, 2);
       // $table->integer('business_type_id');
       $table->integer('user_id');
-			$table->string('video360', 20);
-      // $table->integer('floors');
+      $table->string('video360', 20);
       // $table->integer('parking');
       // $table->string('unit_quantity',100,3);
       // $table->string('left_units',100,3);
