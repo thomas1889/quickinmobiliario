@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use QuickInmobiliario\Messages;
 
 class MessagesTableSeeder extends Seeder
 {
@@ -11,6 +12,7 @@ class MessagesTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+       Messages::truncate();
+       factory(Messages::class,10)->create();
     }
 }

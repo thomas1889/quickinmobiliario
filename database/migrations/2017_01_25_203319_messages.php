@@ -17,7 +17,7 @@ class Messages extends Migration {
         $table->string('email', 45)->default("")->nullable();
         $table->string('message', 150)->default("")->nullable();
         $table->integer('user_id')->default(0)->nullable();
-        //$table->integer('user_message_id')->default(0)->nullable();
+        $table->integer('user_message_id')->default(0)->nullable();
         $table->timestamps();
       });
     }

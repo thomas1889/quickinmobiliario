@@ -23,5 +23,6 @@ class DatabaseSeeder extends Seeder
       $this->call(ProfilesTableSeeder::class);
       $this->call(FeaturesTableSeeder::class);
       $this->call(PunctuationTableSeeder::class);
+      $this->call(MessagesTableSeeder::class);
     }
 }
