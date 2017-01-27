@@ -92,6 +92,10 @@ Route::get('answer/{user_contacted_id}', [
   'uses' => 'MessageController@edit',
   'as' => 'get_answer_path'
 ]);
+Route::post('answer', [
+  'uses' => 'MessageController@update',
+  'as' => 'answer_update_path'
+]);
 
 /**
  * Property routes

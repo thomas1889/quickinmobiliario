@@ -15,7 +15,7 @@ class MessageController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index($id) {
-        $messages = Messages::where(['user_contacted_id' => $id])->orderBy('id','DESC')->get();
+        $messages = Messages::where(['user_contacted_id' => $id])->orderBy('id', 'DESC')->get();
         $user = User::findOrFail($id);
 
         return view('messages.messages', ['messages' => $messages, 'user' => $user]);
@@ -61,7 +61,7 @@ class MessageController extends Controller {
      */
     public function edit($user_contacted_id) {
         $respons = Messages::where(['id' => $user_contacted_id])->get();
-        
+
 
         return view('messages.answer', ['respons' => $respons, 'user' => Auth::User()]);
     }
@@ -73,8 +73,10 @@ class MessageController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id) {
-        //
+    public function update(Request $responding) {
+        $id = Auth::User()->id;
+        $user_respond = User::findOrFail($id);
+        dd($id);
     }
 
     /**

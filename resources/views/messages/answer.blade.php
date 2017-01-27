@@ -31,15 +31,15 @@
                 <!-- blog-details-reply -->
                 <div class="leave-review">
                     <h5>Escriba su mensaje a continuación:</h5>
-                    <form  id="contact-form" action="mail.php" method="post">
-
+                    <form  id="contact-form" action="{{route('answer_update_path')}}" method="post">
+                        {{ csrf_field() }}
                         <input type="hidden" name="email" value="{{ $respon->email }}">
                         <input type="hidden" name="user_id" placeholder="{{ $user->id }}">
                         <input type="hidden" name="user_contacted_id" value="{{ $respon->user_id }}">
                         <textarea name="message" placeholder="Mensaje:"></textarea>
-                        <button type="submit" class="submit-btn-1">Envíar</button>
+                        <button type="button" class="submit-btn-1">Envíar</button>
                     </form>
-                    <p class="form-messege mb-0"></p>
+                  
                 </div>
             </div>
         </div>
