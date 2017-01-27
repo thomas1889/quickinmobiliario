@@ -85,7 +85,7 @@ $factory->define(QuickInmobiliario\Project::class, function (Faker\Generator $fa
       'rooms' => $faker->randomDigitNotNull,
       'bathrooms' => $faker->randomDigitNotNull,
       'description' => $faker->text(400),
-      'state' => 1,
+      'state' => $faker->randomElement(array(1, 2, 3)),
       'status' => $faker->randomElement(array(1, 2, 3)),
       // 'unit_quantity' => $faker->numberBetween(1, 9999),
       // 'left_units' => $faker->numberBetween(1, 9999),
@@ -100,10 +100,10 @@ $factory->define(QuickInmobiliario\Project::class, function (Faker\Generator $fa
       'use_type_id' => $faker->randomElement([1, 2]),
       'price' => $faker->numberBetween(50000000, 1000000000),
       // 'business_type_id' => $faker->randomElement([1, 2, 3, 4]),
-      'video360' => '-xNN-bJQ4vI',
+      'video360' => '-xNN-bJQ4vI',  
       'floors' => $faker->randomDigitNotNull,
       // 'parking' => $faker->randomDigitNotNull,
-      'user_id' => $faker->numberBetween(1,100),
+      'user_id' => 4,
       'coordinates' => DB::raw("GeomFromText('POINT(18 -64)')"),
     ];
 });
