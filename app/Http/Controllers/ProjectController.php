@@ -5,11 +5,10 @@ namespace QuickInmobiliario\Http\Controllers;
 use QuickInmobiliario\Http\Requests\StoreProject;
 use QuickInmobiliario\Project;
 use QuickInmobiliario\ProjectImage;
-use QuickInmobiliario\Property;
 use QuickInmobiliario\PropertyType;
 use QuickInmobiliario\UseType;
-use QuickInmobiliario\BusinessType;
 use Illuminate\Support\Facades\Storage;
+use QuickInmobiliario\Feature;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -21,7 +20,7 @@ class ProjectController extends Controller{
 
 	public function index()
 	{
-		return view('projects.index', ['projects' => Project::paginate(10)]);
+		return view('projects.index', ['projects' => Project::paginate(10), 'property_types' => PropertyType::all()]);
 	}
 
 	public function show($id){
@@ -32,7 +31,7 @@ class ProjectController extends Controller{
 		return view('projects.create', [
 			'property_types' => $this->get_property_types(),
 			'use_types' => $this->get_use_types(),
-			// 'business_types' => $this->get_business_types(),
+			'features' => $this->get_features(),
 			'section_text' => 'Crear'
 		]);
 	}
@@ -41,6 +40,8 @@ class ProjectController extends Controller{
 		$project = new Project;
 		$this->setProject($project, $request);
 		$project->project_code='QP-'.time();
+
+		$project->features()->attach($request->get('features'));
 
 		if(is_array($request->get('images')) && !empty($request->get('images'))){
 			foreach ($request->get('images') as $value) {
@@ -51,85 +52,87 @@ class ProjectController extends Controller{
 		return redirect()->route('projects_show_path', $project->id);
 	}
 
-	public function edit($id){
-		return view('projects.edit',[
-			'project' => $this->$project->getProject($id),
-			'property_types' => $this->get_property_types(),
-			'use_types' => $this->get_use_types(),
-			'business_types' => $this->get_business_types(),
-			'section_text' => 'Editar'
-		]);
-	}
+	/*	public function edit($id){
+	return view('projects.edit',[
+	'project' => $this->$project->getProject($id),
+	'property_types' => $this->get_property_types(),
+	'use_types' => $this->get_use_types(),
+	'business_types' => $this->get_business_types(),
+	'section_text' => 'Editar'
+]);
+}
 
-	public function update($id, StoreProject $request){
-		$project = $this->getProject($id);
-		$this->setProject($project, $request);
-		$project->save();
+public function update($id, StoreProject $request){
+$project = $this->getProject($id);
+$this->setProject($project, $request);
+$project->save();
 
-		return redirect()->route('projects_edit_path', $project->id);
-	}
+return redirect()->route('projects_edit_path', $project->id);
+}
 
-	public function destroy($id){
-		$project = $this->getProject($id);
-		$project->project_images()->each(function($image){
-			Storage::delete('public/projects'.$image->path);
-		})
-		$project->project_images()->delete();
-		$project->delete();
+public function destroy($id){
+$project = $this->getProject($id);
+$project->project_images()->each(function($image){
+Storage::delete('public/projects'.$image->path);
+})
+$project->project_images()->delete();
+$project->delete();
 
-		return redirect()->route('projects_path');
-	}
+return redirect()->route('projects_path');
+}
 
-	public function search(Request $request){
-		$projects = Project::select('id','name','city','zone','created_at');
+public function search(Request $request){
+$projects = Project::select('id','name','city','zone','created_at');
 
-		if($request->has('zone') && $request->get('zone') !=-1){
-			$projects->WHERE('zone', 'LIKE','%'.$request->get('zone').'%');
-		}
-		if($request->has('city')){
-			$projects->WHERE('city','LIKE','%'.$request->get('city').'%');
-		}
+if($request->has('zone') && $request->get('zone') !=-1){
+$projects->WHERE('zone', 'LIKE','%'.$request->get('zone').'%');
+}
+if($request->has('city')){
+$projects->WHERE('city','LIKE','%'.$request->get('city').'%');
+}
 
-		return view('projects.index',['projects'=>$projects->paginate(10)]);
-	}
+return view('projects.index',['projects'=>$projects->paginate(10)]);
+}*/
 
-	private function get_Properties(){
-		return Property::all();
-	}
+private function get_Properties(){
+	return Property::all();
+}
 
-	private function get_property_types(){
-		return PropertyType::all();
-	}
+private function get_property_types(){
+	return PropertyType::all();
+}
 
-	private function get_use_types(){
-		return UseType::all();
-	}
+private function get_use_types(){
+	return UseType::all();
+}
 
-	private function get_business_types(){
-		return BusinessType::all();
-	}
+private function get_features(){
+	return Feature::all();
+}
 
-	private function getProject($id){
-		return Project::findOrFail($id);
-	}
+private function getProject($id){
+	return Project::findOrFail($id);
+}
 
-	private function setProject(Project $project, StoreProject $request){
-		$project->name = $request->get('name');
-		$project->address = $request->get('address');
-		$project->phone = $request->get('phone');
-		$project->description = $request->get('description');
-		$project->built_area = $request->get('built_area');
-		$project->full_area = $request->get('full_area');
-		$project->unit_quantity = $request->get('unit_quantity');
-		$project->left_units = $request->get('left_units');
-		$project->zone = $request->get('zone');
-		$project->city = $request->get('city');
-		$project->neighborhood = $request->get('neighborhood');
-		$project->property_type_id = $request->get('property_type_id');
-		$project->use_type_id = $request->get('use_type_id');
-		$project->business_type_id = $request->get('business_type_id');
-		// $project->property_id = $request->get('property_id');
-		$project->video360 = $request->get('video360');
-	}
-
+private function setProject(Project $project, StoreProject $request){
+	$project->name = $request->get('name');
+	$project->address = $request->get('address');
+	$project->phone = $request->get('phone');
+	$project->description = $request->get('description');
+	$project->built_area = $request->get('built_area');
+	$project->full_area = $request->get('full_area');
+	$project->unit_quantity = $request->get('unit_quantity');
+	$project->left_units = $request->get('left_units');
+	$project->city = $request->get('rooms');
+	$project->zone = $request->get('zone');
+	$project->neighborhood = $request->get('neighborhood');
+	$project->bathrooms = $request->get('bathrooms');
+	$project->price = $request->get('price');
+	$project->stratum = $request->get('stratum');
+	$project->stratum = $request->get('floors');
+	$project->property_type_id = $request->get('property_type_id');
+	$project->use_type_id = $request->get('use_type_id');
+	$project->business_type_id = $request->get('business_type_id');
+	$project->video360 = $request->get('video360');
+}
 }
