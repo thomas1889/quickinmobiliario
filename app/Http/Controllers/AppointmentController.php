@@ -30,8 +30,8 @@ class AppointmentController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function create() {
-        dd('helo');
+    public function create($user_id) {
+        dd($user_id);
     }
 
     /**

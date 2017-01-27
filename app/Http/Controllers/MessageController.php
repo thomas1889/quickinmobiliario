@@ -15,9 +15,9 @@ class MessageController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index($id) {
-        $messages = Messages::where(['user_contacted_id' => $id])->get();
+        $messages = Messages::where(['user_contacted_id' => $id])->orderBy('id','DESC')->get();
         $user = User::findOrFail($id);
-       
+
         return view('messages.messages', ['messages' => $messages, 'user' => $user]);
     }
 
@@ -26,8 +26,9 @@ class MessageController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function create() {
-        //
+    public function create($user_contacted_id) {
+
+        dd($user_contacted_id);
     }
 
     /**
@@ -58,8 +59,11 @@ class MessageController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id) {
-        //
+    public function edit($user_contacted_id) {
+        $respons = Messages::where(['id' => $user_contacted_id])->get();
+        
+
+        return view('messages.answer', ['respons' => $respons, 'user' => Auth::User()]);
     }
 
     /**

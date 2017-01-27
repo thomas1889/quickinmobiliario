@@ -67,7 +67,7 @@ Route::get('usuario/{id}/calificaciones', [
 /**
  * Appointment routes
  */
-Route::post('cita/crear', [
+Route::get('cita/crear/{user_id}', [
   'uses' => 'AppointmentController@create',
   'as' => 'appointment_create_path'
 ]);
@@ -87,6 +87,10 @@ Route::get('message/{id}', [
 Route::get('user_contact/{id}', [
   'uses' => 'MessageController@show',
   'as' => 'get_user_contact_path'
+]);
+Route::get('answer/{user_contacted_id}', [
+  'uses' => 'MessageController@edit',
+  'as' => 'get_answer_path'
 ]);
 
 /**
